@@ -1,14 +1,22 @@
 //
-//  AllTableCell.swift
+//  FavTableCell.swift
 //  SCBFirstAssignment
 //
-//  Created by Thapakorn Tuwaemuesa on 27/8/2562 BE.
+//  Created by Thapakorn Tuwaemuesa on 28/8/2562 BE.
 //  Copyright © 2562 SCB. All rights reserved.
 //
 
 import UIKit
 
-class AllTableCell: UITableViewCell {
+class FavTableCell: UITableViewCell {
+    
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var thumbnailImageView : UIImageView!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

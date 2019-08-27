@@ -12,6 +12,7 @@ class TabBarViewController: UIViewController {
     
     @IBOutlet var buttons : [UIButton]!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var sortButton: UIBarButtonItem!
     
     var allViewController : AllViewController!
     var favouriteViewController : FavouriteViewController!
@@ -70,5 +71,16 @@ class TabBarViewController: UIViewController {
         initialViewController.view.frame = contentView.bounds
         contentView.addSubview(initialViewController.view)
     }
+    
+    @IBAction func didTapSort(_ sender: Any) {
+        let alert = UIAlertController(title: "Did you bring your towel?", message: "", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        
+        self.present(alert, animated: true)
+    }
+    
     
 }
