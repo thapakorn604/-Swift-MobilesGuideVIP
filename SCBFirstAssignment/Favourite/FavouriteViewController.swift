@@ -36,6 +36,7 @@ extension FavouriteViewController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "favTableCell") as? FavTableCell
         
         let element = content[indexPath.row]

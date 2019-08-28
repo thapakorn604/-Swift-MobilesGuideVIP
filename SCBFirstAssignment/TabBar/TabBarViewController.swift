@@ -98,35 +98,40 @@ class TabBarViewController: UIViewController {
     
     func sortByPriceDecending() {
         
-        content = ContentManager.shared.allMobiles.sorted{$0.mobile.price < $1.mobile.price}
-        allViewController.content = content
-        allViewController.tableView.reloadData()
-        
-        content = ContentManager.shared.favMobiles.sorted{$0.mobile.price < $1.mobile.price}
-        favouriteViewController.content = content
-        favouriteViewController.tableView.reloadData()
+        if selectedIndex == 0 {
+            content = ContentManager.shared.allMobiles.sorted{$0.mobile.price < $1.mobile.price}
+            allViewController.content = content
+            allViewController.tableView.reloadData()
+        } else {
+            content = ContentManager.shared.favMobiles.sorted{$0.mobile.price < $1.mobile.price}
+            favouriteViewController.content = content
+            favouriteViewController.tableView.reloadData()
+        }
     }
     
     func sortByPriceAscending() {
         
-        content = ContentManager.shared.allMobiles.sorted{$0.mobile.price > $1.mobile.price}
-        allViewController.content = content
-        allViewController.tableView.reloadData()
-        
-        content = ContentManager.shared.favMobiles.sorted{$0.mobile.price > $1.mobile.price}
-        favouriteViewController.content = content
-        favouriteViewController.tableView.reloadData()
+        if selectedIndex == 0 {
+            content = ContentManager.shared.allMobiles.sorted{$0.mobile.price > $1.mobile.price}
+            allViewController.content = content
+            allViewController.tableView.reloadData()
+        } else {
+            content = ContentManager.shared.favMobiles.sorted{$0.mobile.price > $1.mobile.price}
+            favouriteViewController.content = content
+            favouriteViewController.tableView.reloadData()
+        }
     }
     
     func sortByRating() {
         
-        content = ContentManager.shared.allMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
-        allViewController.content = content
-        allViewController.tableView.reloadData()
-        
-        content = ContentManager.shared.favMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
-        favouriteViewController.content = content
-        favouriteViewController.tableView.reloadData()
+        if selectedIndex == 0 {
+            content = ContentManager.shared.allMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
+            allViewController.content = content
+            allViewController.tableView.reloadData()
+        } else {
+            content = ContentManager.shared.favMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
+            favouriteViewController.content = content
+            favouriteViewController.tableView.reloadData()
+        }
     }
-
 }
