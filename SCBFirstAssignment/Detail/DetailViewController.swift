@@ -16,6 +16,7 @@ class DetailViewController: UIViewController, UICollectionViewDataSource {
     @IBOutlet weak var priceLabel: UILabel!
     
     var receivedId : Int!
+    var receivedName : String!
     var receivedDetail : String!
     var receivedPrice : Double!
     var receivedRating : Double!
@@ -50,6 +51,7 @@ class DetailViewController: UIViewController, UICollectionViewDataSource {
 
     func setup() {
         
+        navigationItem.title = receivedName
         detailTextView.text = receivedDetail
         ratingLabel.text = "Rating: \(receivedRating!)"
         priceLabel.text = "Price: \(receivedPrice!)"

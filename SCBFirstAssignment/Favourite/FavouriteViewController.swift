@@ -19,10 +19,13 @@ class FavouriteViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         content = ContentManager.shared.favMobiles
         tableView.reloadData()
-        
     }
     
 }
@@ -58,6 +61,7 @@ extension FavouriteViewController : UITableViewDelegate {
         let sendingDetail = element.mobile.description
         let sendingPrice = element.mobile.price
         let sendingRating = element.mobile.rating
+        let sendingName = element.mobile.name
         
         let destination = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
@@ -65,6 +69,7 @@ extension FavouriteViewController : UITableViewDelegate {
         destination.receivedDetail = sendingDetail
         destination.receivedPrice = sendingPrice
         destination.receivedRating = sendingRating
+        destination.receivedName = sendingName
         
         self.navigationController?.pushViewController(destination, animated: true)
     }
@@ -83,5 +88,4 @@ extension FavouriteViewController : UITableViewDelegate {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-    
 }
