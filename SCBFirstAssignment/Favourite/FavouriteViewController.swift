@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouriteViewController: UIViewController, UITableViewDelegate {
+class FavouriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView : UITableView!
 
@@ -16,8 +16,18 @@ class FavouriteViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         
         tableView.delegate = self
-        tableView.dataSource = FavouriteTableView.shared
+        tableView.dataSource = self
         
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "favTableCell") as? FavTableCell
+        
+        return cell!
     }
     
 

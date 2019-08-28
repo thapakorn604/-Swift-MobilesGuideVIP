@@ -20,10 +20,12 @@ class TabBarViewController: UIViewController {
     var viewControllers : [UIViewController]!
     
     var selectedIndex : Int = 0
+    
+    var content = [Mobile]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setupViewControllers()
         setup()
         
@@ -75,13 +77,45 @@ class TabBarViewController: UIViewController {
     @IBAction func didTapSort(_ sender: Any) {
         let alert = UIAlertController(title: "Sort", message: "", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: {
+            (action:UIAlertAction!) in
+                self.sortByPriceDecending()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: {
+            (action:UIAlertAction!) in
+            self.sortByPriceAscending()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: {
+            (action:UIAlertAction!) in
+            self.sortByRating()
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
     }
     
+    func sortByPriceDecending() {
+        
+        content = ContentManager.shared.allMobiles.sorted{$0.mobile.price < $1.mobile.price}
+        allViewController.content = content
+        allViewController.tableView.reloadData()
+        
+    }
     
+    func sortByPriceAscending() {
+        
+        content = ContentManager.shared.allMobiles.sorted{$0.mobile.price > $1.mobile.price}
+        allViewController.content = content
+        allViewController.tableView.reloadData()
+    }
+    
+    func sortByRating() {
+        
+        content = ContentManager.shared.allMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
+        allViewController.content = content
+        allViewController.tableView.reloadData()
+    }
+
 }

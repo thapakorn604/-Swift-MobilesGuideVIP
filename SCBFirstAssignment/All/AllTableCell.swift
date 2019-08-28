@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AllTableCellDelegate : class {
+    func didSelectFav(cell: AllTableCell)
+}
+
 class AllTableCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -17,6 +21,7 @@ class AllTableCell: UITableViewCell {
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var thumbnailImageView : UIImageView!
     
+    var delegate : AllTableCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,11 +34,11 @@ class AllTableCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func didTapFav(_ sender: UIButton) {
+        delegate?.didSelectFav(cell: self)
         if !sender.isSelected {
             sender.isSelected = true
         }else{
             sender.isSelected = false
         }
     }
-    
 }
