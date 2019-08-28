@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class AllViewController: UIViewController {
     
@@ -111,5 +112,7 @@ extension AllViewController : AllTableCellDelegate {
         }
     }
 }
+
+
     
 
