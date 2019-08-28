@@ -28,7 +28,12 @@ class AllTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    @IBAction func didTapFav(_ sender: Any) {
+    @IBAction func didTapFav(_ sender: UIButton) {
+        if !sender.isSelected {
+            sender.isSelected = true
+        }else{
+            sender.isSelected = false
+        }
     }
     
 }

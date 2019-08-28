@@ -6,5 +6,7 @@ target 'SCBFirstAssignment' do
   use_frameworks!
 
   # Pods for SCBFirstAssignment
+pod 'Alamofire', '~> 4.8'
+pod 'AlamofireImage', '~> 3.5'
 
 end

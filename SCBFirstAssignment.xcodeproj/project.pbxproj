@@ -19,9 +19,15 @@
 		B24744012315925E003C58C0 /* AllTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24744002315925E003C58C0 /* AllTableView.swift */; };
 		B247440823159AD9003C58C0 /* FavouriteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247440723159AD9003C58C0 /* FavouriteTableView.swift */; };
 		B247440A23159B0C003C58C0 /* FavTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247440923159B0C003C58C0 /* FavTableCell.swift */; };
+		B247440D2315A3E6003C58C0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247440C2315A3E6003C58C0 /* DetailViewController.swift */; };
+		B2474410231618CB003C58C0 /* MobileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247440F231618CB003C58C0 /* MobileResponse.swift */; };
+		D6428472781CF52750D3F900 /* Pods_SCBFirstAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79961CE899F9A76F0BFC3A01 /* Pods_SCBFirstAssignment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DC8CD2D798454AF27DA7A92 /* Pods-SCBFirstAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBFirstAssignment.debug.xcconfig"; path = "Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment.debug.xcconfig"; sourceTree = "<group>"; };
+		46EA5036C96980B1AC3A7988 /* Pods-SCBFirstAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBFirstAssignment.release.xcconfig"; path = "Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment.release.xcconfig"; sourceTree = "<group>"; };
+		79961CE899F9A76F0BFC3A01 /* Pods_SCBFirstAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCBFirstAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24743DB23153520003C58C0 /* SCBFirstAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCBFirstAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24743DE23153520003C58C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24743E323153520003C58C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -36,6 +42,8 @@
 		B24744002315925E003C58C0 /* AllTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableView.swift; sourceTree = "<group>"; };
 		B247440723159AD9003C58C0 /* FavouriteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableView.swift; sourceTree = "<group>"; };
 		B247440923159B0C003C58C0 /* FavTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableCell.swift; sourceTree = "<group>"; };
+		B247440C2315A3E6003C58C0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B247440F231618CB003C58C0 /* MobileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +51,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6428472781CF52750D3F900 /* Pods_SCBFirstAssignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D098D9B1AC19E4EE9014AA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0DC8CD2D798454AF27DA7A92 /* Pods-SCBFirstAssignment.debug.xcconfig */,
+				46EA5036C96980B1AC3A7988 /* Pods-SCBFirstAssignment.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B24743D223153520003C58C0 = {
 			isa = PBXGroup;
 			children = (
 				B24743DD23153520003C58C0 /* SCBFirstAssignment */,
 				B24743DC23153520003C58C0 /* Products */,
+				4D098D9B1AC19E4EE9014AA7 /* Pods */,
+				DB61B0715E755394A0E02A4E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,10 +89,12 @@
 		B24743DD23153520003C58C0 /* SCBFirstAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				B247440B2315A3CC003C58C0 /* Detail */,
 				B24743F823153E77003C58C0 /* Favourite */,
 				B24743F723153E6F003C58C0 /* All */,
 				B24743F323153D30003C58C0 /* TabBar */,
 				B24743F02315352B003C58C0 /* Managers */,
+				B247440E231618AC003C58C0 /* Responses */,
 				B24743DE23153520003C58C0 /* AppDelegate.swift */,
 				B24743E223153520003C58C0 /* Main.storyboard */,
 				B24743E523153520003C58C0 /* Assets.xcassets */,
@@ -149,6 +172,30 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
+		B247440B2315A3CC003C58C0 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B247440C2315A3E6003C58C0 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		B247440E231618AC003C58C0 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				B247440F231618CB003C58C0 /* MobileResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		DB61B0715E755394A0E02A4E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79961CE899F9A76F0BFC3A01 /* Pods_SCBFirstAssignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,9 +203,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B24743ED23153520003C58C0 /* Build configuration list for PBXNativeTarget "SCBFirstAssignment" */;
 			buildPhases = (
+				E4DB9E06F7806677BF0269B3 /* [CP] Check Pods Manifest.lock */,
 				B24743D723153520003C58C0 /* Sources */,
 				B24743D823153520003C58C0 /* Frameworks */,
 				B24743D923153520003C58C0 /* Resources */,
+				6D1CB025AF9618181135ED6D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -215,18 +264,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6D1CB025AF9618181135ED6D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4DB9E06F7806677BF0269B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SCBFirstAssignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B24743D723153520003C58C0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B24743FA23153E88003C58C0 /* FavouriteViewController.swift in Sources */,
+				B2474410231618CB003C58C0 /* MobileResponse.swift in Sources */,
 				B24743FC23153E94003C58C0 /* AllViewController.swift in Sources */,
 				B24743FF231589F0003C58C0 /* AllTableCell.swift in Sources */,
 				B247440823159AD9003C58C0 /* FavouriteTableView.swift in Sources */,
 				B24744012315925E003C58C0 /* AllTableView.swift in Sources */,
 				B24743F22315354D003C58C0 /* NetworkManager.swift in Sources */,
 				B247440A23159B0C003C58C0 /* FavTableCell.swift in Sources */,
+				B247440D2315A3E6003C58C0 /* DetailViewController.swift in Sources */,
 				B24743F523153D55003C58C0 /* TabBarViewController.swift in Sources */,
 				B24743DF23153520003C58C0 /* AppDelegate.swift in Sources */,
 			);
@@ -372,6 +465,7 @@
 		};
 		B24743EE23153520003C58C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DC8CD2D798454AF27DA7A92 /* Pods-SCBFirstAssignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -390,6 +484,7 @@
 		};
 		B24743EF23153520003C58C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46EA5036C96980B1AC3A7988 /* Pods-SCBFirstAssignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

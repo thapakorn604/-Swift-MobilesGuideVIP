@@ -8,14 +8,14 @@
 
 import UIKit
 
-class FavouriteViewController: UIViewController {
+class FavouriteViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView : UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = FavouriteTableView.shared
+        tableView.delegate = self
         tableView.dataSource = FavouriteTableView.shared
         
     }

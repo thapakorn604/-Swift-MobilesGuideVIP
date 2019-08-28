@@ -8,17 +8,21 @@
 
 import UIKit
 
-class AllViewController: UIViewController {
+class AllViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView : UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = AllTableView.shared
+        tableView.delegate = self
         tableView.dataSource = AllTableView.shared
-
-        // Do any additional setup after loading the view.
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        self.navigationController?.pushViewController(destination, animated: true)
     }
     
 }

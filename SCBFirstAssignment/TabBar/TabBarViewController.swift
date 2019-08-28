@@ -73,11 +73,12 @@ class TabBarViewController: UIViewController {
     }
     
     @IBAction func didTapSort(_ sender: Any) {
-        let alert = UIAlertController(title: "Did you bring your towel?", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Sort", message: "", preferredStyle: .alert)
         
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true)
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
+class AllTableView: UITableView, UITableViewDataSource {
     
     
     static let shared = AllTableView()
@@ -27,5 +27,4 @@ class AllTableView: UITableView, UITableViewDataSource, UITableViewDelegate {
         
         return cell!
     }
-    
 }

@@ -1,0 +1,6 @@
+framework module Pods_SCBFirstAssignment {
+  umbrella header "Pods-SCBFirstAssignment-umbrella.h"
+
+  export *
+  module * { export * }
+}

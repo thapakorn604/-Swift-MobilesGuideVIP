@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouriteTableView: UITableView, UITableViewDelegate, UITableViewDataSource {
+class FavouriteTableView: UITableView, UITableViewDataSource {
     
     static let shared = FavouriteTableView()
     
@@ -21,7 +21,4 @@ class FavouriteTableView: UITableView, UITableViewDelegate, UITableViewDataSourc
         
         return cell!
     }
-    
-
-
 }
