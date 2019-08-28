@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouriteViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class FavouriteViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
     
@@ -25,6 +25,9 @@ class FavouriteViewController: UIViewController, UITableViewDelegate, UITableVie
         
     }
     
+}
+
+extension FavouriteViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return content.count
     }
@@ -44,4 +47,41 @@ class FavouriteViewController: UIViewController, UITableViewDelegate, UITableVie
         
         return cell!
     }
+}
+
+extension FavouriteViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let element = content[indexPath.row]
+        
+        let sendindId = element.mobile.id
+        let sendingDetail = element.mobile.description
+        let sendingPrice = element.mobile.price
+        let sendingRating = element.mobile.rating
+        
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        
+        destination.receivedId = sendindId
+        destination.receivedDetail = sendingDetail
+        destination.receivedPrice = sendingPrice
+        destination.receivedRating = sendingRating
+        
+        self.navigationController?.pushViewController(destination, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let cellId = content[indexPath.row].mobile.id
+            let index = ContentManager.shared.favMobiles.firstIndex(where: {$0.mobile.id == cellId})
+            
+            let mobileIndex = ContentManager.shared.allMobiles.firstIndex(where: {$0.mobile.id == cellId})
+            
+            ContentManager.shared.allMobiles[mobileIndex!].isFav = false
+            content.remove(at: indexPath.row)
+            ContentManager.shared.favMobiles.remove(at: index!)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
 }

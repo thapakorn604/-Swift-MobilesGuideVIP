@@ -78,18 +78,6 @@ extension AllViewController : UITableViewDelegate {
         
         self.navigationController?.pushViewController(destination, animated: true)
     }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let cellId = content[indexPath.row].mobile.id
-            let index = ContentManager.shared.allMobiles.firstIndex(where: {$0.mobile.id == cellId})
-            
-            content.remove(at: indexPath.row)
-            ContentManager.shared.allMobiles.remove(at: index!)
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
 }
 
 extension AllViewController : AllTableCellDelegate {
