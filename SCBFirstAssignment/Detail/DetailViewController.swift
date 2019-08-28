@@ -8,14 +8,59 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UICollectionViewDataSource {
+    
+    @IBOutlet weak var detailTextView: UITextView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    
+    var receivedId : Int!
+    var receivedDetail : String!
+    var receivedPrice : Double!
+    var receivedRating : Double!
+    
+    var images = [PurpleImageResponse]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        collectionView.dataSource = self
+        loadImages()
+        setup()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageCollectionCell", for: indexPath) as? ImageCollectionCell
+        
+        let element = images[indexPath.row]
+        let imageUrl = element.url
+        
+        if NetworkManager.shared.canOpenURL(imageUrl) {
+            cell?.detailImageView.loadImageUrl(imageUrl, "mobile")
+        } else {
+            cell?.detailImageView.loadImageUrl("https://\(imageUrl)", "mobile")
+        }
+        
+        return cell!
     }
 
+    func setup() {
+        
+        detailTextView.text = receivedDetail
+        ratingLabel.text = "Rating: \(receivedRating!)"
+        priceLabel.text = "Price: \(receivedPrice!)"
+        
+        
+    }
     
-    
+    func loadImages() {
+        NetworkManager.shared.feedImages(url: "https://scb-test-mobile.herokuapp.com/api/mobiles/\(receivedId!)/images/") { (result) in
+            self.images = result
+            self.collectionView.reloadData()
+        }
+    }
 }

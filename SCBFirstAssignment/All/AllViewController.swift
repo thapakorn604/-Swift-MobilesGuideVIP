@@ -52,6 +52,7 @@ extension AllViewController : UITableViewDataSource {
         cell?.priceLabel.text = "Price: \(element.mobile.price)"
         cell?.ratingLabel.text = "Rating: \(element.mobile.rating)"
         cell?.favButton.isSelected = element.isFav
+        cell?.thumbnailImageView.loadImageUrl(element.mobile.thumbImageURL, "mobile")
         
         return cell!
     }
@@ -60,9 +61,34 @@ extension AllViewController : UITableViewDataSource {
 extension AllViewController : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let element = content[indexPath.row]
+        
+        let sendindId = element.mobile.id
+        let sendingDetail = element.mobile.description
+        let sendingPrice = element.mobile.price
+        let sendingRating = element.mobile.rating
+        
         let destination = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         
+        destination.receivedId = sendindId
+        destination.receivedDetail = sendingDetail
+        destination.receivedPrice = sendingPrice
+        destination.receivedRating = sendingRating
+        
         self.navigationController?.pushViewController(destination, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let cellId = content[indexPath.row].mobile.id
+            let index = ContentManager.shared.allMobiles.firstIndex(where: {$0.mobile.id == cellId})
+            
+            content.remove(at: indexPath.row)
+            ContentManager.shared.allMobiles.remove(at: index!)
+            
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }
 
@@ -72,9 +98,9 @@ extension AllViewController : AllTableCellDelegate {
             return
         }
         
-        //  Do whatever you need to do with the indexPath
-        
         print("Button tapped on row \(indexPath.row)")
+        
+        
     }
 }
     
