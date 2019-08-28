@@ -33,7 +33,7 @@ class ContentManager {
         
         NetworkManager.shared.feedMobiles(url: "https://scb-test-mobile.herokuapp.com/api/mobiles/") { (result) in
             for i in 0...result.count - 1 {
-                    let newMobile = Mobile(mobile: result[i], isFav: true)
+                    let newMobile = Mobile(mobile: result[i], isFav: false)
                     self.allMobiles.append(newMobile)
                 }
                 completion(self.allMobiles)

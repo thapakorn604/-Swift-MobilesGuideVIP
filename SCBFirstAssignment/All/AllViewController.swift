@@ -100,7 +100,21 @@ extension AllViewController : AllTableCellDelegate {
         
         print("Button tapped on row \(indexPath.row)")
         
+        let cellId = content[indexPath.row].mobile.id
+        let index = ContentManager.shared.allMobiles.firstIndex(where: {$0.mobile.id == cellId})
+        let favIndex = ContentManager.shared.favMobiles.firstIndex(where: {$0.mobile.id == cellId})
         
+        var element = ContentManager.shared.allMobiles[index!]
+        
+        if !element.isFav {
+            element.isFav = true
+            ContentManager.shared.favMobiles.append(element)
+            ContentManager.shared.allMobiles[index!].isFav = true
+        } else {
+            element.isFav = false
+            ContentManager.shared.favMobiles.remove(at: favIndex!)
+            ContentManager.shared.allMobiles[index!].isFav = false
+        }
     }
 }
     

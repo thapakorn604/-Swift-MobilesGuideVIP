@@ -102,6 +102,9 @@ class TabBarViewController: UIViewController {
         allViewController.content = content
         allViewController.tableView.reloadData()
         
+        content = ContentManager.shared.favMobiles.sorted{$0.mobile.price < $1.mobile.price}
+        favouriteViewController.content = content
+        favouriteViewController.tableView.reloadData()
     }
     
     func sortByPriceAscending() {
@@ -109,6 +112,10 @@ class TabBarViewController: UIViewController {
         content = ContentManager.shared.allMobiles.sorted{$0.mobile.price > $1.mobile.price}
         allViewController.content = content
         allViewController.tableView.reloadData()
+        
+        content = ContentManager.shared.favMobiles.sorted{$0.mobile.price > $1.mobile.price}
+        favouriteViewController.content = content
+        favouriteViewController.tableView.reloadData()
     }
     
     func sortByRating() {
@@ -116,6 +123,10 @@ class TabBarViewController: UIViewController {
         content = ContentManager.shared.allMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
         allViewController.content = content
         allViewController.tableView.reloadData()
+        
+        content = ContentManager.shared.favMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
+        favouriteViewController.content = content
+        favouriteViewController.tableView.reloadData()
     }
 
 }
