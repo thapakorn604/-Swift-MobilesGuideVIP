@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SCBFirstAssignment/Managers/ContentManager.swift"
-            timestampString = "588761549.522069"
+            timestampString = "588761718.682947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SCBFirstAssignment/Managers/ContentManager.swift"
-            timestampString = "588761549.522419"
+            timestampString = "588761718.6832761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83">
+            startingLineNumber = "43"
+            endingLineNumber = "43">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
