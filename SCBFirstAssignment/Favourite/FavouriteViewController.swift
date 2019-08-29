@@ -37,7 +37,7 @@ extension FavouriteViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "favTableCell") as? FavTableCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellConstant.favTableCell) as? FavTableCell
         
         let element = content[indexPath.row]
         
@@ -64,7 +64,7 @@ extension FavouriteViewController : UITableViewDelegate {
         let sendingRating = element.mobile.rating
         let sendingName = element.mobile.name
         
-        let destination = self.storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.detailViewController) as! DetailViewController
         
         destination.receivedId = sendindId
         destination.receivedDetail = sendingDetail

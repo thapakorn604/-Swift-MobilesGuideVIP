@@ -40,20 +40,18 @@ class ContentManager {
             }
         }
     
-    func sortContent(by: String, stage:Int) -> [Mobile] {
+    func sortContent(by: Constants.sortingType, stage:Int) -> [Mobile] {
         
         switch by {
-        case "priceDecending": sortByPriceDecending(stage: stage)
-        case "priceAscending": sortByPriceAscending(stage: stage)
-        case "rating": sortByRating(stage: stage)
-        default:
-            break
+        case .priceDecending: sortByPriceDecending(stage: stage)
+        case .priceAscending: sortByPriceAscending(stage: stage)
+        case .rating: sortByRating(stage: stage)
         }
         
         return stage == 0 ? allMobiles : favMobiles
     }
     
-    func sortByPriceDecending(stage:Int) {
+    func sortByPriceDecending(stage:Int) { //stage is all content(0) for favourite contents(1)
         
         if stage == 0 {
             allMobiles = ContentManager.shared.allMobiles.sorted{$0.mobile.price < $1.mobile.price}
