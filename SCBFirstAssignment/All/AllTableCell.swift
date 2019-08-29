@@ -31,9 +31,9 @@ class AllTableCell: UITableViewCell {
     }
     
     func showSkeleton() {
-        [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({$0?.showAnimatedSkeleton()})
-        favButton.showAnimatedSkeleton()
-        thumbnailImageView.showAnimatedSkeleton()
+        [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({$0?.showAnimatedGradientSkeleton()})
+        favButton.showAnimatedGradientSkeleton()
+        thumbnailImageView.showAnimatedGradientSkeleton()
     }
     
     func hideSkeleton() {
