@@ -125,11 +125,11 @@ class TabBarViewController: UIViewController {
     func sortByRating() {
         
         if selectedIndex == 0 {
-            content = ContentManager.shared.allMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
+            content = ContentManager.shared.sortContent(by: "rating", stage: selectedIndex)
             allViewController.content = content
             allViewController.tableView.reloadData()
         } else {
-            content = ContentManager.shared.favMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
+            content = ContentManager.shared.sortContent(by: "rating", stage: selectedIndex)
             favouriteViewController.content = content
             favouriteViewController.tableView.reloadData()
         }
