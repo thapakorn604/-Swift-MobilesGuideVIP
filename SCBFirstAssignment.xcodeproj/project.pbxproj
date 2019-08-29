@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B23CF5FD231785F9002D491C /* SCBFirstAssignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B23CF5FB231785F9002D491C /* SCBFirstAssignment.xcdatamodeld */; };
 		B24743DF23153520003C58C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24743DE23153520003C58C0 /* AppDelegate.swift */; };
 		B24743E423153520003C58C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24743E223153520003C58C0 /* Main.storyboard */; };
 		B24743E623153520003C58C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B24743E523153520003C58C0 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		0DC8CD2D798454AF27DA7A92 /* Pods-SCBFirstAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBFirstAssignment.debug.xcconfig"; path = "Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment.debug.xcconfig"; sourceTree = "<group>"; };
 		46EA5036C96980B1AC3A7988 /* Pods-SCBFirstAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBFirstAssignment.release.xcconfig"; path = "Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		79961CE899F9A76F0BFC3A01 /* Pods_SCBFirstAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCBFirstAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B23CF5FC231785F9002D491C /* SCBFirstAssignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SCBFirstAssignment.xcdatamodel; sourceTree = "<group>"; };
 		B24743DB23153520003C58C0 /* SCBFirstAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCBFirstAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24743DE23153520003C58C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24743E323153520003C58C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				B24743E523153520003C58C0 /* Assets.xcassets */,
 				B24743E723153520003C58C0 /* LaunchScreen.storyboard */,
 				B24743EA23153520003C58C0 /* Info.plist */,
+				B23CF5FB231785F9002D491C /* SCBFirstAssignment.xcdatamodeld */,
 			);
 			path = SCBFirstAssignment;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				B247440A23159B0C003C58C0 /* FavTableCell.swift in Sources */,
 				B247440D2315A3E6003C58C0 /* DetailViewController.swift in Sources */,
 				B2AEB8BD2316528B00C625A9 /* UIImageView+Extension.swift in Sources */,
+				B23CF5FD231785F9002D491C /* SCBFirstAssignment.xcdatamodeld in Sources */,
 				B2AEB8BB231633F900C625A9 /* AllTableCell.swift in Sources */,
 				B24743F523153D55003C58C0 /* TabBarViewController.swift in Sources */,
 				B24743DF23153520003C58C0 /* AppDelegate.swift in Sources */,
@@ -506,6 +510,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B23CF5FB231785F9002D491C /* SCBFirstAssignment.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B23CF5FC231785F9002D491C /* SCBFirstAssignment.xcdatamodel */,
+			);
+			currentVersion = B23CF5FC231785F9002D491C /* SCBFirstAssignment.xcdatamodel */;
+			path = SCBFirstAssignment.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B24743D323153520003C58C0 /* Project object */;
 }
