@@ -39,4 +39,46 @@ class ContentManager {
                 completion(self.allMobiles)
             }
         }
+    
+    func sortContent(by: String, stage:Int) -> [Mobile] {
+        
+        switch by {
+        case "priceDecending": sortByPriceDecending(stage: stage)
+        case "priceAscending": sortByPriceAscending(stage: stage)
+        case "rating": sortByRating(stage: stage)
+        default:
+            break
+        }
+        
+        return stage == 0 ? allMobiles : favMobiles
     }
+    
+    func sortByPriceDecending(stage:Int) {
+        
+        if stage == 0 {
+            allMobiles = ContentManager.shared.allMobiles.sorted{$0.mobile.price < $1.mobile.price}
+        } else {
+            favMobiles = ContentManager.shared.favMobiles.sorted{$0.mobile.price < $1.mobile.price}
+        }
+    }
+    
+    func sortByPriceAscending(stage:Int) {
+        
+        if stage == 0 {
+            allMobiles = ContentManager.shared.allMobiles.sorted{$0.mobile.price > $1.mobile.price}
+        } else {
+            favMobiles = ContentManager.shared.favMobiles.sorted{$0.mobile.price > $1.mobile.price}
+        }
+    }
+    
+    func sortByRating(stage:Int) {
+        
+        if stage == 0 {
+            allMobiles = ContentManager.shared.allMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
+        } else {
+            favMobiles = ContentManager.shared.favMobiles.sorted{$0.mobile.rating > $1.mobile.rating}
+        }
+    }
+    
+}
+

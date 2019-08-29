@@ -99,11 +99,11 @@ class TabBarViewController: UIViewController {
     func sortByPriceDecending() {
         
         if selectedIndex == 0 {
-            content = ContentManager.shared.allMobiles.sorted{$0.mobile.price < $1.mobile.price}
+            content = ContentManager.shared.sortContent(by: "priceDecending", stage: selectedIndex)
             allViewController.content = content
             allViewController.tableView.reloadData()
         } else {
-            content = ContentManager.shared.favMobiles.sorted{$0.mobile.price < $1.mobile.price}
+            content = ContentManager.shared.sortContent(by: "priceDecending", stage: selectedIndex)
             favouriteViewController.content = content
             favouriteViewController.tableView.reloadData()
         }
@@ -112,11 +112,11 @@ class TabBarViewController: UIViewController {
     func sortByPriceAscending() {
         
         if selectedIndex == 0 {
-            content = ContentManager.shared.allMobiles.sorted{$0.mobile.price > $1.mobile.price}
+            content = ContentManager.shared.sortContent(by: "priceAscending", stage: selectedIndex)
             allViewController.content = content
             allViewController.tableView.reloadData()
         } else {
-            content = ContentManager.shared.favMobiles.sorted{$0.mobile.price > $1.mobile.price}
+            content = ContentManager.shared.sortContent(by: "priceAscending", stage: selectedIndex)
             favouriteViewController.content = content
             favouriteViewController.tableView.reloadData()
         }
