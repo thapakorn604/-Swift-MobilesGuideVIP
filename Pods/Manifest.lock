@@ -2,20 +2,24 @@ PODS:
   - Alamofire (5.0.0-beta.6)
   - AlamofireImage (4.0.0-beta.3):
     - Alamofire (~> 5.0.0-beta.6)
+  - SkeletonView (1.7)
 
 DEPENDENCIES:
   - Alamofire (= 5.0.0-beta.6)
   - AlamofireImage (= 4.0.0-beta.3)
+  - SkeletonView
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - SkeletonView
 
 SPEC CHECKSUMS:
   Alamofire: cd08a4402bd12cacd0c66f23fb12fec8d6b965e4
   AlamofireImage: 980b4eccaed1fa559d78bc479d067ff89d23bc95
+  SkeletonView: 7d7378731b708f8a6e6b1ffefb68cc3903f10a03
 
-PODFILE CHECKSUM: b942ca59189673bdb16af33650d107a321eaa86a
+PODFILE CHECKSUM: a07176def22607a50c4b3df279ec0fb0f21aa746
 
 COCOAPODS: 1.7.3

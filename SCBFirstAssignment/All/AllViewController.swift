@@ -40,23 +40,27 @@ extension AllViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(content)
-        return content.count
+        return content.count == 0 ? 5 : content.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allTableCell") as? AllTableCell
         cell?.delegate = self
         
-        let element = content[indexPath.row]
+        var element = Mobile()
         
-        //print(element)
-        
-        cell?.nameLabel.text = element.mobile.name
-        cell?.descriptionLabel.text = element.mobile.description
-        cell?.priceLabel.text = "Price: \(element.mobile.price)"
-        cell?.ratingLabel.text = "Rating: \(element.mobile.rating)"
-        cell?.favButton.isSelected = element.isFav
-        cell?.thumbnailImageView.loadImageUrl(element.mobile.thumbImageURL, "mobile")
+        if content.count != 0 {
+            element = content[indexPath.row]
+            cell?.hideSkeleton()
+            
+            cell?.nameLabel.text = element.mobile.name
+            cell?.descriptionLabel.text = element.mobile.description
+            cell?.priceLabel.text = "Price: \(element.mobile.price)"
+            cell?.ratingLabel.text = "Rating: \(element.mobile.rating)"
+            cell?.favButton.isSelected = element.isFav
+            cell?.thumbnailImageView.loadImageUrl(element.mobile.thumbImageURL, "mobile")
+
+        }
         
         return cell!
     }

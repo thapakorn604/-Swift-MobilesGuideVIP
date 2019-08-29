@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 protocol AllTableCellDelegate : class {
     func didSelectFav(cell: AllTableCell)
@@ -26,6 +27,19 @@ class AllTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        showSkeleton()
+    }
+    
+    func showSkeleton() {
+        [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({$0?.showAnimatedSkeleton()})
+        favButton.showAnimatedSkeleton()
+        thumbnailImageView.showAnimatedSkeleton()
+    }
+    
+    func hideSkeleton() {
+        [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({$0?.hideSkeleton()})
+        favButton.hideSkeleton()
+        thumbnailImageView.hideSkeleton()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
