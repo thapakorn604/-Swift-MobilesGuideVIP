@@ -56,7 +56,6 @@ class DetailViewController: UIViewController, UICollectionViewDataSource {
         ratingLabel.text = "Rating: \(receivedRating!)"
         priceLabel.text = "Price: \(receivedPrice!)"
         
-        
     }
     
     func loadImages() {

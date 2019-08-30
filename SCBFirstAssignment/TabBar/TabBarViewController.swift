@@ -77,12 +77,12 @@ class TabBarViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: {
             (action:UIAlertAction!) in
-                self.sortByPriceDecending()
+                self.sortByPriceAscending()
         }))
         
         alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: {
             (action:UIAlertAction!) in
-            self.sortByPriceAscending()
+            self.sortByPriceDescending()
         }))
         
         alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: {
@@ -94,19 +94,6 @@ class TabBarViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
-    func sortByPriceDecending() {
-        
-        if selectedIndex == 0 {
-            content = ContentManager.shared.sortContent(by: .priceDecending, stage: selectedIndex)
-            allViewController.content = content
-            allViewController.tableView.reloadData()
-        } else {
-            content = ContentManager.shared.sortContent(by: .priceDecending, stage: selectedIndex)
-            favouriteViewController.content = content
-            favouriteViewController.tableView.reloadData()
-        }
-    }
-    
     func sortByPriceAscending() {
         
         if selectedIndex == 0 {
@@ -115,6 +102,19 @@ class TabBarViewController: UIViewController {
             allViewController.tableView.reloadData()
         } else {
             content = ContentManager.shared.sortContent(by: .priceAscending, stage: selectedIndex)
+            favouriteViewController.content = content
+            favouriteViewController.tableView.reloadData()
+        }
+    }
+    
+    func sortByPriceDescending() {
+        
+        if selectedIndex == 0 {
+            content = ContentManager.shared.sortContent(by: .priceDescending, stage: selectedIndex)
+            allViewController.content = content
+            allViewController.tableView.reloadData()
+        } else {
+            content = ContentManager.shared.sortContent(by: .priceDescending, stage: selectedIndex)
             favouriteViewController.content = content
             favouriteViewController.tableView.reloadData()
         }

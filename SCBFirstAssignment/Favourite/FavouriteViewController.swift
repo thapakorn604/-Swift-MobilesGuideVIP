@@ -58,7 +58,7 @@ extension FavouriteViewController : UITableViewDelegate {
         
         let element = content[indexPath.row]
         
-        let sendindId = element.mobile.id
+        let sendingId = element.mobile.id
         let sendingDetail = element.mobile.description
         let sendingPrice = element.mobile.price
         let sendingRating = element.mobile.rating
@@ -66,7 +66,7 @@ extension FavouriteViewController : UITableViewDelegate {
         
         let destination = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.detailViewController) as! DetailViewController
         
-        destination.receivedId = sendindId
+        destination.receivedId = sendingId
         destination.receivedDetail = sendingDetail
         destination.receivedPrice = sendingPrice
         destination.receivedRating = sendingRating

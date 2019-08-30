@@ -11,7 +11,7 @@ import Foundation
 class Constants {
     
     enum  sortingType {
-        case priceDecending
+        case priceDescending
         case priceAscending
         case rating
     }
