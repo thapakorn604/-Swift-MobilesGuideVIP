@@ -14,8 +14,8 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
-    var allViewController : AllViewController!
-    var favouriteViewController : FavouriteViewController!
+    var allViewController : AllViewController2!
+    var favouriteViewController : FavouriteViewController2!
     
     var viewControllers : [UIViewController]!
     var selectedIndex : Int = 0
@@ -32,9 +32,9 @@ class TabBarViewController: UIViewController {
     func setupViewControllers() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        allViewController = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.allViewController) as? AllViewController
+        allViewController = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.allViewController) as? AllViewController2
         
-        favouriteViewController = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.favViewController) as? FavouriteViewController
+        favouriteViewController = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.favViewController) as? FavouriteViewController2
         
         viewControllers = [allViewController, favouriteViewController]
     }

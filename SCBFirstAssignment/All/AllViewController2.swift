@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AllViewController: UIViewController {
+class AllViewController2: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
     
@@ -36,7 +36,7 @@ class AllViewController: UIViewController {
     
 }
 
-extension AllViewController : UITableViewDataSource {
+extension AllViewController2 : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(content)
@@ -66,7 +66,7 @@ extension AllViewController : UITableViewDataSource {
     }
 }
 
-extension AllViewController : UITableViewDelegate {
+extension AllViewController2 : UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -78,7 +78,7 @@ extension AllViewController : UITableViewDelegate {
         let sendingRating = element.mobile.rating
         let sendingName = element.mobile.name
         
-        let destination = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.detailViewController) as! DetailViewController
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.detailViewController) as! DetailViewController2
         
         destination.receivedId = sendingId
         destination.receivedDetail = sendingDetail
@@ -90,7 +90,7 @@ extension AllViewController : UITableViewDelegate {
     }
 }
 
-extension AllViewController : AllTableCellDelegate {
+extension AllViewController2 : AllTableCellDelegate {
     func didSelectFav(cell: AllTableCell) {
         guard let indexPath = self.tableView.indexPath(for: cell) else {
             return

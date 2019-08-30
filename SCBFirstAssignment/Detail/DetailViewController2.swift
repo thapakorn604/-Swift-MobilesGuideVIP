@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UICollectionViewDataSource {
+class DetailViewController2: UIViewController, UICollectionViewDataSource {
     
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var collectionView: UICollectionView!

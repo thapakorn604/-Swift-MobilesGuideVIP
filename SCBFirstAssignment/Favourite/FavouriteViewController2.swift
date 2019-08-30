@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouriteViewController: UIViewController {
+class FavouriteViewController2: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
     
@@ -30,7 +30,7 @@ class FavouriteViewController: UIViewController {
     
 }
 
-extension FavouriteViewController : UITableViewDataSource {
+extension FavouriteViewController2 : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return content.count
     }
@@ -53,7 +53,7 @@ extension FavouriteViewController : UITableViewDataSource {
     }
 }
 
-extension FavouriteViewController : UITableViewDelegate {
+extension FavouriteViewController2 : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let element = content[indexPath.row]
@@ -64,7 +64,7 @@ extension FavouriteViewController : UITableViewDelegate {
         let sendingRating = element.mobile.rating
         let sendingName = element.mobile.name
         
-        let destination = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.detailViewController) as! DetailViewController
+        let destination = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.detailViewController) as! DetailViewController2
         
         destination.receivedId = sendingId
         destination.receivedDetail = sendingDetail
