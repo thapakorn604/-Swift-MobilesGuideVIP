@@ -46,7 +46,6 @@ class AllViewController2: UIViewController {
             }))
             self.present(alert, animated: true)
         }
-
     }
     
 }
