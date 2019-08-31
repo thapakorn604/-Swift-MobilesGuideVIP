@@ -27,6 +27,7 @@ class AllTableCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.isUserInteractionEnabled = false
         showSkeleton()
     }
     

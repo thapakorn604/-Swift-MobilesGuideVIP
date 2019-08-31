@@ -8,13 +8,21 @@
 
 import Foundation
 import Alamofire
+import Network
+
+enum Result<T> {
+    case success(T)
+    case failure(Error)
+}
 
 class NetworkManager {
     
     static let shared = NetworkManager()
     
+    let monitor = NWPathMonitor()
+    let queue = DispatchQueue(label: "InternetConnectionMonitor")
+    
     func feedMobiles(url:String, completion:@escaping (([PurpleMobileResponse])->())) {
-        
         AF.request(URL(string: url)!, method: .get).response { res in
             switch res.result {
             case .success:
@@ -70,6 +78,10 @@ class NetworkManager {
         let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
         let predicate = NSPredicate(format:"SELF MATCHES %@", argumentArray:[regEx])
         return predicate.evaluate(with: string)
+    }
+    
+    func isReachingInternet() -> Bool {
+        return NetworkReachabilityManager()!.isReachable
     }
 }
 

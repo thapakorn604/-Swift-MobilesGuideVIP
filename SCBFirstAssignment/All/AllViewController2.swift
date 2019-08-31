@@ -5,7 +5,6 @@
 //  Created by Thapakorn Tuwaemuesa on 27/8/2562 BE.
 //  Copyright © 2562 SCB. All rights reserved.
 //
-
 import UIKit
 
 class AllViewController2: UIViewController {
@@ -28,10 +27,26 @@ class AllViewController2: UIViewController {
     }
     
     func setupContent() {
-        ContentManager.shared.loadContent(completion: { (result) in
-            self.content = result
-            self.tableView.reloadData()
-        })
+        
+        let internetStatus = NetworkManager.shared.isReachingInternet()
+        
+        if internetStatus == true {
+            
+            ContentManager.shared.loadContent(completion: { (result) in
+                self.content = result
+                self.tableView.reloadData()
+            })
+            
+        } else {
+            let alert = UIAlertController(title: "No internet connection", message: "Please connect your device to the internet and try again.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {
+                (action:UIAlertAction!) in
+                    self.setupContent()
+            }))
+            self.present(alert, animated: true)
+        }
+
     }
     
 }
@@ -50,6 +65,7 @@ extension AllViewController2 : UITableViewDataSource {
         var element = Mobile()
         
         if content.count != 0 {
+            cell?.isUserInteractionEnabled = true
             element = content[indexPath.row]
             cell?.hideSkeleton()
             

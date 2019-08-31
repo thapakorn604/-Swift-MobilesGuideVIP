@@ -8,24 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B23CF5FF2317CD7B002D491C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF5FE2317CD7B002D491C /* Constant.swift */; };
-		B23CF60823190389002D491C /* AllPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF60223190389002D491C /* AllPresenter.swift */; };
-		B23CF60923190389002D491C /* AllWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF60323190389002D491C /* AllWorker.swift */; };
-		B23CF60A23190389002D491C /* AllRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF60423190389002D491C /* AllRouter.swift */; };
-		B23CF60B23190389002D491C /* AllModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF60523190389002D491C /* AllModels.swift */; };
-		B23CF60C23190389002D491C /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF60623190389002D491C /* AllViewController.swift */; };
-		B23CF60D23190389002D491C /* AllInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF60723190389002D491C /* AllInteractor.swift */; };
-		B23CF6152319040B002D491C /* FavouritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF60F2319040B002D491C /* FavouritePresenter.swift */; };
-		B23CF6162319040B002D491C /* FavouriteWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF6102319040B002D491C /* FavouriteWorker.swift */; };
-		B23CF6172319040B002D491C /* FavouriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF6112319040B002D491C /* FavouriteRouter.swift */; };
-		B23CF6182319040B002D491C /* FavouriteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF6122319040B002D491C /* FavouriteModels.swift */; };
-		B23CF6192319040B002D491C /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF6132319040B002D491C /* FavouriteViewController.swift */; };
-		B23CF61A2319040B002D491C /* FavouriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF6142319040B002D491C /* FavouriteInteractor.swift */; };
-		B23CF62223190456002D491C /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF61C23190456002D491C /* DetailPresenter.swift */; };
-		B23CF62323190456002D491C /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF61D23190456002D491C /* DetailWorker.swift */; };
-		B23CF62423190456002D491C /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF61E23190456002D491C /* DetailRouter.swift */; };
-		B23CF62523190456002D491C /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF61F23190456002D491C /* DetailModels.swift */; };
-		B23CF62623190456002D491C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF62023190456002D491C /* DetailViewController.swift */; };
-		B23CF62723190456002D491C /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23CF62123190456002D491C /* DetailInteractor.swift */; };
 		B24743DF23153520003C58C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24743DE23153520003C58C0 /* AppDelegate.swift */; };
 		B24743E423153520003C58C0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24743E223153520003C58C0 /* Main.storyboard */; };
 		B24743E623153520003C58C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B24743E523153520003C58C0 /* Assets.xcassets */; };
@@ -50,24 +32,6 @@
 		46EA5036C96980B1AC3A7988 /* Pods-SCBFirstAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBFirstAssignment.release.xcconfig"; path = "Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		79961CE899F9A76F0BFC3A01 /* Pods_SCBFirstAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCBFirstAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23CF5FE2317CD7B002D491C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		B23CF60223190389002D491C /* AllPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPresenter.swift; sourceTree = "<group>"; };
-		B23CF60323190389002D491C /* AllWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWorker.swift; sourceTree = "<group>"; };
-		B23CF60423190389002D491C /* AllRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRouter.swift; sourceTree = "<group>"; };
-		B23CF60523190389002D491C /* AllModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllModels.swift; sourceTree = "<group>"; };
-		B23CF60623190389002D491C /* AllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewController.swift; sourceTree = "<group>"; };
-		B23CF60723190389002D491C /* AllInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInteractor.swift; sourceTree = "<group>"; };
-		B23CF60F2319040B002D491C /* FavouritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePresenter.swift; sourceTree = "<group>"; };
-		B23CF6102319040B002D491C /* FavouriteWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteWorker.swift; sourceTree = "<group>"; };
-		B23CF6112319040B002D491C /* FavouriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteRouter.swift; sourceTree = "<group>"; };
-		B23CF6122319040B002D491C /* FavouriteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteModels.swift; sourceTree = "<group>"; };
-		B23CF6132319040B002D491C /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
-		B23CF6142319040B002D491C /* FavouriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteInteractor.swift; sourceTree = "<group>"; };
-		B23CF61C23190456002D491C /* DetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
-		B23CF61D23190456002D491C /* DetailWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWorker.swift; sourceTree = "<group>"; };
-		B23CF61E23190456002D491C /* DetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRouter.swift; sourceTree = "<group>"; };
-		B23CF61F23190456002D491C /* DetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModels.swift; sourceTree = "<group>"; };
-		B23CF62023190456002D491C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		B23CF62123190456002D491C /* DetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractor.swift; sourceTree = "<group>"; };
 		B24743DB23153520003C58C0 /* SCBFirstAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCBFirstAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24743DE23153520003C58C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24743E323153520003C58C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,45 +79,6 @@
 				B23CF5FE2317CD7B002D491C /* Constant.swift */,
 			);
 			path = Constant;
-			sourceTree = "<group>";
-		};
-		B23CF6012319034E002D491C /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				B23CF60223190389002D491C /* AllPresenter.swift */,
-				B23CF60323190389002D491C /* AllWorker.swift */,
-				B23CF60423190389002D491C /* AllRouter.swift */,
-				B23CF60523190389002D491C /* AllModels.swift */,
-				B23CF60623190389002D491C /* AllViewController.swift */,
-				B23CF60723190389002D491C /* AllInteractor.swift */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		B23CF60E231903F6002D491C /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				B23CF60F2319040B002D491C /* FavouritePresenter.swift */,
-				B23CF6102319040B002D491C /* FavouriteWorker.swift */,
-				B23CF6112319040B002D491C /* FavouriteRouter.swift */,
-				B23CF6122319040B002D491C /* FavouriteModels.swift */,
-				B23CF6132319040B002D491C /* FavouriteViewController.swift */,
-				B23CF6142319040B002D491C /* FavouriteInteractor.swift */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		B23CF61B2319043B002D491C /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				B23CF61C23190456002D491C /* DetailPresenter.swift */,
-				B23CF61D23190456002D491C /* DetailWorker.swift */,
-				B23CF61E23190456002D491C /* DetailRouter.swift */,
-				B23CF61F23190456002D491C /* DetailModels.swift */,
-				B23CF62023190456002D491C /* DetailViewController.swift */,
-				B23CF62123190456002D491C /* DetailInteractor.swift */,
-			);
-			path = Scene;
 			sourceTree = "<group>";
 		};
 		B24743D223153520003C58C0 = {
@@ -214,7 +139,6 @@
 		B24743F723153E6F003C58C0 /* All */ = {
 			isa = PBXGroup;
 			children = (
-				B23CF6012319034E002D491C /* Scene */,
 				B2AEB8BA231633F900C625A9 /* AllTableCell.swift */,
 				B24743FB23153E94003C58C0 /* AllViewController2.swift */,
 			);
@@ -224,7 +148,6 @@
 		B24743F823153E77003C58C0 /* Favourite */ = {
 			isa = PBXGroup;
 			children = (
-				B23CF60E231903F6002D491C /* Scene */,
 				B24743F923153E88003C58C0 /* FavouriteViewController2.swift */,
 				B247440923159B0C003C58C0 /* FavTableCell.swift */,
 			);
@@ -234,7 +157,6 @@
 		B247440B2315A3CC003C58C0 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				B23CF61B2319043B002D491C /* Scene */,
 				B247440C2315A3E6003C58C0 /* DetailViewController2.swift */,
 				B2AEB8BF231656CE00C625A9 /* ImageCollectionCell.swift */,
 			);
@@ -383,36 +305,18 @@
 			files = (
 				B2AEB8C2231660E700C625A9 /* ImageResponse.swift in Sources */,
 				B24743FA23153E88003C58C0 /* FavouriteViewController2.swift in Sources */,
-				B23CF62223190456002D491C /* DetailPresenter.swift in Sources */,
 				B2AEB8B92316221500C625A9 /* ContentManager.swift in Sources */,
 				B2474410231618CB003C58C0 /* MobileResponse.swift in Sources */,
-				B23CF60A23190389002D491C /* AllRouter.swift in Sources */,
 				B2AEB8C0231656CE00C625A9 /* ImageCollectionCell.swift in Sources */,
 				B24743FC23153E94003C58C0 /* AllViewController2.swift in Sources */,
-				B23CF62523190456002D491C /* DetailModels.swift in Sources */,
-				B23CF60B23190389002D491C /* AllModels.swift in Sources */,
-				B23CF6192319040B002D491C /* FavouriteViewController.swift in Sources */,
-				B23CF60C23190389002D491C /* AllViewController.swift in Sources */,
-				B23CF6182319040B002D491C /* FavouriteModels.swift in Sources */,
-				B23CF6172319040B002D491C /* FavouriteRouter.swift in Sources */,
 				B24743F22315354D003C58C0 /* NetworkManager.swift in Sources */,
 				B23CF5FF2317CD7B002D491C /* Constant.swift in Sources */,
-				B23CF61A2319040B002D491C /* FavouriteInteractor.swift in Sources */,
 				B247440A23159B0C003C58C0 /* FavTableCell.swift in Sources */,
 				B247440D2315A3E6003C58C0 /* DetailViewController2.swift in Sources */,
-				B23CF62623190456002D491C /* DetailViewController.swift in Sources */,
-				B23CF6152319040B002D491C /* FavouritePresenter.swift in Sources */,
-				B23CF60823190389002D491C /* AllPresenter.swift in Sources */,
-				B23CF60D23190389002D491C /* AllInteractor.swift in Sources */,
 				B2AEB8BD2316528B00C625A9 /* UIImageView+Extension.swift in Sources */,
 				B2AEB8BB231633F900C625A9 /* AllTableCell.swift in Sources */,
-				B23CF62423190456002D491C /* DetailRouter.swift in Sources */,
-				B23CF60923190389002D491C /* AllWorker.swift in Sources */,
 				B24743F523153D55003C58C0 /* TabBarViewController.swift in Sources */,
 				B24743DF23153520003C58C0 /* AppDelegate.swift in Sources */,
-				B23CF62323190456002D491C /* DetailWorker.swift in Sources */,
-				B23CF6162319040B002D491C /* FavouriteWorker.swift in Sources */,
-				B23CF62723190456002D491C /* DetailInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
