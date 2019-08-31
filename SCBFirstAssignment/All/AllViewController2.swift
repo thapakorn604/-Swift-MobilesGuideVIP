@@ -28,9 +28,9 @@ class AllViewController2: UIViewController {
     
     func setupContent() {
         
-        let internetStatus = NetworkManager.shared.isReachingInternet()
+        let isInternetEnabled = NetworkManager.shared.isReachingInternet()
         
-        if internetStatus == true {
+        if isInternetEnabled {
             
             ContentManager.shared.loadContent(completion: { (result) in
                 self.content = result
@@ -53,7 +53,6 @@ class AllViewController2: UIViewController {
 extension AllViewController2 : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(content)
         return content.count == 0 ? 5 : content.count
     }
     
