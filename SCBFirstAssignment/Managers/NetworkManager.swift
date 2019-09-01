@@ -10,11 +10,6 @@ import Foundation
 import Alamofire
 import Network
 
-enum Result<T> {
-    case success(T)
-    case failure(Error)
-}
-
 class NetworkManager {
     
     static let shared = NetworkManager()

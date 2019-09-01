@@ -9,11 +9,6 @@
 import Foundation
 import UIKit
 
-struct Mobile {
-    var mobile : PurpleMobileResponse!
-    var isFav : Bool!
-}
-
 class ContentManager {
     
     var allMobiles = [Mobile]()
@@ -43,9 +38,9 @@ class ContentManager {
     func sortContent(by: Constants.sortingType, stage:Int) -> [Mobile] {
         
         switch by {
-        case .priceDescending: sortByPriceDescending(stage: stage)
-        case .priceAscending: sortByPriceAscending(stage: stage)
-        case .rating: sortByRating(stage: stage)
+            case .priceDescending: sortByPriceDescending(stage: stage)
+            case .priceAscending: sortByPriceAscending(stage: stage)
+            case .rating: sortByRating(stage: stage)
         }
         
         return stage == 0 ? allMobiles : favMobiles

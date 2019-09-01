@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="266.66666666666669" y="-392.41071428571428"/>
         </scene>
-        <!--All View Controller2-->
+        <!--All View Controller-->
         <scene sceneID="IMo-kf-Q1z">
             <objects>
-                <viewController storyboardIdentifier="AllViewController" id="17u-sK-NQL" customClass="AllViewController2" customModule="SCBFirstAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AllViewController" id="17u-sK-NQL" customClass="AllViewController" customModule="SCBFirstAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qSo-lk-Dbe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -239,7 +239,7 @@
                         <viewLayoutGuide key="safeArea" id="0bV-FB-KUL"/>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="ZBX-xK-l5b" id="ViN-Iw-BuV"/>
+                        <outlet property="tableView" destination="ZBX-xK-l5b" id="PLw-Tf-NJb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jf4-he-7Tl" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -22,7 +22,7 @@ class AllTableCell: UITableViewCell {
     @IBOutlet weak var favButton: UIButton!
     @IBOutlet weak var thumbnailImageView : UIImageView!
     
-    var delegate : AllTableCellDelegate?
+    weak var delegate : AllTableCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()

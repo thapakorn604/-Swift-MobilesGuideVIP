@@ -14,7 +14,7 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var sortButton: UIBarButtonItem!
     
-    var allViewController : AllViewController2!
+    var allViewController : AllViewController!
     var favouriteViewController : FavouriteViewController2!
     
     var viewControllers : [UIViewController]!
@@ -32,7 +32,7 @@ class TabBarViewController: UIViewController {
     func setupViewControllers() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        allViewController = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.allViewController) as? AllViewController2
+        allViewController = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.allViewController) as? AllViewController
         
         favouriteViewController = storyboard.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.favViewController) as? FavouriteViewController2
         
@@ -98,7 +98,7 @@ class TabBarViewController: UIViewController {
         
         if selectedIndex == 0 {
             content = ContentManager.shared.sortContent(by: .priceAscending, stage: selectedIndex)
-            allViewController.content = content
+            //allViewController.content = content
             allViewController.tableView.reloadData()
         } else {
             content = ContentManager.shared.sortContent(by: .priceAscending, stage: selectedIndex)
@@ -111,7 +111,7 @@ class TabBarViewController: UIViewController {
         
         if selectedIndex == 0 {
             content = ContentManager.shared.sortContent(by: .priceDescending, stage: selectedIndex)
-            allViewController.content = content
+            //allViewController.content = content
             allViewController.tableView.reloadData()
         } else {
             content = ContentManager.shared.sortContent(by: .priceDescending, stage: selectedIndex)
@@ -124,7 +124,7 @@ class TabBarViewController: UIViewController {
         
         if selectedIndex == 0 {
             content = ContentManager.shared.sortContent(by:.rating, stage: selectedIndex)
-            allViewController.content = content
+            //allViewController.content = content
             allViewController.tableView.reloadData()
         } else {
             content = ContentManager.shared.sortContent(by: .rating, stage: selectedIndex)
