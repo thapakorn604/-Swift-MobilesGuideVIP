@@ -9,14 +9,11 @@
 import UIKit
 
 class FavTableCell: UITableViewCell {
-    
-    
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var thumbnailImageView : UIImageView!
-    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var ratingLabel: UILabel!
+    @IBOutlet var thumbnailImageView: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,5 +25,4 @@ class FavTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 }

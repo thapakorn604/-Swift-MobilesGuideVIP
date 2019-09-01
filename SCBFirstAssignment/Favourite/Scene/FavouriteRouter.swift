@@ -1,5 +1,5 @@
 //
-//  AllRouter.swift
+//  FavouriteRouter.swift
 //  SCBFirstAssignment
 //
 //  Created by Thapakorn Tuwaemuesa on 1/9/2562 BE.
@@ -8,24 +8,12 @@
 
 import UIKit
 
-protocol AllRouterInput {
-    func navigateToDetail(id: Int, name: String, description: String, price: String, rating: String)
+protocol FavouriteRouterInput {
+    func navigateToSomewhere()
 }
 
-class AllRouter: AllRouterInput {
-    func navigateToDetail(id: Int, name: String, description: String, price: String, rating: String) {
-//        let destination = self.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.detailViewController) as! DetailViewController2
-//
-//        destination.receivedId = id
-//        destination.receivedDetail = description
-//        destination.receivedPrice = price
-//        destination.receivedRating = rating
-//        destination.receivedName = name
-//
-//        self.navigationController?.pushViewController(destination, animated: true)
-    }
-
-    weak var viewController: AllViewController!
+class FavouriteRouter: FavouriteRouterInput {
+    weak var viewController: FavouriteViewController!
 
     // MARK: - Navigation
 

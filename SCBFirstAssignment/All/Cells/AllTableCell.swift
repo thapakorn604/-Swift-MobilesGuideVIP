@@ -6,39 +6,38 @@
 //  Copyright © 2562 SCB. All rights reserved.
 //
 
-import UIKit
 import SkeletonView
+import UIKit
 
-protocol AllTableCellDelegate : class {
+protocol AllTableCellDelegate: class {
     func didSelectFav(cell: AllTableCell)
 }
 
 class AllTableCell: UITableViewCell {
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var ratingLabel: UILabel!
+    @IBOutlet var favButton: UIButton!
+    @IBOutlet var thumbnailImageView: UIImageView!
 
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var favButton: UIButton!
-    @IBOutlet weak var thumbnailImageView : UIImageView!
-    
-    weak var delegate : AllTableCellDelegate?
-    
+    weak var delegate: AllTableCellDelegate?
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.isUserInteractionEnabled = false
+        isUserInteractionEnabled = false
         showSkeleton()
     }
-    
+
     func showSkeleton() {
-        [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({$0?.showAnimatedGradientSkeleton()})
+        [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({ $0?.showAnimatedGradientSkeleton() })
         favButton.showAnimatedGradientSkeleton()
         thumbnailImageView.showAnimatedGradientSkeleton()
     }
-    
+
     func hideSkeleton() {
-        [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({$0?.hideSkeleton()})
+        [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({ $0?.hideSkeleton() })
         favButton.hideSkeleton()
         thumbnailImageView.hideSkeleton()
     }
@@ -48,11 +47,12 @@ class AllTableCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
     @IBAction func didTapFav(_ sender: UIButton) {
         delegate?.didSelectFav(cell: self)
         if !sender.isSelected {
             sender.isSelected = true
-        }else{
+        } else {
             sender.isSelected = false
         }
     }

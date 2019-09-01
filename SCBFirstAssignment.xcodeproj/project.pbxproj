@@ -19,7 +19,7 @@
 		B247440A23159B0C003C58C0 /* FavTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247440923159B0C003C58C0 /* FavTableCell.swift */; };
 		B247440D2315A3E6003C58C0 /* DetailViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247440C2315A3E6003C58C0 /* DetailViewController2.swift */; };
 		B2474410231618CB003C58C0 /* MobileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B247440F231618CB003C58C0 /* MobileResponse.swift */; };
-		B297FF0F231BB4A500C89077 /* AllStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF07231BB4A500C89077 /* AllStore.swift */; };
+		B297FF0F231BB4A500C89077 /* MobilesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF07231BB4A500C89077 /* MobilesStore.swift */; };
 		B297FF10231BB4A500C89077 /* AllPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF08231BB4A500C89077 /* AllPresenter.swift */; };
 		B297FF11231BB4A500C89077 /* MobilesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF09231BB4A500C89077 /* MobilesWorker.swift */; };
 		B297FF12231BB4A500C89077 /* AllRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF0A231BB4A500C89077 /* AllRouter.swift */; };
@@ -27,6 +27,11 @@
 		B297FF14231BB4A500C89077 /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF0C231BB4A500C89077 /* AllViewController.swift */; };
 		B297FF15231BB4A500C89077 /* AllInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF0D231BB4A500C89077 /* AllInteractor.swift */; };
 		B297FF19231BB97D00C89077 /* Mobile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF18231BB97D00C89077 /* Mobile.swift */; };
+		B297FF24231C265D00C89077 /* FavouritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF1C231C265D00C89077 /* FavouritePresenter.swift */; };
+		B297FF26231C265D00C89077 /* FavouriteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF1E231C265D00C89077 /* FavouriteRouter.swift */; };
+		B297FF27231C265D00C89077 /* FavouriteModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF1F231C265D00C89077 /* FavouriteModels.swift */; };
+		B297FF28231C265D00C89077 /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF20231C265D00C89077 /* FavouriteViewController.swift */; };
+		B297FF29231C265D00C89077 /* FavouriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B297FF21231C265D00C89077 /* FavouriteInteractor.swift */; };
 		B2AEB8B92316221500C625A9 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEB8B82316221500C625A9 /* ContentManager.swift */; };
 		B2AEB8BB231633F900C625A9 /* AllTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEB8BA231633F900C625A9 /* AllTableCell.swift */; };
 		B2AEB8BD2316528B00C625A9 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEB8BC2316528B00C625A9 /* UIImageView+Extension.swift */; };
@@ -53,7 +58,7 @@
 		B247440923159B0C003C58C0 /* FavTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableCell.swift; sourceTree = "<group>"; };
 		B247440C2315A3E6003C58C0 /* DetailViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController2.swift; sourceTree = "<group>"; };
 		B247440F231618CB003C58C0 /* MobileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileResponse.swift; sourceTree = "<group>"; };
-		B297FF07231BB4A500C89077 /* AllStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllStore.swift; sourceTree = "<group>"; };
+		B297FF07231BB4A500C89077 /* MobilesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilesStore.swift; sourceTree = "<group>"; };
 		B297FF08231BB4A500C89077 /* AllPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPresenter.swift; sourceTree = "<group>"; };
 		B297FF09231BB4A500C89077 /* MobilesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobilesWorker.swift; sourceTree = "<group>"; };
 		B297FF0A231BB4A500C89077 /* AllRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRouter.swift; sourceTree = "<group>"; };
@@ -61,6 +66,11 @@
 		B297FF0C231BB4A500C89077 /* AllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewController.swift; sourceTree = "<group>"; };
 		B297FF0D231BB4A500C89077 /* AllInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInteractor.swift; sourceTree = "<group>"; };
 		B297FF18231BB97D00C89077 /* Mobile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobile.swift; sourceTree = "<group>"; };
+		B297FF1C231C265D00C89077 /* FavouritePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePresenter.swift; sourceTree = "<group>"; };
+		B297FF1E231C265D00C89077 /* FavouriteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteRouter.swift; sourceTree = "<group>"; };
+		B297FF1F231C265D00C89077 /* FavouriteModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteModels.swift; sourceTree = "<group>"; };
+		B297FF20231C265D00C89077 /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		B297FF21231C265D00C89077 /* FavouriteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteInteractor.swift; sourceTree = "<group>"; };
 		B2AEB8B82316221500C625A9 /* ContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		B2AEB8BA231633F900C625A9 /* AllTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllTableCell.swift; sourceTree = "<group>"; };
 		B2AEB8BC2316528B00C625A9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
@@ -118,6 +128,8 @@
 		B24743DD23153520003C58C0 /* SCBFirstAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				B297FF2E231C323B00C89077 /* Workers */,
+				B297FF2D231C323100C89077 /* Stores */,
 				B23CF6002317CFCF002D491C /* Constant */,
 				B2AEB8BE231652AA00C625A9 /* Extentions */,
 				B247440B2315A3CC003C58C0 /* Detail */,
@@ -155,8 +167,8 @@
 		B24743F723153E6F003C58C0 /* All */ = {
 			isa = PBXGroup;
 			children = (
+				B297FF2B231C26AB00C89077 /* Cells */,
 				B297FF17231BB4AD00C89077 /* Scene */,
-				B2AEB8BA231633F900C625A9 /* AllTableCell.swift */,
 				B24743FB23153E94003C58C0 /* AllViewController2.swift */,
 			);
 			path = All;
@@ -165,8 +177,9 @@
 		B24743F823153E77003C58C0 /* Favourite */ = {
 			isa = PBXGroup;
 			children = (
+				B297FF2C231C26C300C89077 /* Cells */,
+				B297FF1A231C263B00C89077 /* Scene */,
 				B24743F923153E88003C58C0 /* FavouriteViewController2.swift */,
-				B247440923159B0C003C58C0 /* FavTableCell.swift */,
 			);
 			path = Favourite;
 			sourceTree = "<group>";
@@ -174,8 +187,8 @@
 		B247440B2315A3CC003C58C0 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				B297FF2F231C39B800C89077 /* Cells */,
 				B247440C2315A3E6003C58C0 /* DetailViewController2.swift */,
-				B2AEB8BF231656CE00C625A9 /* ImageCollectionCell.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -193,15 +206,65 @@
 		B297FF17231BB4AD00C89077 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				B297FF07231BB4A500C89077 /* AllStore.swift */,
 				B297FF08231BB4A500C89077 /* AllPresenter.swift */,
-				B297FF09231BB4A500C89077 /* MobilesWorker.swift */,
 				B297FF0A231BB4A500C89077 /* AllRouter.swift */,
 				B297FF0B231BB4A500C89077 /* AllModels.swift */,
 				B297FF0C231BB4A500C89077 /* AllViewController.swift */,
 				B297FF0D231BB4A500C89077 /* AllInteractor.swift */,
 			);
 			path = Scene;
+			sourceTree = "<group>";
+		};
+		B297FF1A231C263B00C89077 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				B297FF1C231C265D00C89077 /* FavouritePresenter.swift */,
+				B297FF1E231C265D00C89077 /* FavouriteRouter.swift */,
+				B297FF1F231C265D00C89077 /* FavouriteModels.swift */,
+				B297FF20231C265D00C89077 /* FavouriteViewController.swift */,
+				B297FF21231C265D00C89077 /* FavouriteInteractor.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		B297FF2B231C26AB00C89077 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B2AEB8BA231633F900C625A9 /* AllTableCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B297FF2C231C26C300C89077 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B247440923159B0C003C58C0 /* FavTableCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B297FF2D231C323100C89077 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				B297FF07231BB4A500C89077 /* MobilesStore.swift */,
+			);
+			path = Stores;
+			sourceTree = "<group>";
+		};
+		B297FF2E231C323B00C89077 /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				B297FF09231BB4A500C89077 /* MobilesWorker.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
+		B297FF2F231C39B800C89077 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B2AEB8BF231656CE00C625A9 /* ImageCollectionCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		B2AEB8BE231652AA00C625A9 /* Extentions */ = {
@@ -339,6 +402,7 @@
 				B24743FA23153E88003C58C0 /* FavouriteViewController2.swift in Sources */,
 				B2AEB8B92316221500C625A9 /* ContentManager.swift in Sources */,
 				B2474410231618CB003C58C0 /* MobileResponse.swift in Sources */,
+				B297FF28231C265D00C89077 /* FavouriteViewController.swift in Sources */,
 				B2AEB8C0231656CE00C625A9 /* ImageCollectionCell.swift in Sources */,
 				B24743FC23153E94003C58C0 /* AllViewController2.swift in Sources */,
 				B297FF14231BB4A500C89077 /* AllViewController.swift in Sources */,
@@ -351,12 +415,16 @@
 				B2AEB8BD2316528B00C625A9 /* UIImageView+Extension.swift in Sources */,
 				B2AEB8BB231633F900C625A9 /* AllTableCell.swift in Sources */,
 				B24743F523153D55003C58C0 /* TabBarViewController.swift in Sources */,
+				B297FF24231C265D00C89077 /* FavouritePresenter.swift in Sources */,
 				B297FF15231BB4A500C89077 /* AllInteractor.swift in Sources */,
 				B297FF19231BB97D00C89077 /* Mobile.swift in Sources */,
+				B297FF26231C265D00C89077 /* FavouriteRouter.swift in Sources */,
 				B297FF13231BB4A500C89077 /* AllModels.swift in Sources */,
 				B24743DF23153520003C58C0 /* AppDelegate.swift in Sources */,
+				B297FF27231C265D00C89077 /* FavouriteModels.swift in Sources */,
 				B297FF10231BB4A500C89077 /* AllPresenter.swift in Sources */,
-				B297FF0F231BB4A500C89077 /* AllStore.swift in Sources */,
+				B297FF29231C265D00C89077 /* FavouriteInteractor.swift in Sources */,
+				B297FF0F231BB4A500C89077 /* MobilesStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ import Foundation
 
  */
 
-class AllStore: AllStoreProtocol {
+class MobilesStore: MobilesProtocol {
     func getData(_ completion: @escaping ([Mobile]) -> Void) {
         //todo
     }

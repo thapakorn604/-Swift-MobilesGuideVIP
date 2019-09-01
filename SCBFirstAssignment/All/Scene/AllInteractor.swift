@@ -9,25 +9,31 @@
 import UIKit
 
 protocol AllInteractorInterface {
-  func loadContent(request: All.FetchMobiles.Request)
-  var mobiles: [Mobile]? { get }
+    func loadContent(request: All.FetchMobiles.Request)
+    func sortContent(sortingType: Constants.sortingType, stage: Int)
+    var mobiles: [Mobile]? { get }
 }
 
 class AllInteractor: AllInteractorInterface {
     var mobiles: [Mobile]?
-  var presenter: AllPresenterInterface!
-  var worker: MobilesWorker?
-
+    var presenter: AllPresenterInterface!
+    var worker: MobilesWorker?
 
     func loadContent(request: All.FetchMobiles.Request) {
-    print("EI")
-    worker?.fetchMobiles { response in
-        //print(response)
-        self.mobiles = response
-        
-        let response = All.FetchMobiles.Response(mobiles: (self.mobiles!))
-        self.presenter.presentMobiles(response: response)
-        }
-      }
-}
+        worker?.fetchMobiles { result in
+            self.mobiles = result
 
+            let response = All.FetchMobiles.Response(mobiles: self.mobiles!)
+            self.presenter.presentMobiles(response: response)
+        }
+    }
+
+    func sortContent(sortingType: Constants.sortingType, stage: Int) {
+        worker?.sortMobiles(sortingType: sortingType, stage: stage, { result in
+            self.mobiles = result
+
+            let response = All.FetchMobiles.Response(mobiles: self.mobiles!)
+            self.presenter.presentMobiles(response: response)
+        })
+    }
+}
