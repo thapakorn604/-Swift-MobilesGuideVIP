@@ -13,9 +13,6 @@ import Network
 class NetworkManager {
     static let shared = NetworkManager()
 
-    let monitor = NWPathMonitor()
-    let queue = DispatchQueue(label: "InternetConnectionMonitor")
-
     func feedMobiles(url: String, completion: @escaping (([PurpleMobileResponse]) -> Void)) {
         AF.request(URL(string: url)!, method: .get).response { res in
             switch res.result {
