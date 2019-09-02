@@ -24,14 +24,14 @@ class ContentManager {
             return
         }
 
-        NetworkManager.shared.feedMobiles(url: "https://scb-test-mobile.herokuapp.com/api/mobiles/") { (response) in
+        NetworkManager.shared.feedMobiles(url: "https://scb-test-mobile.herokuapp.com/api/mobiles/") { [weak self] response in
             switch response {
                 case .success(let result):
                     for i in 0 ... result.count - 1 {
                         let newMobile = Mobile(mobile: result[i], isFav: false)
-                        self.allMobiles.append(newMobile)
+                        self?.allMobiles.append(newMobile)
                     }
-                    completion(.success(self.allMobiles))
+                    completion(.success(self!.allMobiles))
                 
                 case .failure(let error):
                     completion(.failure(error))
@@ -74,14 +74,3 @@ class ContentManager {
         }
     }
 }
-//
-//switch result {
-//case .success(let result):
-//    for i in 0 ... result.count - 1 {
-//        let newMobile = Mobile(mobile: result[i], isFav: false)
-//        self.allMobiles.append(newMobile)
-//    }
-//    completion(self.allMobiles)
-//case .failure(let error):
-//    completion()
-//}

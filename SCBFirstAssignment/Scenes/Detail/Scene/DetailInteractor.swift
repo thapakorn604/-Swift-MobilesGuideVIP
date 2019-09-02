@@ -33,14 +33,14 @@ class DetailInteractor: DetailInteractorInterface {
     }
 
     func getImages(request: Detail.DetailImage.Request) {
-        worker?.fetchImages(id: request.id, { response in
+        worker?.fetchImages(id: request.id, { [weak self] response in
 
             switch response {
             case .success(let result):
-                self.images = result
+                self?.images = result
                 
-                let response = Detail.DetailImage.Response(images: self.images)
-                self.presenter.presentImage(response: response)
+                let response = Detail.DetailImage.Response(images: self!.images)
+                self?.presenter.presentImage(response: response)
             case .failure(let error):
                 print(error)
             }

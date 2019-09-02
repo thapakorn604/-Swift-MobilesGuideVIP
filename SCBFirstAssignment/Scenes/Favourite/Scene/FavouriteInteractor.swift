@@ -22,11 +22,11 @@ class FavouriteInteractor: FavouriteInteractorInterface {
     // MARK: - Business logic
 
     func loadContent(request: Favourite.FavMobiles.Request) {
-        worker?.fetchFavourites { result in
-            self.favMobiles = result
+        worker?.fetchFavourites { [weak self] result in
+            self?.favMobiles = result
 
-            let response = Favourite.FavMobiles.Response(favMobiles: self.favMobiles)
-            self.presenter.presentFavourites(response: response)
+            let response = Favourite.FavMobiles.Response(favMobiles: self!.favMobiles)
+            self?.presenter.presentFavourites(response: response)
         }
     }
 

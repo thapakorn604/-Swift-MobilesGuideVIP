@@ -21,14 +21,14 @@ class AllInteractor: AllInteractorInterface {
     var worker: MobilesWorker?
 
     func loadContent(request: All.FetchMobiles.Request) {
-        worker?.fetchMobiles { response in
+        worker?.fetchMobiles { [weak self] response in
             
             switch response {
             case .success(let result):
-                self.mobiles = result
+                self?.mobiles = result
                 
-                let response = All.FetchMobiles.Response(mobiles: self.mobiles)
-                self.presenter.presentMobiles(response: response)
+                let response = All.FetchMobiles.Response(mobiles: self!.mobiles)
+                self?.presenter.presentMobiles(response: response)
             case .failure(let error):
                 print(error)
             }
