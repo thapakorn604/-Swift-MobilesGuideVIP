@@ -13,30 +13,26 @@ import Network
 class NetworkManager {
     static let shared = NetworkManager()
 
-    func feedMobiles(url: String, completion: @escaping (([PurpleMobileResponse]) -> Void)) {
+    func feedMobiles(url: String, completion: @escaping ((Result<[PurpleMobileResponse], Error>) -> Void)) {
         AF.request(URL(string: url)!, method: .get).response { res in
             switch res.result {
             case .success:
-
                 do {
                     let decoder = JSONDecoder()
                     let result = try decoder.decode([PurpleMobileResponse].self, from: res.data!)
 
-                    completion(result)
+                    completion(.success(result))
 
                 } catch {
                     print(error)
                 }
-
-                break
             case let .failure(error):
-                print(error)
-                break
+                completion(.failure(error))
             }
         }
     }
 
-    func feedImages(url: String, completion: @escaping (([PurpleImageResponse]) -> Void)) {
+    func feedImages(url: String, completion: @escaping ((Result<[PurpleImageResponse], Error>) -> Void)) {
         AF.request(URL(string: url)!, method: .get).response { res in
             switch res.result {
             case .success:
@@ -44,16 +40,13 @@ class NetworkManager {
                     let decoder = JSONDecoder()
                     let result = try decoder.decode([PurpleImageResponse].self, from: res.data!)
 
-                    completion(result)
+                    completion(.success(result))
 
                 } catch {
                     print(error)
                 }
-
-                break
             case let .failure(error):
-                print(error)
-                break
+                completion(.failure(error))
             }
         }
     }

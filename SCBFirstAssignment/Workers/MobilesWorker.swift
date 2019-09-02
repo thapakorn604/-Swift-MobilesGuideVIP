@@ -17,7 +17,6 @@ protocol MobilesProtocol {
 class MobilesWorker {
 
   var store: MobilesStore
-  //var mobiles = [Mobile]()
 
   init(store: MobilesStore) {
     self.store = store
@@ -25,9 +24,15 @@ class MobilesWorker {
 
   // MARK: - Business Logic
 
-  func fetchMobiles(_ completion: @escaping ([Mobile]) -> Void) {
+  func fetchMobiles(_ completion: @escaping (Result<[Mobile], Error>) -> Void) {
     ContentManager.shared.loadContent { (response) in
-        completion(response)
+        switch response {
+        case .success(let result):
+            completion(.success(result))
+        case .failure(let error):
+            completion(.failure(error))
+        }
+        
     }
   }
     func fetchFavourites(_ completion: @escaping ([Mobile]) -> Void) {
@@ -36,9 +41,17 @@ class MobilesWorker {
         completion(result)
     }
     
-    func sortMobiles(sortingType: Constants.sortingType, stage: Int, _ completion: @escaping ([Mobile]) -> Void) {
-        let result = ContentManager.shared.sortContent(by: sortingType, stage: stage)
-        
-        completion(result)
-    }
+    func fetchImages(id : Int, _ completion: @escaping(Result<ImageResponse, Error>) -> Void) {
+        NetworkManager.shared.feedImages(url: "https://scb-test-mobile.herokuapp.com/api/mobiles/\(id)/images/") { (response) in
+            
+            switch response {
+            case .success(let result):
+                completion(.success(result))
+            case . failure(let error):
+                completion(.failure(error))
+            }
+            
+            }
+        }
+    
 }

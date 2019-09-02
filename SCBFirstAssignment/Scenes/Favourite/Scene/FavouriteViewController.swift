@@ -10,7 +10,6 @@ import UIKit
 
 protocol FavouriteViewControllerInterface: class {
     func displayFavourites(viewModel: Favourite.FavMobiles.ViewModel)
-    func sortFavourites(sortingType: Constants.sortingType, stage: Int)
 }
 
 class FavouriteViewController: UIViewController, FavouriteViewControllerInterface {
@@ -51,7 +50,7 @@ class FavouriteViewController: UIViewController, FavouriteViewControllerInterfac
         super.viewDidLoad()
 
         tableView.dataSource = self
-        // self.tableView.delegate = self
+        tableView.delegate = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -75,19 +74,9 @@ class FavouriteViewController: UIViewController, FavouriteViewControllerInterfac
         tableView.reloadData()
     }
 
-    func sortFavourites(sortingType: Constants.sortingType, stage: Int) {
-        interactor.sortContent(sortingType: sortingType, stage: stage)
-    }
-
-    // MARK: - Router
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        router.passDataToNextScene(segue: segue)
-    }
-
-    @IBAction func unwindToFavouriteViewController(from segue: UIStoryboardSegue) {
-        print("unwind...")
-        router.passDataToNextScene(segue: segue)
+    func sortFavourites(sortingType: Constants.sortingType, contentType: Constants.contentType) {
+        let request = Favourite.SortFavs.Request(sortingType: sortingType, contentType: contentType)
+        interactor.sortContent(request: request)
     }
 }
 
@@ -108,5 +97,27 @@ extension FavouriteViewController: UITableViewDataSource {
         cell?.thumbnailImageView.loadImageUrl(element.thumbImageURL, "mobile")
 
         return cell!
+    }
+}
+
+extension FavouriteViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let element = displayedFavourites[indexPath.row]
+        router.navigateToDetail(mobileId: element.id)
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let cellId = displayedFavourites[indexPath.row].id
+            guard let index = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == cellId }) else { return }
+
+            guard let mobileIndex = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == cellId }) else { return }
+
+            ContentManager.shared.allMobiles[mobileIndex].isFav = false
+            displayedFavourites.remove(at: indexPath.row)
+            ContentManager.shared.favMobiles.remove(at: index)
+
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }

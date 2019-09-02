@@ -358,10 +358,10 @@
             </objects>
             <point key="canvasLocation" x="1024.6376811594205" y="290.625"/>
         </scene>
-        <!--Detail View Controller2-->
+        <!--Detail View Controller-->
         <scene sceneID="1cB-fk-RhH">
             <objects>
-                <viewController storyboardIdentifier="DetailViewController" id="XhX-EA-9Tu" customClass="DetailViewController2" customModule="SCBFirstAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="XhX-EA-9Tu" customClass="DetailViewController" customModule="SCBFirstAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w7Z-54-cOR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -461,10 +461,10 @@
                         <viewLayoutGuide key="safeArea" id="VLJ-Cc-cDi"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="NLx-Cr-6ub" id="FSB-Ov-e0c"/>
-                        <outlet property="detailTextView" destination="NMa-B9-Mef" id="xLG-CI-0ME"/>
-                        <outlet property="priceLabel" destination="57K-oB-Zkm" id="rRt-0k-WgJ"/>
-                        <outlet property="ratingLabel" destination="F9N-SK-LYp" id="xhs-LQ-2ef"/>
+                        <outlet property="collectionView" destination="NLx-Cr-6ub" id="kDM-lF-MrQ"/>
+                        <outlet property="detailTextView" destination="NMa-B9-Mef" id="t9b-Fc-yla"/>
+                        <outlet property="priceLabel" destination="57K-oB-Zkm" id="1p0-Bu-CQh"/>
+                        <outlet property="ratingLabel" destination="F9N-SK-LYp" id="6Un-L3-r0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nBF-eL-wfs" userLabel="First Responder" sceneMemberID="firstResponder"/>

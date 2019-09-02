@@ -16,6 +16,11 @@ class Constants {
         case rating
     }
     
+    enum contentType {
+        case allMobiles
+        case favourites
+    }
+    
     struct ViewControllerConstant {
         static let allViewController = "AllViewController"
         static let favViewController = "FavouriteViewController"

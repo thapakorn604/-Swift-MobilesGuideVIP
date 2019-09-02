@@ -31,8 +31,32 @@ struct All {
                 var thumbImageURL: String!
                 var isFav: Bool!
             }
-
+            //var result: Result<[DisplayedMobile],Error>
             var displayedMobiles: [DisplayedMobile]
+        }
+    }
+    
+    struct SortMobiles {
+        struct Request {
+            var sortingType : Constants.sortingType
+            var contentType : Constants.contentType
+        }
+        
+        struct Response {
+            var sortedMobiles: [Mobile]
+        }
+        
+        struct ViewModel {
+            struct DisplayedSortedMobile {
+                var id: Int!
+                var name: String!
+                var description: String!
+                var price: String!
+                var rating: String!
+                var thumbImageURL: String!
+                var isFav: Bool!
+            }
+            var displayedSortedMobiles: [DisplayedSortedMobile]
         }
     }
 }

@@ -10,14 +10,14 @@ import UIKit
 
 protocol FavouriteInteractorInterface {
     func loadContent(request: Favourite.FavMobiles.Request)
-    func sortContent(sortingType: Constants.sortingType, stage: Int)
-    var favMobiles: [Mobile]? { get }
+    func sortContent(request: Favourite.SortFavs.Request)
+    var favMobiles: [Mobile] { get }
 }
 
 class FavouriteInteractor: FavouriteInteractorInterface {
     var presenter: FavouritePresenterInterface!
     var worker: MobilesWorker?
-    var favMobiles: [Mobile]?
+    var favMobiles: [Mobile] = []
 
     // MARK: - Business logic
 
@@ -25,17 +25,15 @@ class FavouriteInteractor: FavouriteInteractorInterface {
         worker?.fetchFavourites { result in
             self.favMobiles = result
 
-            let response = Favourite.FavMobiles.Response(favMobiles: self.favMobiles!)
+            let response = Favourite.FavMobiles.Response(favMobiles: self.favMobiles)
             self.presenter.presentFavourites(response: response)
         }
     }
 
-    func sortContent(sortingType: Constants.sortingType, stage: Int) {
-        worker?.sortMobiles(sortingType: sortingType, stage: stage, { result in
-            self.favMobiles = result
+    func sortContent(request: Favourite.SortFavs.Request) {
+        favMobiles = ContentManager.shared.sortContent(by: request.sortingType, contentType: request.contentType)
 
-            let response = Favourite.FavMobiles.Response(favMobiles: self.favMobiles!)
-            self.presenter.presentFavourites(response: response)
-        })
+        let response = Favourite.FavMobiles.Response(favMobiles: favMobiles)
+        presenter.presentFavourites(response: response)
     }
 }
