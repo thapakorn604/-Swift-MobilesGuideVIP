@@ -62,5 +62,11 @@ class AllInteractor: AllInteractorInterface {
       ContentManager.shared.favMobiles.remove(at: favIndex)
       ContentManager.shared.allMobiles[index].isFav = false
     }
+    
+    self.mobiles = ContentManager.shared.allMobiles
+    
+    let content : Content<[Mobile]> = .success(data: self.mobiles)
+    let response = All.FetchMobiles.Response(content: content)
+    self.presenter.presentMobiles(response: response)
   }
 }

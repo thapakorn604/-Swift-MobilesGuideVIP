@@ -38,11 +38,14 @@ class DetailInteractor: DetailInteractorInterface {
       switch response {
       case .success(let result):
         self?.images = result
-        
-        let response = Detail.DetailImage.Response(images: result)
+
+        let content : Content<ImageResponse> = .success(data: result)
+        let response = Detail.DetailImage.Response(content: content)
         self?.presenter.presentImage(response: response)
       case .failure(let error):
-        print(error)
+        let content : Content<ImageResponse> = .error(error.localizedDescription)
+        let response = Detail.DetailImage.Response(content: content)
+        self?.presenter.presentImage(response: response)
       }
     })
   }

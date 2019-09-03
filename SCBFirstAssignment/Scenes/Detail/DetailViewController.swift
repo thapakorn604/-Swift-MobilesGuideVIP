@@ -75,6 +75,12 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     interactor.getImages(request: request)
   }
   
+  func showErrorAlert(errorMsg : String) {
+    let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: nil))
+    present(alert, animated: true)
+  }
+  
   // MARK: - Display logic
   
   func displayDetail(viewModel: Detail.MobileDetail.ViewModel) {
@@ -87,8 +93,13 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
   }
   
   func displayImage(viewModel: Detail.DetailImage.ViewModel) {
-    displayImages = viewModel.displayedImages
-    collectionView.reloadData()
+    switch viewModel.displayedImages {
+    case .success(let images):
+      displayImages = images
+      collectionView.reloadData()
+    case .error(let error):
+      showErrorAlert(errorMsg: error)
+    }
   }
 }
 

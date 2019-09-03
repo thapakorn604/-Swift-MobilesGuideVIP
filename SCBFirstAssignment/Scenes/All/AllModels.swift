@@ -42,7 +42,7 @@ struct All {
     }
     
     struct Response {
-      let sortedMobiles: [Mobile]
+      
     }
   }
   

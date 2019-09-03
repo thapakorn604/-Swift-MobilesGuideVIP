@@ -33,14 +33,14 @@ struct Detail {
       let id : Int
     }
     struct Response {
-      let images : ImageResponse
+      let content : Content<ImageResponse>
     }
     
     struct ViewModel {
       struct displayedImage {
         let imageURL : String
       }
-      let displayedImages : [displayedImage]
+      let displayedImages : Content<[displayedImage]>
     }
   }
 }

@@ -32,18 +32,23 @@ class DetailPresenter: DetailPresenterInterface {
   }
   
   func presentImage(response: Detail.DetailImage.Response) {
-    var displayedImages : [Detail.DetailImage.ViewModel.displayedImage] = []
-    
-    for image in response.images{
-      var imageURL = image.url
-      if !NetworkManager.shared.canOpenURL(imageURL) {
-        imageURL = "https://\(imageURL)"
+    var displayImages : [Detail.DetailImage.ViewModel.displayedImage] = []
+    var content : Content<[Detail.DetailImage.ViewModel.displayedImage]>
+    switch response.content {
+    case .success(let images):
+      for image in images{
+        var imageURL = image.url
+        if !NetworkManager.shared.canOpenURL(imageURL) {
+          imageURL = "https://\(imageURL)"
+        }
+        let image = Detail.DetailImage.ViewModel.displayedImage(imageURL: imageURL)
+        displayImages.append(image)
       }
-      let image = Detail.DetailImage.ViewModel.displayedImage(imageURL: imageURL)
-      displayedImages.append(image)
+      content = .success(data: displayImages)
+    case .error(let error):
+      content = .error(error)
     }
-    let viewModel = Detail.DetailImage.ViewModel(displayedImages: displayedImages)
+    let viewModel = Detail.DetailImage.ViewModel(displayedImages: content)
     self.viewController.displayImage(viewModel: viewModel)
-    
   }
 }

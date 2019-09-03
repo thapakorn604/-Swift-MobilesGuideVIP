@@ -54,7 +54,6 @@ class AllViewController: UIViewController, AllViewControllerInterface {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(true)
-    print("Hello world")
     loadContent()
   }
   
@@ -65,6 +64,15 @@ class AllViewController: UIViewController, AllViewControllerInterface {
     interactor.loadContent(request: request)
   }
   
+  func showErrorAlert(errorMsg : String) {
+    let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {
+      (_: UIAlertAction!) in
+      self.loadContent()
+    }))
+    present(alert, animated: true)
+  }
+  
   // MARK: - Display logic
   
   func displayMobiles(viewModel: All.FetchMobiles.ViewModel) {
@@ -73,12 +81,7 @@ class AllViewController: UIViewController, AllViewControllerInterface {
       displayedMobiles = mobiles
       tableView.reloadData()
     case .error(let error):
-      let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
-      present(alert, animated: true)
-      alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {
-        (_: UIAlertAction!) in
-        self.loadContent()
-      }))
+      showErrorAlert(errorMsg: error)
     }
   }
   

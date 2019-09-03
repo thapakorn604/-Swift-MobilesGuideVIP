@@ -10,6 +10,7 @@ import UIKit
 
 protocol FavouriteViewControllerInterface: class {
   func displayFavourites(viewModel: Favourite.FavMobiles.ViewModel)
+  func displayDeletedFavourite(viewModel: Favourite.FavMobiles.ViewModel)
 }
 
 class FavouriteViewController: UIViewController, FavouriteViewControllerInterface {
@@ -72,6 +73,10 @@ class FavouriteViewController: UIViewController, FavouriteViewControllerInterfac
     tableView.reloadData()
   }
   
+  func displayDeletedFavourite(viewModel: Favourite.FavMobiles.ViewModel) {
+    displayedFavourites = viewModel.displayedFavourites
+  }
+  
   func sortFavourites(sortingType: Constants.sortingType, contentType: Constants.contentType) {
     let request = Favourite.SortFavs.Request(sortingType: sortingType, contentType: contentType)
     interactor.sortContent(request: request)
@@ -106,15 +111,9 @@ extension FavouriteViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
-      let cellId = displayedFavourites[indexPath.row].id
-      guard let index = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == cellId }) else { return }
-      
-      guard let mobileIndex = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == cellId }) else { return }
-      
-      ContentManager.shared.allMobiles[mobileIndex].isFav = false
-      displayedFavourites.remove(at: indexPath.row)
-      ContentManager.shared.favMobiles.remove(at: index)
-      
+      guard let cellId = displayedFavourites[indexPath.row].id else { return }
+      let request = Favourite.DeleteFav.Request(id: cellId)
+      interactor.deleteFavourite(request: request)
       tableView.deleteRows(at: [indexPath], with: .fade)
     }
   }

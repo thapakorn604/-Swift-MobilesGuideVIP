@@ -11,10 +11,12 @@ import UIKit
 protocol FavouriteInteractorInterface {
   func loadContent(request: Favourite.FavMobiles.Request)
   func sortContent(request: Favourite.SortFavs.Request)
+  func deleteFavourite(request: Favourite.DeleteFav.Request)
   var favMobiles: [Mobile] { get }
 }
 
 class FavouriteInteractor: FavouriteInteractorInterface {
+  
   var presenter: FavouritePresenterInterface!
   var worker: MobilesWorker?
   var favMobiles: [Mobile] = []
@@ -35,5 +37,19 @@ class FavouriteInteractor: FavouriteInteractorInterface {
     
     let response = Favourite.FavMobiles.Response(favMobiles: favMobiles)
     presenter.presentFavourites(response: response)
+  }
+  
+  func deleteFavourite(request: Favourite.DeleteFav.Request) {
+    if let index = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == request.id }) {
+      ContentManager.shared.favMobiles.remove(at: index)
+    }
+    
+    if let mobileIndex = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == request.id }) {
+      ContentManager.shared.allMobiles[mobileIndex].isFav = false
+    }
+    
+    favMobiles = ContentManager.shared.favMobiles
+    let response = Favourite.FavMobiles.Response(favMobiles: favMobiles)
+    presenter.presentDeletedFavourite(response: response)
   }
 }

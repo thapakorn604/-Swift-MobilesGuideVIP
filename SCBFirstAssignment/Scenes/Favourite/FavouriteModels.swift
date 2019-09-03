@@ -42,7 +42,16 @@ struct Favourite {
     }
     
     struct Response {
-      let sortedFavs: [Mobile]
+
+    }
+  }
+  
+  struct DeleteFav {
+    struct Request {
+      let id : Int
+    }
+    struct Response {
+      
     }
   }
 }
