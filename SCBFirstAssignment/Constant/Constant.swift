@@ -21,6 +21,11 @@ class Constants {
     case favourites
   }
   
+  struct UrlType {
+    static let mobiles = "https://scb-test-mobile.herokuapp.com/api/mobiles/"
+    static let images = "https://scb-test-mobile.herokuapp.com/api/mobiles/%d/images/"
+  }
+  
   struct ViewControllerConstant {
     static let allViewController = "AllViewController"
     static let favViewController = "FavouriteViewController"

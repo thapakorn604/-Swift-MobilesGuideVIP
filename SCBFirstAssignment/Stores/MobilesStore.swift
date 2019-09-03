@@ -10,8 +10,10 @@ import Foundation
 
 class MobilesStore: MobilesProtocol {
   func fetchImages(id: Int, _ completion: @escaping (Result<ImageResponse, Error>) -> Void) {
-    NetworkManager.shared.feedImages(url: "https://scb-test-mobile.herokuapp.com/api/mobiles/\(id)/images/") { response in
-      
+    let imageUrl = Constants.UrlType.images
+    let url = String(format: imageUrl, id)
+    
+    NetworkManager.shared.feedImages(url: url) { response in
       switch response {
       case let .success(result):
         completion(.success(result))

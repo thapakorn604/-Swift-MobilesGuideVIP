@@ -61,20 +61,8 @@ class AllViewController: UIViewController, AllViewControllerInterface {
   // MARK: - Event handling
   
   func loadContent() {
-    let isInternetEnabled = NetworkManager.shared.isReachingInternet()
-    
-    if isInternetEnabled {
       let request = All.FetchMobiles.Request()
       interactor.loadContent(request: request)
-    } else {
-      let alert = UIAlertController(title: "No internet connection", message: "Please connect your device to the internet and try again.", preferredStyle: .alert)
-      
-      alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {
-        (_: UIAlertAction!) in
-        self.loadContent()
-      }))
-      present(alert, animated: true)
-    }
   }
   
   // MARK: - Display logic

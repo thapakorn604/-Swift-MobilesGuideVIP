@@ -24,7 +24,7 @@ class ContentManager {
       return
     }
     
-    NetworkManager.shared.feedMobiles(url: "https://scb-test-mobile.herokuapp.com/api/mobiles/") { [weak self] response in
+    NetworkManager.shared.feedMobiles(url: Constants.UrlType.mobiles) { [weak self] response in
       switch response {
       case .success(let result):
         for i in 0 ... result.count - 1 {
@@ -36,7 +36,6 @@ class ContentManager {
       case .failure(let error):
         completion(.failure(error))
       }
-      
     }
   }
   
