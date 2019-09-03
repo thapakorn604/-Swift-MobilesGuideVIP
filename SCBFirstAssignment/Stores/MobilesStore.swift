@@ -19,7 +19,15 @@ import Foundation
  */
 
 class MobilesStore: MobilesProtocol {
-    func getData(_ completion: @escaping ([Mobile]) -> Void) {
-        //todo
+    
+    func fetchMobiles(_ completion: @escaping (Result<[Mobile], Error>) -> Void) {
+        ContentManager.shared.loadContent { (response) in
+            switch response {
+            case .success(let result):
+                completion(.success(result))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }

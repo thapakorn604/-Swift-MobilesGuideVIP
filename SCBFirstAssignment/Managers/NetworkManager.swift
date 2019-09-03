@@ -24,6 +24,7 @@ class NetworkManager {
                     completion(.success(result))
 
                 } catch {
+                    completion(.failure(error))
                     print(error)
                 }
             case let .failure(error):

@@ -45,18 +45,5 @@ struct Favourite {
             var sortedFavs: [Mobile]
         }
 
-        struct ViewModel {
-            struct DisplayedSortedFav {
-                var id: Int!
-                var name: String!
-                var description: String!
-                var price: String!
-                var rating: String!
-                var thumbImageURL: String!
-                var isFav: Bool!
-            }
-
-            var displayedSortedFavs: [DisplayedSortedFav]
-        }
     }
 }

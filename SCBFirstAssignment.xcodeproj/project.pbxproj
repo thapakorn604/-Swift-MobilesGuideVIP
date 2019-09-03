@@ -182,8 +182,12 @@
 		B24743F823153E77003C58C0 /* Favourite */ = {
 			isa = PBXGroup;
 			children = (
+				B297FF1C231C265D00C89077 /* FavouritePresenter.swift */,
+				B297FF1E231C265D00C89077 /* FavouriteRouter.swift */,
+				B297FF1F231C265D00C89077 /* FavouriteModels.swift */,
+				B297FF20231C265D00C89077 /* FavouriteViewController.swift */,
+				B297FF21231C265D00C89077 /* FavouriteInteractor.swift */,
 				B297FF2C231C26C300C89077 /* Cells */,
-				B297FF1A231C263B00C89077 /* Scene */,
 			);
 			path = Favourite;
 			sourceTree = "<group>";
@@ -191,7 +195,11 @@
 		B247440B2315A3CC003C58C0 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				B295BA0B231CC6A300DE4E4D /* Scene */,
+				B295BA0D231CC6BC00DE4E4D /* DetailPresenter.swift */,
+				B295BA0F231CC6BC00DE4E4D /* DetailRouter.swift */,
+				B295BA10231CC6BC00DE4E4D /* DetailModels.swift */,
+				B295BA11231CC6BC00DE4E4D /* DetailViewController.swift */,
+				B295BA12231CC6BC00DE4E4D /* DetailInteractor.swift */,
 				B297FF2F231C39B800C89077 /* Cells */,
 			);
 			path = Detail;
@@ -205,30 +213,6 @@
 				B297FF18231BB97D00C89077 /* Mobile.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		B295BA0B231CC6A300DE4E4D /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				B295BA0D231CC6BC00DE4E4D /* DetailPresenter.swift */,
-				B295BA0F231CC6BC00DE4E4D /* DetailRouter.swift */,
-				B295BA10231CC6BC00DE4E4D /* DetailModels.swift */,
-				B295BA11231CC6BC00DE4E4D /* DetailViewController.swift */,
-				B295BA12231CC6BC00DE4E4D /* DetailInteractor.swift */,
-			);
-			path = Scene;
-			sourceTree = "<group>";
-		};
-		B297FF1A231C263B00C89077 /* Scene */ = {
-			isa = PBXGroup;
-			children = (
-				B297FF1C231C265D00C89077 /* FavouritePresenter.swift */,
-				B297FF1E231C265D00C89077 /* FavouriteRouter.swift */,
-				B297FF1F231C265D00C89077 /* FavouriteModels.swift */,
-				B297FF20231C265D00C89077 /* FavouriteViewController.swift */,
-				B297FF21231C265D00C89077 /* FavouriteInteractor.swift */,
-			);
-			path = Scene;
 			sourceTree = "<group>";
 		};
 		B297FF2B231C26AB00C89077 /* Cells */ = {

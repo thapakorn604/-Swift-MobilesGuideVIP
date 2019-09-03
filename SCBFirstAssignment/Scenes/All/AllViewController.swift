@@ -80,8 +80,18 @@ class AllViewController: UIViewController, AllViewControllerInterface {
     // MARK: - Display logic
 
     func displayMobiles(viewModel: All.FetchMobiles.ViewModel) {
-        displayedMobiles = viewModel.displayedMobiles
-        tableView.reloadData()
+        switch viewModel.displayedMobiles {
+        case .success(let mobiles):
+            displayedMobiles = mobiles
+            tableView.reloadData()
+        case .error(let error):
+            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+            present(alert, animated: true)
+            alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {
+                (_: UIAlertAction!) in
+                self.loadContent()
+            }))
+        }
     }
 
     func sortMobiles(sortingType: Constants.sortingType, contentType: Constants.contentType) {

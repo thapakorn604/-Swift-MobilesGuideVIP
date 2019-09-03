@@ -34,3 +34,8 @@ class Constants {
     }
     
 }
+
+enum Content<T> {
+    case success(data: T)
+    case error(String)
+}

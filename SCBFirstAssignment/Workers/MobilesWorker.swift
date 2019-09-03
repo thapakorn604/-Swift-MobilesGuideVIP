@@ -11,7 +11,7 @@ import Alamofire
 import Network
 
 protocol MobilesProtocol {
-  func getData(_ completion: @escaping ([Mobile]) -> Void)
+  func fetchMobiles(_ completion: @escaping (Result<[Mobile], Error>) -> Void)
 }
 
 class MobilesWorker {
@@ -24,16 +24,8 @@ class MobilesWorker {
 
   // MARK: - Business Logic
 
-  func fetchMobiles(_ completion: @escaping (Result<[Mobile], Error>) -> Void) {
-    ContentManager.shared.loadContent { (response) in
-        switch response {
-        case .success(let result):
-            completion(.success(result))
-        case .failure(let error):
-            completion(.failure(error))
-        }
-        
-    }
+  func fetchMobiles( _ completion: @escaping (Result<[Mobile], Error>) -> Void) {
+    store.fetchMobiles(completion)
   }
     func fetchFavourites(_ completion: @escaping ([Mobile]) -> Void) {
         // NOTE: Do the work
@@ -50,8 +42,6 @@ class MobilesWorker {
             case . failure(let error):
                 completion(.failure(error))
             }
-            
-            }
         }
-    
+    }
 }

@@ -17,7 +17,8 @@ struct All {
 
         /// Data struct sent to Presenter
         struct Response {
-            var mobiles: [Mobile]
+//            var mobiles: [Mobile]
+            let content: Content<[Mobile]>
         }
 
         /// Data struct sent to ViewController
@@ -31,8 +32,7 @@ struct All {
                 var thumbImageURL: String!
                 var isFav: Bool!
             }
-            //var result: Result<[DisplayedMobile],Error>
-            var displayedMobiles: [DisplayedMobile]
+            let displayedMobiles: Content<[DisplayedMobile]>
         }
     }
     
@@ -44,19 +44,6 @@ struct All {
         
         struct Response {
             var sortedMobiles: [Mobile]
-        }
-        
-        struct ViewModel {
-            struct DisplayedSortedMobile {
-                var id: Int!
-                var name: String!
-                var description: String!
-                var price: String!
-                var rating: String!
-                var thumbImageURL: String!
-                var isFav: Bool!
-            }
-            var displayedSortedMobiles: [DisplayedSortedMobile]
         }
     }
 }

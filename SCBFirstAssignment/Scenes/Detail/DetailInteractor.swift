@@ -39,7 +39,7 @@ class DetailInteractor: DetailInteractorInterface {
             case .success(let result):
                 self?.images = result
                 
-                let response = Detail.DetailImage.Response(images: self!.images)
+                let response = Detail.DetailImage.Response(images: result)
                 self?.presenter.presentImage(response: response)
             case .failure(let error):
                 print(error)
