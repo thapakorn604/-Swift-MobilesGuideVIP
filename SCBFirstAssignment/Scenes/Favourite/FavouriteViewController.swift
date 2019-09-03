@@ -9,115 +9,113 @@
 import UIKit
 
 protocol FavouriteViewControllerInterface: class {
-    func displayFavourites(viewModel: Favourite.FavMobiles.ViewModel)
+  func displayFavourites(viewModel: Favourite.FavMobiles.ViewModel)
 }
 
 class FavouriteViewController: UIViewController, FavouriteViewControllerInterface {
-    var interactor: FavouriteInteractorInterface!
-    var router: FavouriteRouter!
-
-    @IBOutlet var tableView: UITableView!
-
-    var displayedFavourites: [Favourite.FavMobiles.ViewModel.DisplayedFavourite] = []
-
-    // MARK: - Object lifecycle
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        configure(viewController: self)
-    }
-
-    // MARK: - Configuration
-
-    private func configure(viewController: FavouriteViewController) {
-        let router = FavouriteRouter()
-        router.viewController = viewController
-
-        let presenter = FavouritePresenter()
-        presenter.viewController = viewController
-
-        let interactor = FavouriteInteractor()
-        interactor.presenter = presenter
-        interactor.worker = MobilesWorker(store: MobilesStore())
-
-        viewController.interactor = interactor
-        viewController.router = router
-    }
-
-    // MARK: - View lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        loadContent()
-    }
-
-    // MARK: - Event handling
-
-    func loadContent() {
-        // NOTE: Ask the Interactor to do some work
-
-        let request = Favourite.FavMobiles.Request()
-        interactor.loadContent(request: request)
-    }
-
-    // MARK: - Display logic
-
-    func displayFavourites(viewModel: Favourite.FavMobiles.ViewModel) {
-        displayedFavourites = viewModel.displayedFavourites
-        tableView.reloadData()
-    }
-
-    func sortFavourites(sortingType: Constants.sortingType, contentType: Constants.contentType) {
-        let request = Favourite.SortFavs.Request(sortingType: sortingType, contentType: contentType)
-        interactor.sortContent(request: request)
-    }
+  var interactor: FavouriteInteractorInterface!
+  var router: FavouriteRouter!
+  
+  @IBOutlet var tableView: UITableView!
+  
+  var displayedFavourites: [Favourite.FavMobiles.ViewModel.DisplayedFavourite] = []
+  
+  // MARK: - Object lifecycle
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
+    configure(viewController: self)
+  }
+  
+  // MARK: - Configuration
+  
+  private func configure(viewController: FavouriteViewController) {
+    let router = FavouriteRouter()
+    router.viewController = viewController
+    
+    let presenter = FavouritePresenter()
+    presenter.viewController = viewController
+    
+    let interactor = FavouriteInteractor()
+    interactor.presenter = presenter
+    interactor.worker = MobilesWorker(store: MobilesStore())
+    
+    viewController.interactor = interactor
+    viewController.router = router
+  }
+  
+  // MARK: - View lifecycle
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    tableView.dataSource = self
+    tableView.delegate = self
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(true)
+    loadContent()
+  }
+  
+  // MARK: - Event handling
+  
+  func loadContent() {
+    let request = Favourite.FavMobiles.Request()
+    interactor.loadContent(request: request)
+  }
+  
+  // MARK: - Display logic
+  
+  func displayFavourites(viewModel: Favourite.FavMobiles.ViewModel) {
+    displayedFavourites = viewModel.displayedFavourites
+    tableView.reloadData()
+  }
+  
+  func sortFavourites(sortingType: Constants.sortingType, contentType: Constants.contentType) {
+    let request = Favourite.SortFavs.Request(sortingType: sortingType, contentType: contentType)
+    interactor.sortContent(request: request)
+  }
 }
 
 extension FavouriteViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return displayedFavourites.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellConstant.favTableCell) as? FavTableCell
-
-        let element = displayedFavourites[indexPath.row]
-
-        cell?.nameLabel.text = element.name
-        cell?.descriptionLabel.text = element.description
-        cell?.priceLabel.text = element.price
-        cell?.ratingLabel.text = element.rating
-        cell?.thumbnailImageView.loadImageUrl(element.thumbImageURL, "mobile")
-
-        return cell!
-    }
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return displayedFavourites.count
+  }
+  
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellConstant.favTableCell) as? FavTableCell
+    
+    let element = displayedFavourites[indexPath.row]
+    
+    cell?.nameLabel.text = element.name
+    cell?.descriptionLabel.text = element.description
+    cell?.priceLabel.text = element.price
+    cell?.ratingLabel.text = element.rating
+    cell?.thumbnailImageView.loadImageUrl(element.thumbImageURL, "mobile")
+    
+    return cell!
+  }
 }
 
 extension FavouriteViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let element = displayedFavourites[indexPath.row]
-        router.navigateToDetail(mobileId: element.id)
+  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let element = displayedFavourites[indexPath.row]
+    router.navigateToDetail(mobileId: element.id)
+  }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      let cellId = displayedFavourites[indexPath.row].id
+      guard let index = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == cellId }) else { return }
+      
+      guard let mobileIndex = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == cellId }) else { return }
+      
+      ContentManager.shared.allMobiles[mobileIndex].isFav = false
+      displayedFavourites.remove(at: indexPath.row)
+      ContentManager.shared.favMobiles.remove(at: index)
+      
+      tableView.deleteRows(at: [indexPath], with: .fade)
     }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let cellId = displayedFavourites[indexPath.row].id
-            guard let index = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == cellId }) else { return }
-
-            guard let mobileIndex = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == cellId }) else { return }
-
-            ContentManager.shared.allMobiles[mobileIndex].isFav = false
-            displayedFavourites.remove(at: indexPath.row)
-            ContentManager.shared.favMobiles.remove(at: index)
-
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
+  }
 }

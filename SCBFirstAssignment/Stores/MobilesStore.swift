@@ -8,26 +8,32 @@
 
 import Foundation
 
-/*
-
- The AllStore class implements the AllStoreProtocol.
-
- The source for the data could be a database, cache, or a web service.
-
- You may remove these comments from the file.
-
- */
-
 class MobilesStore: MobilesProtocol {
-    
-    func fetchMobiles(_ completion: @escaping (Result<[Mobile], Error>) -> Void) {
-        ContentManager.shared.loadContent { (response) in
-            switch response {
-            case .success(let result):
-                completion(.success(result))
-            case .failure(let error):
-                completion(.failure(error))
-            }
-        }
+  func fetchImages(id: Int, _ completion: @escaping (Result<ImageResponse, Error>) -> Void) {
+    NetworkManager.shared.feedImages(url: "https://scb-test-mobile.herokuapp.com/api/mobiles/\(id)/images/") { response in
+      
+      switch response {
+      case let .success(result):
+        completion(.success(result))
+      case let .failure(error):
+        completion(.failure(error))
+      }
     }
+  }
+  
+  func fetchFavourites(_ completion: @escaping ([Mobile]) -> Void) {
+    let result = ContentManager.shared.favMobiles
+    completion(result)
+  }
+  
+  func fetchMobiles(_ completion: @escaping (Result<[Mobile], Error>) -> Void) {
+    ContentManager.shared.loadContent { response in
+      switch response {
+      case let .success(result):
+        completion(.success(result))
+      case let .failure(error):
+        completion(.failure(error))
+      }
+    }
+  }
 }

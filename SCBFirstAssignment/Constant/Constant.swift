@@ -9,33 +9,33 @@
 import Foundation
 
 class Constants {
-    
-    enum  sortingType {
-        case priceDescending
-        case priceAscending
-        case rating
-    }
-    
-    enum contentType {
-        case allMobiles
-        case favourites
-    }
-    
-    struct ViewControllerConstant {
-        static let allViewController = "AllViewController"
-        static let favViewController = "FavouriteViewController"
-        static let detailViewController = "DetailViewController"
-    }
-    
-    struct CellConstant {
-        static let allTableCell = "allTableCell"
-        static let favTableCell = "favTableCell"
-        static let imageCollectionCell = "imageCollectionCell"
-    }
-    
+  
+  enum  sortingType {
+    case priceDescending
+    case priceAscending
+    case rating
+  }
+  
+  enum contentType {
+    case allMobiles
+    case favourites
+  }
+  
+  struct ViewControllerConstant {
+    static let allViewController = "AllViewController"
+    static let favViewController = "FavouriteViewController"
+    static let detailViewController = "DetailViewController"
+  }
+  
+  struct CellConstant {
+    static let allTableCell = "allTableCell"
+    static let favTableCell = "favTableCell"
+    static let imageCollectionCell = "imageCollectionCell"
+  }
+  
 }
 
 enum Content<T> {
-    case success(data: T)
-    case error(String)
+  case success(data: T)
+  case error(String)
 }

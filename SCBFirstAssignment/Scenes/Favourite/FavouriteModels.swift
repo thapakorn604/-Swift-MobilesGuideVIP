@@ -9,41 +9,40 @@
 import UIKit
 
 struct Favourite {
-    /// This structure represents a use case
-    struct FavMobiles {
-        /// Data struct sent to Interactor
-        struct Request {
-        }
-
-        /// Data struct sent to Presenter
-        struct Response {
-            var favMobiles: [Mobile]
-        }
-
-        /// Data struct sent to ViewController
-        struct ViewModel {
-            struct DisplayedFavourite {
-                var id: Int!
-                var name: String!
-                var description: String!
-                var price: String!
-                var rating: String!
-                var thumbImageURL: String!
-            }
-
-            var displayedFavourites: [DisplayedFavourite]
-        }
+  /// This structure represents a use case
+  struct FavMobiles {
+    /// Data struct sent to Interactor
+    struct Request {
     }
-
-    struct SortFavs {
-        struct Request {
-            var sortingType: Constants.sortingType
-            var contentType: Constants.contentType
-        }
-
-        struct Response {
-            var sortedFavs: [Mobile]
-        }
-
+    
+    /// Data struct sent to Presenter
+    struct Response {
+      var favMobiles: [Mobile]
     }
+    
+    /// Data struct sent to ViewController
+    struct ViewModel {
+      struct DisplayedFavourite {
+        var id: Int!
+        var name: String!
+        var description: String!
+        var price: String!
+        var rating: String!
+        var thumbImageURL: String!
+      }
+      
+      var displayedFavourites: [DisplayedFavourite]
+    }
+  }
+  
+  struct SortFavs {
+    struct Request {
+      var sortingType: Constants.sortingType
+      var contentType: Constants.contentType
+    }
+    
+    struct Response {
+      var sortedFavs: [Mobile]
+    }
+  }
 }

@@ -11,10 +11,10 @@ import Foundation
 typealias MobileResponse = [PurpleMobileResponse]
 
 struct PurpleMobileResponse: Codable {
-    let description: String
-    let id: Int
-    let price: Double
-    let brand: String
-    let rating: Double
-    let thumbImageURL, name: String
+  let description: String
+  let id: Int
+  let price: Double
+  let brand: String
+  let rating: Double
+  let thumbImageURL, name: String
 }

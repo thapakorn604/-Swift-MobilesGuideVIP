@@ -9,6 +9,6 @@
 import Foundation
 
 struct Mobile {
-    var mobile : PurpleMobileResponse!
-    var isFav : Bool!
+  var mobile : PurpleMobileResponse!
+  var isFav : Bool!
 }

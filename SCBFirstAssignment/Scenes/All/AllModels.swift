@@ -9,41 +9,40 @@
 import UIKit
 
 struct All {
-    /// This structure represents a use case
-    struct FetchMobiles {
-        /// Data struct sent to Interactor
-        struct Request {
-        }
-
-        /// Data struct sent to Presenter
-        struct Response {
-//            var mobiles: [Mobile]
-            let content: Content<[Mobile]>
-        }
-
-        /// Data struct sent to ViewController
-        struct ViewModel {
-            struct DisplayedMobile {
-                var id: Int!
-                var name: String!
-                var description: String!
-                var price: String!
-                var rating: String!
-                var thumbImageURL: String!
-                var isFav: Bool!
-            }
-            let displayedMobiles: Content<[DisplayedMobile]>
-        }
+  /// This structure represents a use case
+  struct FetchMobiles {
+    /// Data struct sent to Interactor
+    struct Request {
     }
     
-    struct SortMobiles {
-        struct Request {
-            var sortingType : Constants.sortingType
-            var contentType : Constants.contentType
-        }
-        
-        struct Response {
-            var sortedMobiles: [Mobile]
-        }
+    /// Data struct sent to Presenter
+    struct Response {
+      let content: Content<[Mobile]>
     }
+    
+    /// Data struct sent to ViewController
+    struct ViewModel {
+      struct DisplayedMobile {
+        var id: Int!
+        var name: String!
+        var description: String!
+        var price: String!
+        var rating: String!
+        var thumbImageURL: String!
+        var isFav: Bool!
+      }
+      let displayedMobiles: Content<[DisplayedMobile]>
+    }
+  }
+  
+  struct SortMobiles {
+    struct Request {
+      var sortingType : Constants.sortingType
+      var contentType : Constants.contentType
+    }
+    
+    struct Response {
+      var sortedMobiles: [Mobile]
+    }
+  }
 }

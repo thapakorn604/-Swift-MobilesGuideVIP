@@ -11,11 +11,11 @@ import Foundation
 typealias ImageResponse = [PurpleImageResponse]
 
 struct PurpleImageResponse: Codable {
-    let url: String
-    let id, mobileID: Int
-
-    enum CodingKeys: String, CodingKey {
-        case url, id
-        case mobileID = "mobile_id"
-    }
+  let url: String
+  let id, mobileID: Int
+  
+  enum CodingKeys: String, CodingKey {
+    case url, id
+    case mobileID = "mobile_id"
+  }
 }
