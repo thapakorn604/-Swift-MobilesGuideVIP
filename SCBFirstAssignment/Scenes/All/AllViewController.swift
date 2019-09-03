@@ -61,8 +61,8 @@ class AllViewController: UIViewController, AllViewControllerInterface {
   // MARK: - Event handling
   
   func loadContent() {
-      let request = All.FetchMobiles.Request()
-      interactor.loadContent(request: request)
+    let request = All.FetchMobiles.Request()
+    interactor.loadContent(request: request)
   }
   
   // MARK: - Display logic
@@ -97,7 +97,7 @@ extension AllViewController: UITableViewDataSource {
     let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellConstant.allTableCell) as? AllTableCell
     cell?.delegate = self
     
-    var element = All.FetchMobiles.ViewModel.DisplayedMobile()
+    var element : All.FetchMobiles.ViewModel.DisplayedMobile
     
     if displayedMobiles.count != 0 {
       cell?.isUserInteractionEnabled = true
@@ -125,23 +125,10 @@ extension AllViewController: UITableViewDelegate {
 
 extension AllViewController: AllTableCellDelegate {
   func didSelectFav(cell: AllTableCell) {
-    guard let indexPath = self.tableView.indexPath(for: cell) else {
-      return
-    }
+    guard let indexPath = self.tableView.indexPath(for: cell) else { return }
+    guard let cellId = displayedMobiles[indexPath.row].id else { return}
     
-    let cellId = displayedMobiles[indexPath.row].id
-    guard let index = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == cellId }) else { return }
-    
-    var element = ContentManager.shared.allMobiles[index]
-    
-    if !element.isFav {
-      element.isFav = true
-      ContentManager.shared.favMobiles.append(element)
-      ContentManager.shared.allMobiles[index].isFav = true
-    } else if let favIndex = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == cellId }) {
-      element.isFav = false
-      ContentManager.shared.favMobiles.remove(at: favIndex)
-      ContentManager.shared.allMobiles[index].isFav = false
-    }
+    let request = All.UpdateFavourite.Request(id: cellId)
+    interactor.updateFavourite(request: request)
   }
 }

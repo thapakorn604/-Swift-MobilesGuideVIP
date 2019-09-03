@@ -23,13 +23,13 @@ struct All {
     /// Data struct sent to ViewController
     struct ViewModel {
       struct DisplayedMobile {
-        var id: Int!
-        var name: String!
-        var description: String!
-        var price: String!
-        var rating: String!
-        var thumbImageURL: String!
-        var isFav: Bool!
+        let id: Int!
+        let name: String!
+        let description: String!
+        let price: String!
+        let rating: String!
+        let thumbImageURL: String!
+        let isFav: Bool!
       }
       let displayedMobiles: Content<[DisplayedMobile]>
     }
@@ -37,12 +37,21 @@ struct All {
   
   struct SortMobiles {
     struct Request {
-      var sortingType : Constants.sortingType
-      var contentType : Constants.contentType
+      let sortingType : Constants.sortingType
+      let contentType : Constants.contentType
     }
     
     struct Response {
-      var sortedMobiles: [Mobile]
+      let sortedMobiles: [Mobile]
+    }
+  }
+  
+  struct UpdateFavourite {
+    struct Request {
+      let id : Int
+    }
+    struct Response {
+      
     }
   }
 }

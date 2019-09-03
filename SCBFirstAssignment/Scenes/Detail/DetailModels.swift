@@ -13,35 +13,34 @@ struct Detail {
   struct MobileDetail {
     /// Data struct sent to Interactor
     struct Request {
-      var id : Int
+      let id : Int
     }
     /// Data struct sent to Presenter
     struct Response {
-      var detailedMobile : Mobile
+      let detailedMobile : Mobile
     }
     /// Data struct sent to ViewController
     struct ViewModel {
-      var id: Int!
-      var name: String!
-      var description: String!
-      var price: String!
-      var rating: String!
+      let id: Int!
+      let name: String!
+      let description: String!
+      let price: String!
+      let rating: String!
     }
   }
   struct DetailImage {
     struct Request {
-      var id : Int
+      let id : Int
     }
     struct Response {
-      var images : ImageResponse
+      let images : ImageResponse
     }
     
     struct ViewModel {
       struct displayedImage {
-        var imageURL : String
+        let imageURL : String
       }
-      var displayedImages : [displayedImage]
-      
+      let displayedImages : [displayedImage]
     }
   }
 }

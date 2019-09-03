@@ -17,32 +17,32 @@ struct Favourite {
     
     /// Data struct sent to Presenter
     struct Response {
-      var favMobiles: [Mobile]
+      let favMobiles: [Mobile]
     }
     
     /// Data struct sent to ViewController
     struct ViewModel {
       struct DisplayedFavourite {
-        var id: Int!
-        var name: String!
-        var description: String!
-        var price: String!
-        var rating: String!
-        var thumbImageURL: String!
+        let id: Int!
+        let name: String!
+        let description: String!
+        let price: String!
+        let rating: String!
+        let thumbImageURL: String!
       }
       
-      var displayedFavourites: [DisplayedFavourite]
+      let displayedFavourites: [DisplayedFavourite]
     }
   }
   
   struct SortFavs {
     struct Request {
-      var sortingType: Constants.sortingType
-      var contentType: Constants.contentType
+      let sortingType: Constants.sortingType
+      let contentType: Constants.contentType
     }
     
     struct Response {
-      var sortedFavs: [Mobile]
+      let sortedFavs: [Mobile]
     }
   }
 }

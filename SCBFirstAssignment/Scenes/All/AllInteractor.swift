@@ -11,6 +11,7 @@ import UIKit
 protocol AllInteractorInterface {
   func loadContent(request: All.FetchMobiles.Request)
   func sortContent(request: All.SortMobiles.Request)
+  func updateFavourite(request: All.UpdateFavourite.Request)
   var mobiles: [Mobile] { get set }
 }
 
@@ -45,5 +46,21 @@ class AllInteractor: AllInteractorInterface {
     let content : Content<[Mobile]> = .success(data: self.mobiles)
     let response = All.FetchMobiles.Response(content: content)
     self.presenter.presentMobiles(response: response)
+  }
+  
+  func updateFavourite(request: All.UpdateFavourite.Request) {
+    
+    guard let index = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == request.id }) else { return }
+    var element = ContentManager.shared.allMobiles[index]
+    
+    if !element.isFav {
+      element.isFav = true
+      ContentManager.shared.favMobiles.append(element)
+      ContentManager.shared.allMobiles[index].isFav = true
+    } else if let favIndex = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == request.id }) {
+      element.isFav = false
+      ContentManager.shared.favMobiles.remove(at: favIndex)
+      ContentManager.shared.allMobiles[index].isFav = false
+    }
   }
 }
