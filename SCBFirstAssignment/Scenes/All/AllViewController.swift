@@ -85,8 +85,8 @@ class AllViewController: UIViewController, AllViewControllerInterface {
     }
   }
   
-  func sortMobiles(sortingType: Constants.sortingType, contentType: Constants.contentType) {
-    let request = All.SortMobiles.Request(sortingType: sortingType, contentType: .allMobiles)
+  func sortMobiles(sortingType: Constants.sortingType) {
+    let request = All.SortMobiles.Request(sortingType: sortingType)
     interactor.sortContent(request: request)
   }
 }

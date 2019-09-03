@@ -38,38 +38,4 @@ class ContentManager {
       }
     }
   }
-  
-  func sortContent(by: Constants.sortingType, contentType: Constants.contentType) -> [Mobile] {
-    switch by {
-    case .priceDescending: sortByPriceDescending(contentType: contentType)
-    case .priceAscending: sortByPriceAscending(contentType: contentType)
-    case .rating: sortByRating(contentType: contentType)
-    }
-    
-    return contentType == .allMobiles ? allMobiles : favMobiles
-  }
-  
-  func sortByPriceAscending(contentType : Constants.contentType) { // stage is all content(0) for favourite contents(1)
-    if contentType == .allMobiles {
-      allMobiles = ContentManager.shared.allMobiles.sorted { $0.mobile.price < $1.mobile.price }
-    } else {
-      favMobiles = ContentManager.shared.favMobiles.sorted { $0.mobile.price < $1.mobile.price }
-    }
-  }
-  
-  func sortByPriceDescending(contentType : Constants.contentType) {
-    if contentType == .allMobiles {
-      allMobiles = ContentManager.shared.allMobiles.sorted { $0.mobile.price > $1.mobile.price }
-    } else {
-      favMobiles = ContentManager.shared.favMobiles.sorted { $0.mobile.price > $1.mobile.price }
-    }
-  }
-  
-  func sortByRating(contentType : Constants.contentType) {
-    if contentType == .allMobiles {
-      allMobiles = ContentManager.shared.allMobiles.sorted { $0.mobile.rating > $1.mobile.rating }
-    } else {
-      favMobiles = ContentManager.shared.favMobiles.sorted { $0.mobile.rating > $1.mobile.rating }
-    }
-  }
 }

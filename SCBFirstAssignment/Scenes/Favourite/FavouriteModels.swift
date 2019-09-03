@@ -38,7 +38,6 @@ struct Favourite {
   struct SortFavs {
     struct Request {
       let sortingType: Constants.sortingType
-      let contentType: Constants.contentType
     }
     
     struct Response {

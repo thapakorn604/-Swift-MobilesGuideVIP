@@ -93,25 +93,25 @@ class TabBarViewController: UIViewController {
   
   func sortByPriceAscending() {
     if selectedIndex == 0 {
-      allViewController.sortMobiles(sortingType: .priceAscending, contentType: .allMobiles)
+      allViewController.sortMobiles(sortingType: .priceAscending)
     } else {
-      favouriteViewController.sortFavourites(sortingType: .priceAscending, contentType: .favourites)
+      favouriteViewController.sortFavourites(sortingType: .priceAscending)
     }
   }
   
   func sortByPriceDescending() {
     if selectedIndex == 0 {
-      allViewController.sortMobiles(sortingType: .priceDescending, contentType: .allMobiles)
+      allViewController.sortMobiles(sortingType: .priceDescending)
     } else {
-      favouriteViewController.sortFavourites(sortingType: .priceDescending, contentType: .favourites)
+      favouriteViewController.sortFavourites(sortingType: .priceDescending)
     }
   }
   
   func sortByRating() {
     if selectedIndex == 0 {
-      allViewController.sortMobiles(sortingType: .rating, contentType: .allMobiles)
+      allViewController.sortMobiles(sortingType: .rating)
     } else {
-      favouriteViewController.sortFavourites(sortingType: .rating, contentType: .favourites)
+      favouriteViewController.sortFavourites(sortingType: .rating)
     }
   }
 }

@@ -38,7 +38,6 @@ struct All {
   struct SortMobiles {
     struct Request {
       let sortingType : Constants.sortingType
-      let contentType : Constants.contentType
     }
     
     struct Response {

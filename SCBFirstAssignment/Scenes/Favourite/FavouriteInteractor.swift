@@ -27,16 +27,34 @@ class FavouriteInteractor: FavouriteInteractorInterface {
     worker?.fetchFavourites { [weak self] result in
       self?.favMobiles = result
       
-      let response = Favourite.FavMobiles.Response(favMobiles: self!.favMobiles)
+      let response = Favourite.FavMobiles.Response(favMobiles: result)
       self?.presenter.presentFavourites(response: response)
     }
   }
   
   func sortContent(request: Favourite.SortFavs.Request) {
-    favMobiles = ContentManager.shared.sortContent(by: request.sortingType, contentType: request.contentType)
-    
+    switch request.sortingType {
+      case .priceDescending: sortByPriceDescending()
+      case .priceAscending: sortByPriceAscending()
+      case .rating: sortByRating()
+    }
     let response = Favourite.FavMobiles.Response(favMobiles: favMobiles)
     presenter.presentFavourites(response: response)
+  }
+  
+  func sortByPriceAscending() {
+    ContentManager.shared.favMobiles = ContentManager.shared.favMobiles.sorted { $0.mobile.price < $1.mobile.price }
+    self.favMobiles = ContentManager.shared.favMobiles
+  }
+  
+  func sortByPriceDescending() {
+    ContentManager.shared.favMobiles = ContentManager.shared.favMobiles.sorted { $0.mobile.price > $1.mobile.price }
+    self.favMobiles = ContentManager.shared.favMobiles
+  }
+  
+  func sortByRating() {
+    ContentManager.shared.favMobiles = ContentManager.shared.favMobiles.sorted { $0.mobile.rating > $1.mobile.rating }
+    self.favMobiles = ContentManager.shared.favMobiles
   }
   
   func deleteFavourite(request: Favourite.DeleteFav.Request) {

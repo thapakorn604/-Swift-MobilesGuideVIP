@@ -77,8 +77,8 @@ class FavouriteViewController: UIViewController, FavouriteViewControllerInterfac
     displayedFavourites = viewModel.displayedFavourites
   }
   
-  func sortFavourites(sortingType: Constants.sortingType, contentType: Constants.contentType) {
-    let request = Favourite.SortFavs.Request(sortingType: sortingType, contentType: contentType)
+  func sortFavourites(sortingType: Constants.sortingType) {
+    let request = Favourite.SortFavs.Request(sortingType: sortingType)
     interactor.sortContent(request: request)
   }
 }

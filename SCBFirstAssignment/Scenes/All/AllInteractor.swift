@@ -41,11 +41,29 @@ class AllInteractor: AllInteractorInterface {
   
   func sortContent(request: All.SortMobiles.Request) {
     
-    self.mobiles = ContentManager.shared.sortContent(by: request.sortingType, contentType: request.contentType)
-    
+    switch request.sortingType {
+    case .priceDescending: sortByPriceDescending()
+    case .priceAscending: sortByPriceAscending()
+    case .rating: sortByRating()
+    }
     let content : Content<[Mobile]> = .success(data: self.mobiles)
     let response = All.FetchMobiles.Response(content: content)
     self.presenter.presentMobiles(response: response)
+  }
+  
+  func sortByPriceAscending() {
+    ContentManager.shared.allMobiles = ContentManager.shared.allMobiles.sorted { $0.mobile.price < $1.mobile.price }
+    self.mobiles = ContentManager.shared.allMobiles
+  }
+  
+  func sortByPriceDescending() {
+    ContentManager.shared.allMobiles = ContentManager.shared.allMobiles.sorted { $0.mobile.price > $1.mobile.price }
+    self.mobiles = ContentManager.shared.allMobiles
+  }
+  
+  func sortByRating() {
+    ContentManager.shared.allMobiles = ContentManager.shared.allMobiles.sorted { $0.mobile.rating > $1.mobile.rating }
+    self.mobiles = ContentManager.shared.allMobiles
   }
   
   func updateFavourite(request: All.UpdateFavourite.Request) {
