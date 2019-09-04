@@ -28,7 +28,7 @@ class AllPresenter: AllPresenterInterface {
         let id = mobile.mobile.id
         let name = mobile.mobile.name
         let description = mobile.mobile.description
-        let price = "Price: \(mobile.mobile.price)"
+        let price = "Price: $\(mobile.mobile.price)"
         let rating = "Rating: \(mobile.mobile.rating)"
         let thumbImageURL = mobile.mobile.thumbImageURL
         let isFav = mobile.isFav

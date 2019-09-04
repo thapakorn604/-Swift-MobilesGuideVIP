@@ -24,7 +24,7 @@ class DetailPresenter: DetailPresenterInterface {
     let id = mobile.id
     let name = mobile.name
     let description = mobile.description
-    let price = "Price: \(mobile.price)"
+    let price = "Price: $\(mobile.price)"
     let rating = "Rating: \(mobile.price)"
     
     let viewModel = Detail.MobileDetail.ViewModel(id: id, name: name, description: description, price: price, rating: rating)

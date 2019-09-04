@@ -39,7 +39,7 @@ class FavouritePresenter: FavouritePresenterInterface {
       let id = favMobile.mobile.id
       let name = favMobile.mobile.name
       let description = favMobile.mobile.description
-      let price = "Price: \(favMobile.mobile.price)"
+      let price = "Price: $\(favMobile.mobile.price)"
       let rating = "Rating: \(favMobile.mobile.rating)"
       let thumbImageURL = favMobile.mobile.thumbImageURL
       
