@@ -1,49 +1,57 @@
 //
-//  AllTableCell.swift
+//  MobileCell.swift
 //  SCBFirstAssignment
 //
-//  Created by Thapakorn Tuwaemuesa on 27/8/2562 BE.
+//  Created by Thapakorn Tuwaemuesa on 4/9/2562 BE.
 //  Copyright © 2562 SCB. All rights reserved.
 //
 
-import SkeletonView
 import UIKit
+import SkeletonView
 
-protocol AllTableCellDelegate: class {
-  func didSelectFav(cell: AllTableCell)
+protocol MobileCellDelegate: class {
+  func didSelectFav(cell: MobileCell)
 }
 
-class AllTableCell: UITableViewCell {
+class MobileCell: UITableViewCell {
+
+  @IBOutlet weak var thumbnailImageView: UIImageView!
   @IBOutlet weak var nameLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
+  @IBOutlet weak var favouriteButton: UIButton!
   @IBOutlet weak var priceLabel: UILabel!
   @IBOutlet weak var ratingLabel: UILabel!
-  @IBOutlet weak var favButton: UIButton!
-  @IBOutlet weak var thumbnailImageView: UIImageView!
   
-  weak var delegate: AllTableCellDelegate?
+  weak var delegate: MobileCellDelegate?
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
+  override init(style: UITableViewCell.CellStyle, reuseIdentifier: String!) {
+    super.init(style: style, reuseIdentifier: reuseIdentifier)
+  }
   
   override func awakeFromNib() {
     super.awakeFromNib()
-    // Initialization code
     isUserInteractionEnabled = false
     showSkeleton()
   }
   
+  override func setSelected(_ selected: Bool, animated: Bool) {
+    super.setSelected(selected, animated: animated)
+  }
+  
   func showSkeleton() {
     [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({ $0?.showAnimatedGradientSkeleton() })
-    favButton.showAnimatedGradientSkeleton()
+    favouriteButton.showAnimatedGradientSkeleton()
     thumbnailImageView.showAnimatedGradientSkeleton()
   }
   
   func hideSkeleton() {
     [nameLabel, descriptionLabel, priceLabel, ratingLabel].forEach({ $0?.hideSkeleton() })
-    favButton.hideSkeleton()
+    favouriteButton.hideSkeleton()
     thumbnailImageView.hideSkeleton()
-  }
-  
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
   }
   
   @IBAction func didTapFav(_ sender: UIButton) {
@@ -54,4 +62,5 @@ class AllTableCell: UITableViewCell {
       sender.isSelected = false
     }
   }
+
 }

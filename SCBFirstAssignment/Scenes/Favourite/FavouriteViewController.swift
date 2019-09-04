@@ -52,6 +52,8 @@ class FavouriteViewController: UIViewController, FavouriteViewControllerInterfac
     
     tableView.dataSource = self
     tableView.delegate = self
+    
+    tableView.register(UINib(nibName: "MobileCell", bundle: nil), forCellReuseIdentifier: "MobileCell")
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -89,17 +91,23 @@ extension FavouriteViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellConstant.favTableCell) as? FavTableCell
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "MobileCell", for: indexPath) as? MobileCell else {
+      return UITableViewCell()
+    }
     
-    let element = displayedFavourites[indexPath.row]
-    
-    cell?.nameLabel.text = element.name
-    cell?.descriptionLabel.text = element.description
-    cell?.priceLabel.text = element.price
-    cell?.ratingLabel.text = element.rating
-    cell?.thumbnailImageView.loadImageUrl(element.thumbImageURL, "mobile")
-    
-    return cell!
+    var element : Favourite.FavMobiles.ViewModel.DisplayedFavourite
+  
+      element = displayedFavourites[indexPath.row]
+      cell.isUserInteractionEnabled = true
+      cell.hideSkeleton()
+      
+      cell.nameLabel.text = element.name
+      cell.descriptionLabel.text = element.description
+      cell.priceLabel.text = element.price
+      cell.ratingLabel.text = element.rating
+      cell.favouriteButton.isHidden = true
+      cell.thumbnailImageView.loadImageUrl(element.thumbImageURL, "mobile")
+    return cell
   }
 }
 

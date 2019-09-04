@@ -48,7 +48,8 @@ class AllViewController: UIViewController, AllViewControllerInterface {
   
   override func viewDidLoad() {
     tableView.dataSource = self
-    self.tableView.delegate = self
+    tableView.delegate = self
+    tableView.register(UINib(nibName: "MobileCell", bundle: nil), forCellReuseIdentifier: "MobileCell")
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -96,25 +97,26 @@ extension AllViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellConstant.allTableCell) as? AllTableCell
-    cell?.delegate = self
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "MobileCell", for: indexPath) as? MobileCell else {
+      return UITableViewCell()
+    }
+    cell.delegate = self
     
     var element : All.FetchMobiles.ViewModel.DisplayedMobile
     
     if displayedMobiles.count != 0 {
-      cell?.isUserInteractionEnabled = true
+      cell.isUserInteractionEnabled = true
       element = displayedMobiles[indexPath.row]
-      cell?.hideSkeleton()
-      
-      cell?.nameLabel.text = element.name
-      cell?.descriptionLabel.text = element.description
-      cell?.priceLabel.text = element.price
-      cell?.ratingLabel.text = element.rating
-      cell?.favButton.isSelected = element.isFav
-      cell?.thumbnailImageView.loadImageUrl(element.thumbImageURL, "mobile")
+      cell.hideSkeleton()
+
+      cell.nameLabel.text = element.name
+      cell.descriptionLabel.text = element.description
+      cell.priceLabel.text = element.price
+      cell.ratingLabel.text = element.rating
+      cell.favouriteButton.isSelected = element.isFav
+      cell.thumbnailImageView.loadImageUrl(element.thumbImageURL, "mobile")
     }
-    
-    return cell!
+    return cell
   }
 }
 
@@ -125,8 +127,8 @@ extension AllViewController: UITableViewDelegate {
   }
 }
 
-extension AllViewController: AllTableCellDelegate {
-  func didSelectFav(cell: AllTableCell) {
+extension AllViewController: MobileCellDelegate {
+  func didSelectFav(cell: MobileCell) {
     guard let indexPath = self.tableView.indexPath(for: cell) else { return }
     guard let cellId = displayedMobiles[indexPath.row].id else { return}
     
