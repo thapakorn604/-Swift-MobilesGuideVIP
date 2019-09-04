@@ -17,7 +17,7 @@ class FavouriteViewController: UIViewController, FavouriteViewControllerInterfac
   var interactor: FavouriteInteractorInterface!
   var router: FavouriteRouter!
   
-  @IBOutlet var tableView: UITableView!
+  @IBOutlet weak var tableView: UITableView!
   
   var displayedFavourites: [Favourite.FavMobiles.ViewModel.DisplayedFavourite] = []
   

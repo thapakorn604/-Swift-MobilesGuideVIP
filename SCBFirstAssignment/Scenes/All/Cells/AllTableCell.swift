@@ -14,12 +14,12 @@ protocol AllTableCellDelegate: class {
 }
 
 class AllTableCell: UITableViewCell {
-  @IBOutlet var nameLabel: UILabel!
-  @IBOutlet var descriptionLabel: UILabel!
-  @IBOutlet var priceLabel: UILabel!
-  @IBOutlet var ratingLabel: UILabel!
-  @IBOutlet var favButton: UIButton!
-  @IBOutlet var thumbnailImageView: UIImageView!
+  @IBOutlet weak var nameLabel: UILabel!
+  @IBOutlet weak var descriptionLabel: UILabel!
+  @IBOutlet weak var priceLabel: UILabel!
+  @IBOutlet weak var ratingLabel: UILabel!
+  @IBOutlet weak var favButton: UIButton!
+  @IBOutlet weak var thumbnailImageView: UIImageView!
   
   weak var delegate: AllTableCellDelegate?
   

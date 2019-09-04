@@ -17,10 +17,9 @@ class AllViewController: UIViewController, AllViewControllerInterface {
   var interactor: AllInteractorInterface!
   var router: AllRouter!
   
-  @IBOutlet var tableView: UITableView!
+  @IBOutlet weak var tableView: UITableView!
   
   var displayedMobiles: [All.FetchMobiles.ViewModel.DisplayedMobile] = []
-  
   // MARK: - Object lifecycle
   
   override func awakeFromNib() {

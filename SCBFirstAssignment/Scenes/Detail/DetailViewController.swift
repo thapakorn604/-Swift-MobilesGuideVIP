@@ -22,10 +22,10 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
   var detailMobile: Mobile!
   var displayImages: [Detail.DetailImage.ViewModel.displayedImage] = []
   
-  @IBOutlet var detailTextView: UITextView!
-  @IBOutlet var collectionView: UICollectionView!
-  @IBOutlet var ratingLabel: UILabel!
-  @IBOutlet var priceLabel: UILabel!
+  @IBOutlet weak var detailTextView: UITextView!
+  @IBOutlet weak var collectionView: UICollectionView!
+  @IBOutlet weak var ratingLabel: UILabel!
+  @IBOutlet weak var priceLabel: UILabel!
   
   // MARK: - Object lifecycle
   

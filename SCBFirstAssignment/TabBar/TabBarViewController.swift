@@ -10,15 +10,14 @@ import UIKit
 
 class TabBarViewController: UIViewController {
   @IBOutlet var buttons: [UIButton]!
-  @IBOutlet var contentView: UIView!
-  @IBOutlet var sortButton: UIBarButtonItem!
+  @IBOutlet weak var contentView: UIView!
+  @IBOutlet weak var sortButton: UIBarButtonItem!
   
-  var allViewController: AllViewController!
-  var favouriteViewController: FavouriteViewController!
+  weak var allViewController: AllViewController!
+  weak var favouriteViewController: FavouriteViewController!
   
   var viewControllers: [UIViewController]!
   var selectedIndex: Int = 0
-  var content = [Mobile]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
