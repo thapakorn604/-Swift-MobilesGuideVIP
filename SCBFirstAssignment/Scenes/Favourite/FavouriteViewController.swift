@@ -53,7 +53,7 @@ class FavouriteViewController: UIViewController, FavouriteViewControllerInterfac
     tableView.dataSource = self
     tableView.delegate = self
     
-    tableView.register(UINib(nibName: "MobileCell", bundle: nil), forCellReuseIdentifier: "MobileCell")
+    tableView.register(UINib(nibName: Constants.CellConstant.mobileCell, bundle: nil), forCellReuseIdentifier: Constants.CellConstant.mobileCell)
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +91,7 @@ extension FavouriteViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "MobileCell", for: indexPath) as? MobileCell else {
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.CellConstant.mobileCell, for: indexPath) as? MobileCell else {
       return UITableViewCell()
     }
     

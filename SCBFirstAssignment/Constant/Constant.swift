@@ -33,8 +33,7 @@ class Constants {
   }
   
   struct CellConstant {
-    static let allTableCell = "allTableCell"
-    static let favTableCell = "favTableCell"
+    static let mobileCell = "MobileCell"
     static let imageCollectionCell = "imageCollectionCell"
   }
   
