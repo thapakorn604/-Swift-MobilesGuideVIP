@@ -12,7 +12,6 @@ protocol DetailInteractorInterface {
   func getDetail(request: Detail.MobileDetail.Request)
   func getImages(request: Detail.DetailImage.Request)
   var mobile: Mobile { get set }
-  var images: ImageResponse { get set }
 }
 
 class DetailInteractor: DetailInteractorInterface {
@@ -37,7 +36,6 @@ class DetailInteractor: DetailInteractorInterface {
       
       switch response {
       case .success(let result):
-        self?.images = result
 
         let content : Content<ImageResponse> = .success(data: result)
         let response = Detail.DetailImage.Response(content: content)

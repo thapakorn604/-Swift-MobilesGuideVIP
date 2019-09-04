@@ -39,8 +39,20 @@
 		B2AEB8BD2316528B00C625A9 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEB8BC2316528B00C625A9 /* UIImageView+Extension.swift */; };
 		B2AEB8C0231656CE00C625A9 /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEB8BF231656CE00C625A9 /* ImageCollectionCell.swift */; };
 		B2AEB8C2231660E700C625A9 /* ImageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AEB8C1231660E700C625A9 /* ImageResponse.swift */; };
+		B2CE5776231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE5775231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.swift */; };
+		B2CE577E231F72C70034A2B7 /* AllInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE577D231F72C70034A2B7 /* AllInteractorTest.swift */; };
 		D6428472781CF52750D3F900 /* Pods_SCBFirstAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79961CE899F9A76F0BFC3A01 /* Pods_SCBFirstAssignment.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2CE5778231F71AA0034A2B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B24743D323153520003C58C0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B24743DA23153520003C58C0;
+			remoteInfo = SCBFirstAssignment;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0DC8CD2D798454AF27DA7A92 /* Pods-SCBFirstAssignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBFirstAssignment.debug.xcconfig"; path = "Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +92,10 @@
 		B2AEB8BC2316528B00C625A9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		B2AEB8BF231656CE00C625A9 /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		B2AEB8C1231660E700C625A9 /* ImageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResponse.swift; sourceTree = "<group>"; };
+		B2CE5773231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCBFirstAssignmentUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2CE5775231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCBFirstAssignmentUnitTests.swift; sourceTree = "<group>"; };
+		B2CE5777231F71AA0034A2B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2CE577D231F72C70034A2B7 /* AllInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInteractorTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +104,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6428472781CF52750D3F900 /* Pods_SCBFirstAssignment.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2CE5770231F71AA0034A2B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				B24743DD23153520003C58C0 /* SCBFirstAssignment */,
+				B2CE5774231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests */,
 				B24743DC23153520003C58C0 /* Products */,
 				4D098D9B1AC19E4EE9014AA7 /* Pods */,
 				DB61B0715E755394A0E02A4E /* Frameworks */,
@@ -125,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				B24743DB23153520003C58C0 /* SCBFirstAssignment.app */,
+				B2CE5773231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,6 +288,16 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		B2CE5774231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				B2CE5775231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.swift */,
+				B2CE5777231F71AA0034A2B7 /* Info.plist */,
+				B2CE577D231F72C70034A2B7 /* AllInteractorTest.swift */,
+			);
+			path = SCBFirstAssignmentUnitTests;
+			sourceTree = "<group>";
+		};
 		B2DA1EB3231CF93300A9FED2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +338,24 @@
 			productReference = B24743DB23153520003C58C0 /* SCBFirstAssignment.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B2CE5772231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2CE577C231F71AA0034A2B7 /* Build configuration list for PBXNativeTarget "SCBFirstAssignmentUnitTests" */;
+			buildPhases = (
+				B2CE576F231F71AA0034A2B7 /* Sources */,
+				B2CE5770231F71AA0034A2B7 /* Frameworks */,
+				B2CE5771231F71AA0034A2B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2CE5779231F71AA0034A2B7 /* PBXTargetDependency */,
+			);
+			name = SCBFirstAssignmentUnitTests;
+			productName = SCBFirstAssignmentUnitTests;
+			productReference = B2CE5773231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -315,6 +368,10 @@
 				TargetAttributes = {
 					B24743DA23153520003C58C0 = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					B2CE5772231F71AA0034A2B7 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = B24743DA23153520003C58C0;
 					};
 				};
 			};
@@ -332,6 +389,7 @@
 			projectRoot = "";
 			targets = (
 				B24743DA23153520003C58C0 /* SCBFirstAssignment */,
+				B2CE5772231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -344,6 +402,13 @@
 				B24743E923153520003C58C0 /* LaunchScreen.storyboard in Resources */,
 				B24743E623153520003C58C0 /* Assets.xcassets in Resources */,
 				B24743E423153520003C58C0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2CE5771231F71AA0034A2B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,7 +493,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2CE576F231F71AA0034A2B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2CE577E231F72C70034A2B7 /* AllInteractorTest.swift in Sources */,
+				B2CE5776231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2CE5779231F71AA0034A2B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B24743DA23153520003C58C0 /* SCBFirstAssignment */;
+			targetProxy = B2CE5778231F71AA0034A2B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B24743E223153520003C58C0 /* Main.storyboard */ = {
@@ -604,6 +686,46 @@
 			};
 			name = Release;
 		};
+		B2CE577A231F71AA0034A2B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VYHQLU2W93;
+				INFOPLIST_FILE = SCBFirstAssignmentUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.scb.ios.SCBFirstAssignmentUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCBFirstAssignment.app/SCBFirstAssignment";
+			};
+			name = Debug;
+		};
+		B2CE577B231F71AA0034A2B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VYHQLU2W93;
+				INFOPLIST_FILE = SCBFirstAssignmentUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.scb.ios.SCBFirstAssignmentUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCBFirstAssignment.app/SCBFirstAssignment";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -621,6 +743,15 @@
 			buildConfigurations = (
 				B24743EE23153520003C58C0 /* Debug */,
 				B24743EF23153520003C58C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2CE577C231F71AA0034A2B7 /* Build configuration list for PBXNativeTarget "SCBFirstAssignmentUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2CE577A231F71AA0034A2B7 /* Debug */,
+				B2CE577B231F71AA0034A2B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
