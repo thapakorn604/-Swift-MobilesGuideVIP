@@ -61,15 +61,15 @@ class FavouriteInteractor: FavouriteInteractorInterface {
   }
   
   func deleteFavourite(request: Favourite.DeleteFav.Request) {
-    if let index = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == request.id }) {
-      ContentManager.shared.favMobiles.remove(at: index)
+    if let index = favMobiles.firstIndex(where: { $0.mobile.id == request.id }) {
+      favMobiles.remove(at: index)
     }
     
     if let mobileIndex = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == request.id }) {
       ContentManager.shared.allMobiles[mobileIndex].isFav = false
     }
     
-    favMobiles = ContentManager.shared.favMobiles
+    ContentManager.shared.favMobiles = favMobiles
     let response = Favourite.FavMobiles.Response(favMobiles: favMobiles)
     presenter.presentDeletedFavourite(response: response)
   }
