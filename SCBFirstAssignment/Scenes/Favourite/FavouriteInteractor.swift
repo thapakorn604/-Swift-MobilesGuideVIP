@@ -34,27 +34,30 @@ class FavouriteInteractor: FavouriteInteractorInterface {
   
   func sortContent(request: Favourite.SortFavs.Request) {
     switch request.sortingType {
-      case .priceDescending: sortByPriceDescending()
-      case .priceAscending: sortByPriceAscending()
-      case .rating: sortByRating()
+      case .priceDescending:
+        self.favMobiles = sortByPriceDescending(self.favMobiles)
+        ContentManager.shared.favMobiles = self.favMobiles
+      case .priceAscending:
+        self.favMobiles = sortByPriceAscending(self.favMobiles)
+      ContentManager.shared.favMobiles = self.favMobiles
+      case .rating:
+        self.favMobiles = sortByRating(self.favMobiles)
+      ContentManager.shared.favMobiles = self.favMobiles
     }
     let response = Favourite.FavMobiles.Response(favMobiles: favMobiles)
     presenter.presentFavourites(response: response)
   }
   
-  func sortByPriceAscending() {
-    ContentManager.shared.favMobiles = ContentManager.shared.favMobiles.sorted { $0.mobile.price < $1.mobile.price }
-    self.favMobiles = ContentManager.shared.favMobiles
+  func sortByPriceAscending(_ list : [Mobile]) -> [Mobile] {
+    return list.sorted { $0.mobile.price < $1.mobile.price }
+  }
+
+  func sortByPriceDescending(_ list : [Mobile]) -> [Mobile] {
+    return list.sorted { $0.mobile.price > $1.mobile.price }
   }
   
-  func sortByPriceDescending() {
-    ContentManager.shared.favMobiles = ContentManager.shared.favMobiles.sorted { $0.mobile.price > $1.mobile.price }
-    self.favMobiles = ContentManager.shared.favMobiles
-  }
-  
-  func sortByRating() {
-    ContentManager.shared.favMobiles = ContentManager.shared.favMobiles.sorted { $0.mobile.rating > $1.mobile.rating }
-    self.favMobiles = ContentManager.shared.favMobiles
+  func sortByRating(_ list : [Mobile]) -> [Mobile] {
+    return list.sorted { $0.mobile.rating > $1.mobile.rating }
   }
   
   func deleteFavourite(request: Favourite.DeleteFav.Request) {

@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct Mobile {
+struct Mobile : Equatable {
+  static func == (lhs: Mobile, rhs: Mobile) -> Bool {
+    return lhs.mobile == rhs.mobile && lhs.isFav == rhs.isFav
+  }
+  
   var mobile : PurpleMobileResponse!
   var isFav : Bool!
 }

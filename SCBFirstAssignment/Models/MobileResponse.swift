@@ -10,7 +10,7 @@ import Foundation
 
 typealias MobileResponse = [PurpleMobileResponse]
 
-struct PurpleMobileResponse: Codable {
+struct PurpleMobileResponse: Codable, Equatable {
   let description: String
   let id: Int
   let price: Double

@@ -42,49 +42,51 @@ class AllInteractor: AllInteractorInterface {
   func sortContent(request: All.SortMobiles.Request) {
     
     switch request.sortingType {
-    case .priceDescending: sortByPriceDescending()
-    case .priceAscending: sortByPriceAscending()
-    case .rating: sortByRating()
+    case .priceDescending:
+      self.mobiles = sortByPriceDescending(self.mobiles)
+      ContentManager.shared.allMobiles = self.mobiles
+    case .priceAscending:
+      self.mobiles = sortByPriceAscending(self.mobiles)
+      ContentManager.shared.allMobiles = self.mobiles
+    case .rating:
+      self.mobiles = sortByRating(self.mobiles)
+      ContentManager.shared.allMobiles = self.mobiles
     }
     let content : Content<[Mobile]> = .success(data: self.mobiles)
     let response = All.FetchMobiles.Response(content: content)
     self.presenter.presentMobiles(response: response)
   }
   
-  func sortByPriceAscending() {
-    ContentManager.shared.allMobiles = ContentManager.shared.allMobiles.sorted { $0.mobile.price < $1.mobile.price }
-    self.mobiles = ContentManager.shared.allMobiles
+  func sortByPriceAscending(_ list : [Mobile]) -> [Mobile] {
+    return list.sorted { $0.mobile.price < $1.mobile.price }
   }
   
-  func sortByPriceDescending() {
-    ContentManager.shared.allMobiles = ContentManager.shared.allMobiles.sorted { $0.mobile.price > $1.mobile.price }
-    self.mobiles = ContentManager.shared.allMobiles
+  func sortByPriceDescending(_ list : [Mobile]) -> [Mobile] {
+    return list.sorted { $0.mobile.price > $1.mobile.price }
   }
   
-  func sortByRating() {
-    ContentManager.shared.allMobiles = ContentManager.shared.allMobiles.sorted { $0.mobile.rating > $1.mobile.rating }
-    self.mobiles = ContentManager.shared.allMobiles
+  func sortByRating(_ list: [Mobile]) -> [Mobile] {
+    return list.sorted { $0.mobile.rating > $1.mobile.rating }
   }
   
   func updateFavourite(request: All.UpdateFavourite.Request) {
     
-    guard let index = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == request.id }) else { return }
-    var element = ContentManager.shared.allMobiles[index]
+    guard let index = mobiles.firstIndex(where: { $0.mobile.id == request.id }) else { return }
+    let element = mobiles[index]
     
     if !element.isFav {
-      element.isFav = true
+      mobiles[index].isFav = true
       ContentManager.shared.favMobiles.append(element)
-      ContentManager.shared.allMobiles[index].isFav = true
     } else if let favIndex = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == request.id }) {
-      element.isFav = false
+      mobiles[index].isFav = false
       ContentManager.shared.favMobiles.remove(at: favIndex)
-      ContentManager.shared.allMobiles[index].isFav = false
     }
     
-    self.mobiles = ContentManager.shared.allMobiles
+    ContentManager.shared.allMobiles = mobiles
     
     let content : Content<[Mobile]> = .success(data: self.mobiles)
     let response = All.FetchMobiles.Response(content: content)
     self.presenter.presentMobiles(response: response)
   }
-}
+ }
+
