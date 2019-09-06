@@ -19,7 +19,7 @@ class DetailPresenter: DetailPresenterInterface {
   
   func presentDetail(response: Detail.MobileDetail.Response) {
     
-    let mobile = response.detailedMobile.mobile!
+    guard let mobile = response.detailedMobile.mobile else { return }
     
     let id = mobile.id
     let name = mobile.name

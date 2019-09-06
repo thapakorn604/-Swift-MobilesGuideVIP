@@ -79,14 +79,59 @@ class DetailPresenterTests: XCTestCase {
   func testPresentDetailWithEmptyContent() {
     // Given
     let mobile = Mobile()
-    //let empty : Detail.MobileDetail.ViewModel
     // When
     let response = Detail.MobileDetail.Response(detailedMobile: mobile)
     sut.presentDetail(response: response)
     
     // Then
-    XCTAssertTrue(viewController.isDisplayDetailCalled)
+    XCTAssertFalse(viewController.isDisplayDetailCalled)
     XCTAssertNil(viewController.displayedMobile)
   }
   
+  func testPresentImageWithSuccessCase() {
+    // Given
+    let content : Content<ImageResponse> = .success(data: getImages())
+    // When
+    let response = Detail.DetailImage.Response(content: content)
+    sut.presentImage(response: response)
+    
+    // Then
+    XCTAssertTrue(viewController.isDisplayImageCalled)
+    XCTAssertEqual(viewController.displayedImages[0].imageURL, "https://a")
+    XCTAssertEqual(viewController.displayedImages[1].imageURL, "https://b")
+    XCTAssertEqual(viewController.displayedImages[2].imageURL, "https://c")
+  }
+  
+  func testPresentImageWithFailCase() {
+    // Given
+    let errorMsg = "error message"
+    let content : Content<ImageResponse> = .error(errorMsg)
+    // When
+    let response = Detail.DetailImage.Response(content: content)
+    sut.presentImage(response: response)
+    
+    // Then
+    XCTAssertTrue(viewController.isDisplayImageCalled)
+    XCTAssertEqual(viewController.errorMsg, errorMsg)
+  }
+  
+  func testPresentImageWithEmptyContent() {
+    // Given
+    let empty : ImageResponse = []
+    let content : Content<ImageResponse> = .success(data: empty)
+    // When
+    let response = Detail.DetailImage.Response(content: content)
+    sut.presentImage(response: response)
+    
+    // Then
+    XCTAssertTrue(viewController.isDisplayImageCalled)
+    XCTAssertTrue(viewController.displayedImages.count == 0)
+  }
+}
+
+fileprivate func getImages () -> ImageResponse {
+  return [
+    PurpleImageResponse(url: "a", id: 1, mobileID: 1),
+    PurpleImageResponse(url: "b", id: 2, mobileID: 1),
+    PurpleImageResponse(url: "c", id: 3, mobileID: 1)]
 }
