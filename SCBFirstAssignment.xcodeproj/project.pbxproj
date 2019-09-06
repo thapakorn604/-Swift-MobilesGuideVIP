@@ -41,6 +41,10 @@
 		B2CE5782231FBC330034A2B7 /* MobileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE5781231FBC330034A2B7 /* MobileCell.swift */; };
 		B2CE57A62320B0F60034A2B7 /* AllInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE57A42320B0F60034A2B7 /* AllInteractorTests.swift */; };
 		B2CE57A72320B0F60034A2B7 /* AllPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE57A52320B0F60034A2B7 /* AllPresenterTests.swift */; };
+		B2CE57AB2321F8840034A2B7 /* FavouriteInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE57A92321F8840034A2B7 /* FavouriteInteractorTests.swift */; };
+		B2CE57AC2321F8840034A2B7 /* FavouritePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE57AA2321F8840034A2B7 /* FavouritePresenterTests.swift */; };
+		B2CE57B023221E0E0034A2B7 /* DetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE57AE23221E0E0034A2B7 /* DetailInteractorTests.swift */; };
+		B2CE57B123221E0E0034A2B7 /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CE57AF23221E0E0034A2B7 /* DetailPresenterTests.swift */; };
 		D6428472781CF52750D3F900 /* Pods_SCBFirstAssignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79961CE899F9A76F0BFC3A01 /* Pods_SCBFirstAssignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +100,10 @@
 		B2CE5781231FBC330034A2B7 /* MobileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCell.swift; sourceTree = "<group>"; };
 		B2CE57A42320B0F60034A2B7 /* AllInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInteractorTests.swift; sourceTree = "<group>"; };
 		B2CE57A52320B0F60034A2B7 /* AllPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPresenterTests.swift; sourceTree = "<group>"; };
+		B2CE57A92321F8840034A2B7 /* FavouriteInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteInteractorTests.swift; sourceTree = "<group>"; };
+		B2CE57AA2321F8840034A2B7 /* FavouritePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritePresenterTests.swift; sourceTree = "<group>"; };
+		B2CE57AE23221E0E0034A2B7 /* DetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailInteractorTests.swift; sourceTree = "<group>"; };
+		B2CE57AF23221E0E0034A2B7 /* DetailPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -274,6 +282,8 @@
 		B2CE5774231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests */ = {
 			isa = PBXGroup;
 			children = (
+				B2CE57AD23221DF70034A2B7 /* Detail */,
+				B2CE57A82321F8600034A2B7 /* Favourite */,
 				B2CE57A32320B0E50034A2B7 /* All */,
 				B2CE5777231F71AA0034A2B7 /* Info.plist */,
 			);
@@ -304,6 +314,24 @@
 				B2CE57A52320B0F60034A2B7 /* AllPresenterTests.swift */,
 			);
 			path = All;
+			sourceTree = "<group>";
+		};
+		B2CE57A82321F8600034A2B7 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				B2CE57A92321F8840034A2B7 /* FavouriteInteractorTests.swift */,
+				B2CE57AA2321F8840034A2B7 /* FavouritePresenterTests.swift */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		B2CE57AD23221DF70034A2B7 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B2CE57AE23221E0E0034A2B7 /* DetailInteractorTests.swift */,
+				B2CE57AF23221E0E0034A2B7 /* DetailPresenterTests.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		B2DA1EB3231CF93300A9FED2 /* Scenes */ = {
@@ -505,6 +533,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2CE57B023221E0E0034A2B7 /* DetailInteractorTests.swift in Sources */,
+				B2CE57AC2321F8840034A2B7 /* FavouritePresenterTests.swift in Sources */,
+				B2CE57AB2321F8840034A2B7 /* FavouriteInteractorTests.swift in Sources */,
+				B2CE57B123221E0E0034A2B7 /* DetailPresenterTests.swift in Sources */,
 				B2CE57A72320B0F60034A2B7 /* AllPresenterTests.swift in Sources */,
 				B2CE57A62320B0F60034A2B7 /* AllInteractorTests.swift in Sources */,
 			);

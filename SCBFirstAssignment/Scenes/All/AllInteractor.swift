@@ -77,9 +77,11 @@ class AllInteractor: AllInteractorInterface {
     if !element.isFav {
       mobiles[index].isFav = true
       ContentManager.shared.favMobiles.append(element)
-    } else if let favIndex = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == request.id }) {
+    } else {
       mobiles[index].isFav = false
-      ContentManager.shared.favMobiles.remove(at: favIndex)
+      if let favIndex = ContentManager.shared.favMobiles.firstIndex(where: { $0.mobile.id == request.id }) {
+        ContentManager.shared.favMobiles.remove(at: favIndex)
+      }
     }
     
     ContentManager.shared.allMobiles = mobiles

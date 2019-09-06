@@ -17,8 +17,8 @@ protocol MobilesProtocol {
 }
 
 class MobilesWorker {
-  var store: MobilesStore
-  init(store: MobilesStore) {
+  var store: MobilesProtocol
+  init(store: MobilesProtocol) {
     self.store = store
   }
   
