@@ -19,7 +19,6 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
   
   var receivedId: Int!
   
-  var detailMobile: Mobile!
   var displayImages: [Detail.DetailImage.ViewModel.displayedImage] = []
   
   @IBOutlet weak var detailTextView: UITextView!
