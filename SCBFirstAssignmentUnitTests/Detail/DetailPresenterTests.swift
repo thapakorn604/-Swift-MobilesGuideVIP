@@ -38,7 +38,7 @@ class DetailPresenterTests: XCTestCase {
   final class DetailViewControllerSpy : DetailViewControllerInterface {
     var isDisplayDetailCalled = false
     var isDisplayImageCalled = false
-    var displayedMobile : Detail.MobileDetail.ViewModel!
+    var displayedMobile : Detail.MobileDetail.ViewModel?
     var displayedImages : [Detail.DetailImage.ViewModel.displayedImage] = []
     var errorMsg = ""
     
@@ -72,8 +72,8 @@ class DetailPresenterTests: XCTestCase {
     // Then
     XCTAssertTrue(viewController.isDisplayDetailCalled)
     
-    XCTAssertEqual(viewController.displayedMobile.price, "Price: $1.0")
-    XCTAssertEqual(viewController.displayedMobile.rating, "Rating: 1.0")
+    XCTAssertEqual(viewController.displayedMobile?.price, "Price: $1.0")
+    XCTAssertEqual(viewController.displayedMobile?.rating, "Rating: 1.0")
   }
   
   func testPresentDetailWithEmptyContent() {
