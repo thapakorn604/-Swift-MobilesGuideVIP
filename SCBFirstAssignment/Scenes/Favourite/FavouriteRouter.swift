@@ -6,8 +6,6 @@
 //  Copyright (c) 2562 SCB. All rights reserved.
 //
 
-import UIKit
-
 protocol FavouriteRouterInput {
   func navigateToDetail(mobileId: Int)
 }

@@ -1,13 +1,3 @@
-//
-//  DetailPresenter.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 2/9/2562 BE.
-//  Copyright (c) 2562 SCB. All rights reserved.
-//
-
-import UIKit
-
 protocol DetailPresenterInterface {
   func presentDetail(response: Detail.MobileDetail.Response)
   func presentImage(response: Detail.DetailImage.Response)
@@ -25,7 +15,7 @@ class DetailPresenter: DetailPresenterInterface {
     let name = mobile.name
     let description = mobile.description
     let price = "Price: $\(mobile.price)"
-    let rating = "Rating: \(mobile.price)"
+    let rating = "Rating: \(mobile.rating)"
     
     let viewModel = Detail.MobileDetail.ViewModel(id: id, name: name, description: description, price: price, rating: rating)
     viewController.displayDetail(viewModel:viewModel)

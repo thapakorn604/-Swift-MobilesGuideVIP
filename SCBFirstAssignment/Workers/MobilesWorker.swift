@@ -1,11 +1,3 @@
-//
-//  AllWorker.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 1/9/2562 BE.
-//  Copyright (c) 2562 SCB. All rights reserved.
-//
-
 import Alamofire
 import Foundation
 import Network

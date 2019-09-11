@@ -1,11 +1,3 @@
-//
-//  ContentManager.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 28/8/2562 BE.
-//  Copyright © 2562 SCB. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -24,14 +16,16 @@ class ContentManager {
       return
     }
     
-    NetworkManager.shared.feedMobiles(url: Constants.UrlType.mobiles) { [weak self] response in
+    NetworkManager.shared.feedMobiles(urlString: Constants.UrlType.mobiles) { [weak self] response in
       switch response {
       case .success(let result):
+        var mobiles : [Mobile] = []
         for i in 0 ... result.count - 1 {
           let newMobile = Mobile(mobile: result[i], isFav: false)
-          self?.allMobiles.append(newMobile)
+          mobiles.append(newMobile)
         }
-        completion(.success(self!.allMobiles))
+        self?.allMobiles = mobiles
+        completion(.success(mobiles))
         
       case .failure(let error):
         completion(.failure(error))

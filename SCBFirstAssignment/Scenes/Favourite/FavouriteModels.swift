@@ -5,9 +5,6 @@
 //  Created by Thapakorn Tuwaemuesa on 1/9/2562 BE.
 //  Copyright (c) 2562 SCB. All rights reserved.
 //
-
-import UIKit
-
 struct Favourite {
   /// This structure represents a use case
   struct FavMobiles {
@@ -37,7 +34,7 @@ struct Favourite {
   
   struct SortFavs {
     struct Request {
-      let sortingType: Constants.sortingType
+      let sortingType: Constants.SortingType
     }
     
     struct Response {

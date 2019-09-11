@@ -1,25 +1,19 @@
-//
-//  NetworkManager.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 27/8/2562 BE.
-//  Copyright © 2562 SCB. All rights reserved.
-//
-
 import Alamofire
 import Foundation
-import Network
 
 class NetworkManager {
   static let shared = NetworkManager()
   
-  func feedMobiles(url: String, completion: @escaping ((Result<[PurpleMobileResponse], Error>) -> Void)) {
-    AF.request(URL(string: url)!, method: .get).response { res in
+  func feedMobiles(urlString: String, completion: @escaping ((Result<[MobileResponse], Error>) -> Void)) {
+    
+    guard let url = URL(string: urlString) else { return }
+    
+    AF.request(url, method: .get).response { res in
       switch res.result {
       case .success:
         do {
           let decoder = JSONDecoder()
-          let result = try decoder.decode([PurpleMobileResponse].self, from: res.data!)
+          let result = try decoder.decode([MobileResponse].self, from: res.data!)
           
           completion(.success(result))
           
@@ -32,13 +26,16 @@ class NetworkManager {
     }
   }
   
-  func feedImages(url: String, completion: @escaping ((Result<[PurpleImageResponse], Error>) -> Void)) {
-    AF.request(URL(string: url)!, method: .get).response { res in
+  func feedImages(urlString: String, completion: @escaping ((Result<[Image], Error>) -> Void)) {
+    
+    guard let url = URL(string: urlString) else { return }
+    
+    AF.request(url, method: .get).response { res in
       switch res.result {
       case .success:
         do {
           let decoder = JSONDecoder()
-          let result = try decoder.decode([PurpleImageResponse].self, from: res.data!)
+          let result = try decoder.decode([Image].self, from: res.data!)
           
           completion(.success(result))
           
@@ -61,9 +58,5 @@ class NetworkManager {
     let regEx = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
     let predicate = NSPredicate(format: "SELF MATCHES %@", argumentArray: [regEx])
     return predicate.evaluate(with: string)
-  }
-  
-  func isReachingInternet() -> Bool {
-    return NetworkReachabilityManager()!.isReachable
   }
 }

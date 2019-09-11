@@ -1,11 +1,3 @@
-//
-//  DetailViewController.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 2/9/2562 BE.
-//  Copyright (c) 2562 SCB. All rights reserved.
-//
-
 import UIKit
 
 protocol DetailViewControllerInterface: class {
@@ -26,14 +18,11 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
   @IBOutlet weak var ratingLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
   
-  // MARK: - Object lifecycle
   
   override func awakeFromNib() {
     super.awakeFromNib()
     configure(viewController: self)
   }
-  
-  // MARK: - Configuration
   
   private func configure(viewController: DetailViewController) {
     let router = DetailRouter()
@@ -50,8 +39,6 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     viewController.router = router
   }
   
-  // MARK: - View lifecycle
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     collectionView.dataSource = self
@@ -61,8 +48,6 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
     getDetail()
     getImages()
   }
-  
-  // MARK: - Event handling
   
   func getDetail() {
     let request = Detail.MobileDetail.Request(id: receivedId)
@@ -75,20 +60,17 @@ class DetailViewController: UIViewController, DetailViewControllerInterface {
   }
   
   func showErrorAlert(errorMsg : String) {
-    let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: nil))
+    let alert = UIAlertController(title: Constants.ErrorText.header, message: errorMsg, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: Constants.ErrorText.retry, style: .default, handler: nil))
     present(alert, animated: true)
   }
   
-  // MARK: - Display logic
   
   func displayDetail(viewModel: Detail.MobileDetail.ViewModel) {
     navigationItem.title = viewModel.name
     priceLabel.text = viewModel.price
     ratingLabel.text = viewModel.rating
     detailTextView.text = viewModel.description
-    
-    // nameTextField.text = viewModel.name
   }
   
   func displayImage(viewModel: Detail.DetailImage.ViewModel) {
@@ -108,11 +90,13 @@ extension DetailViewController: UICollectionViewDataSource {
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellConstant.imageCollectionCell, for: indexPath) as? ImageCollectionCell
+    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.CellConstant.imageCollectionCell, for: indexPath) as? ImageCollectionCell else {
+      return UICollectionViewCell()
+    }
     
     let element = displayImages[indexPath.row]
-    cell?.detailImageView.loadImageUrl(element.imageURL, "mobile")
+    cell.detailImageView.loadImageUrl(element.imageURL, Constants.imagePlaceholder)
     
-    return cell!
+    return cell
   }
 }

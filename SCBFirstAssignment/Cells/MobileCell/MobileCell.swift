@@ -1,11 +1,3 @@
-//
-//  MobileCell.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 4/9/2562 BE.
-//  Copyright © 2562 SCB. All rights reserved.
-//
-
 import UIKit
 import SkeletonView
 

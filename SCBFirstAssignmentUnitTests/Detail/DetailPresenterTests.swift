@@ -63,7 +63,7 @@ class DetailPresenterTests: XCTestCase {
 
   func testPresentDetailWithCorrectFormat() {
     // Given
-    let mobile = Mobile(mobile: PurpleMobileResponse(description: "a", id: 1, price: 1, brand: "a", rating: 1.0, thumbImageURL: "a", name: "a"),
+    let mobile = Mobile(mobile: MobileResponse(description: "a", id: 1, price: 1, brand: "a", rating: 1.0, thumbImageURL: "a", name: "a"),
                         isFav: false)
     // When
     let response = Detail.MobileDetail.Response(detailedMobile: mobile)
@@ -131,7 +131,7 @@ class DetailPresenterTests: XCTestCase {
 
 fileprivate func getImages () -> ImageResponse {
   return [
-    PurpleImageResponse(url: "a", id: 1, mobileID: 1),
-    PurpleImageResponse(url: "b", id: 2, mobileID: 1),
-    PurpleImageResponse(url: "c", id: 3, mobileID: 1)]
+    ImageResponse(url: "a", id: 1, mobileID: 1),
+    ImageResponse(url: "b", id: 2, mobileID: 1),
+    ImageResponse(url: "c", id: 3, mobileID: 1)]
 }

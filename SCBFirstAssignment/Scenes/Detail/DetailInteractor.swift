@@ -1,13 +1,3 @@
-//
-//  DetailInteractor.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 2/9/2562 BE.
-//  Copyright (c) 2562 SCB. All rights reserved.
-//
-
-import UIKit
-
 protocol DetailInteractorInterface {
   func getDetail(request: Detail.MobileDetail.Request)
   func getImages(request: Detail.DetailImage.Request)
@@ -19,8 +9,6 @@ class DetailInteractor: DetailInteractorInterface {
   var worker: MobilesWorker?
   var mobile: Mobile = Mobile()
   var images: ImageResponse = ImageResponse()
-  
-  // MARK: - Business logic
   
   func getDetail(request: Detail.MobileDetail.Request) {
     if let index = ContentManager.shared.allMobiles.firstIndex(where: { $0.mobile.id == request.id }) {

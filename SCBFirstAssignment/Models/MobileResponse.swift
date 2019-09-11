@@ -8,9 +8,7 @@
 
 import Foundation
 
-typealias MobileResponse = [PurpleMobileResponse]
-
-struct PurpleMobileResponse: Codable, Equatable {
+struct MobileResponse: Codable, Equatable {
   let description: String
   let id: Int
   let price: Double

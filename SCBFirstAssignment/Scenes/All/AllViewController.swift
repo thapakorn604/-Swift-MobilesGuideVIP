@@ -1,11 +1,3 @@
-//
-//  AllViewController.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 1/9/2562 BE.
-//  Copyright (c) 2562 SCB. All rights reserved.
-//
-
 import UIKit
 
 protocol AllViewControllerInterface: class {
@@ -20,14 +12,11 @@ class AllViewController: UIViewController, AllViewControllerInterface {
   @IBOutlet weak var tableView: UITableView!
   
   var displayedMobiles: [All.FetchMobiles.ViewModel.DisplayedMobile] = []
-  // MARK: - Object lifecycle
   
   override func awakeFromNib() {
     super.awakeFromNib()
     configure(viewController: self)
   }
-  
-  // MARK: - Configuration
   
   private func configure(viewController: AllViewController) {
     let router = AllRouter()
@@ -44,8 +33,6 @@ class AllViewController: UIViewController, AllViewControllerInterface {
     viewController.router = router
   }
   
-  // MARK: - View lifecycle
-  
   override func viewDidLoad() {
     tableView.dataSource = self
     tableView.delegate = self
@@ -57,23 +44,19 @@ class AllViewController: UIViewController, AllViewControllerInterface {
     loadContent()
   }
   
-  // MARK: - Event handling
-  
   func loadContent() {
     let request = All.FetchMobiles.Request()
     interactor.loadContent(request: request)
   }
   
   func showErrorAlert(errorMsg : String) {
-    let alert = UIAlertController(title: "Error", message: errorMsg, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: {
+    let alert = UIAlertController(title: Constants.ErrorText.header, message: errorMsg, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: Constants.ErrorText.retry, style: .default, handler: {
       (_: UIAlertAction!) in
       self.loadContent()
     }))
     present(alert, animated: true)
   }
-  
-  // MARK: - Display logic
   
   func displayMobiles(viewModel: All.FetchMobiles.ViewModel) {
     switch viewModel.displayedMobiles {
@@ -85,7 +68,7 @@ class AllViewController: UIViewController, AllViewControllerInterface {
     }
   }
   
-  func sortMobiles(sortingType: Constants.sortingType) {
+  func sortMobiles(sortingType: Constants.SortingType) {
     let request = All.SortMobiles.Request(sortingType: sortingType)
     interactor.sortContent(request: request)
   }
@@ -114,7 +97,7 @@ extension AllViewController: UITableViewDataSource {
       cell.priceLabel.text = element.price
       cell.ratingLabel.text = element.rating
       cell.favouriteButton.isSelected = element.isFav
-      cell.thumbnailImageView.loadImageUrl(element.thumbImageURL, "mobile")
+      cell.thumbnailImageView.loadImageUrl(element.thumbImageURL, Constants.imagePlaceholder)
     }
     return cell
   }

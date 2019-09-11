@@ -1,13 +1,3 @@
-//
-//  AllInteractor.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 1/9/2562 BE.
-//  Copyright (c) 2562 SCB. All rights reserved.
-//
-
-import UIKit
-
 protocol AllInteractorInterface {
   func loadContent(request: All.FetchMobiles.Request)
   func sortContent(request: All.SortMobiles.Request)

@@ -8,9 +8,9 @@
 
 import Foundation
 
-typealias ImageResponse = [PurpleImageResponse]
+typealias ImageResponse = [Image]
 
-struct PurpleImageResponse: Codable {
+struct Image: Codable {
   let url: String
   let id, mobileID: Int
   

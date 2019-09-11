@@ -79,7 +79,7 @@ class FavouriteViewController: UIViewController, FavouriteViewControllerInterfac
     displayedFavourites = viewModel.displayedFavourites
   }
   
-  func sortFavourites(sortingType: Constants.sortingType) {
+  func sortFavourites(sortingType: Constants.SortingType) {
     let request = Favourite.SortFavs.Request(sortingType: sortingType)
     interactor.sortContent(request: request)
   }
@@ -106,7 +106,7 @@ extension FavouriteViewController: UITableViewDataSource {
       cell.priceLabel.text = element.price
       cell.ratingLabel.text = element.rating
       cell.favouriteButton.isHidden = true
-      cell.thumbnailImageView.loadImageUrl(element.thumbImageURL, "mobile")
+      cell.thumbnailImageView.loadImageUrl(element.thumbImageURL, Constants.imagePlaceholder)
     return cell
   }
 }

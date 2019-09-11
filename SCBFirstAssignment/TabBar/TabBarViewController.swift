@@ -1,11 +1,3 @@
-//
-//  TabBarViewController.swift
-//  SCBFirstAssignment
-//
-//  Created by Thapakorn Tuwaemuesa on 27/8/2562 BE.
-//  Copyright © 2562 SCB. All rights reserved.
-//
-
 import UIKit
 
 class TabBarViewController: UIViewController {
@@ -37,22 +29,18 @@ class TabBarViewController: UIViewController {
   }
   
   @IBAction func didTapTabButton(_ sender: UIButton) {
-    // save prev index and get current index
     let previousIndex = selectedIndex
     selectedIndex = sender.tag
     
-    // remove prev VC
     buttons[previousIndex].isSelected = false
     let previousViewController = viewControllers[previousIndex]
     previousViewController.willMove(toParent: nil)
     previousViewController.view.removeFromSuperview()
     previousViewController.removeFromParent()
     
-    // get current VC
     sender.isSelected = true
     let currentViewController = viewControllers[selectedIndex]
     
-    // add current VC
     addChild(currentViewController)
     currentViewController.view.frame = contentView.bounds
     contentView.addSubview(currentViewController.view)
@@ -69,23 +57,23 @@ class TabBarViewController: UIViewController {
   }
   
   @IBAction func didTapSort(_ sender: Any) {
-    let alert = UIAlertController(title: "Sort", message: "", preferredStyle: .alert)
+    let alert = UIAlertController(title: Constants.SortText.header, message: Constants.emptyString, preferredStyle: .alert)
     
-    alert.addAction(UIAlertAction(title: "Price low to high", style: .default, handler: {
+    alert.addAction(UIAlertAction(title: Constants.SortText.ascending, style: .default, handler: {
       (_: UIAlertAction!) in
       self.sortByPriceAscending()
     }))
     
-    alert.addAction(UIAlertAction(title: "Price high to low", style: .default, handler: {
+    alert.addAction(UIAlertAction(title: Constants.SortText.descending, style: .default, handler: {
       (_: UIAlertAction!) in
       self.sortByPriceDescending()
     }))
     
-    alert.addAction(UIAlertAction(title: "Rating", style: .default, handler: {
+    alert.addAction(UIAlertAction(title: Constants.SortText.rating, style: .default, handler: {
       (_: UIAlertAction!) in
       self.sortByRating()
     }))
-    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    alert.addAction(UIAlertAction(title: Constants.SortText.cancel, style: .cancel, handler: nil))
     
     present(alert, animated: true)
   }

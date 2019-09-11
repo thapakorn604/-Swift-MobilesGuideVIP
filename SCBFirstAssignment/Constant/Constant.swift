@@ -10,15 +10,31 @@ import Foundation
 
 class Constants {
   
-  enum  sortingType {
+  static let imagePlaceholder = "mobile"
+  static let emptyString = ""
+  
+  enum  SortingType {
     case priceDescending
     case priceAscending
     case rating
   }
   
-  enum contentType {
+  enum ContentType {
     case allMobiles
     case favourites
+  }
+  
+  struct ErrorText {
+    static let header = "Error"
+    static let retry = "Retry"
+  }
+  
+  struct SortText {
+    static let header = "Sort"
+    static let ascending = "Price low to high"
+    static let descending = "Price high to low"
+    static let rating = "Rating"
+    static let cancel = "Cancel"
   }
   
   struct UrlType {
