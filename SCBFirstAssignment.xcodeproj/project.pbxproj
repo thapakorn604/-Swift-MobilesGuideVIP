@@ -64,7 +64,7 @@
 		46EA5036C96980B1AC3A7988 /* Pods-SCBFirstAssignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SCBFirstAssignment.release.xcconfig"; path = "Target Support Files/Pods-SCBFirstAssignment/Pods-SCBFirstAssignment.release.xcconfig"; sourceTree = "<group>"; };
 		79961CE899F9A76F0BFC3A01 /* Pods_SCBFirstAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SCBFirstAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23CF5FE2317CD7B002D491C /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
-		B24743DB23153520003C58C0 /* MobilesGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobilesGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B24743DB23153520003C58C0 /* SCBFirstAssignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCBFirstAssignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24743DE23153520003C58C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B24743E323153520003C58C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B24743E523153520003C58C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		B2AEB8BC2316528B00C625A9 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		B2AEB8BF231656CE00C625A9 /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
 		B2AEB8C1231660E700C625A9 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
-		B2CE5773231F71AA0034A2B7 /* MobilesGuideUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobilesGuideUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2CE5773231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SCBFirstAssignmentUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CE5777231F71AA0034A2B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2CE577F231FB9320034A2B7 /* MobileCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MobileCell.xib; sourceTree = "<group>"; };
 		B2CE5781231FBC330034A2B7 /* MobileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MobileCell.swift; sourceTree = "<group>"; };
@@ -147,8 +147,8 @@
 		B24743D223153520003C58C0 = {
 			isa = PBXGroup;
 			children = (
-				B24743DD23153520003C58C0 /* MobilesGuide */,
-				B2CE5774231F71AA0034A2B7 /* MobilesGuideUnitTests */,
+				B24743DD23153520003C58C0 /* SCBFirstAssignment */,
+				B2CE5774231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests */,
 				B24743DC23153520003C58C0 /* Products */,
 				4D098D9B1AC19E4EE9014AA7 /* Pods */,
 				DB61B0715E755394A0E02A4E /* Frameworks */,
@@ -158,13 +158,13 @@
 		B24743DC23153520003C58C0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B24743DB23153520003C58C0 /* MobilesGuide.app */,
-				B2CE5773231F71AA0034A2B7 /* MobilesGuideUnitTests.xctest */,
+				B24743DB23153520003C58C0 /* SCBFirstAssignment.app */,
+				B2CE5773231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B24743DD23153520003C58C0 /* MobilesGuide */ = {
+		B24743DD23153520003C58C0 /* SCBFirstAssignment */ = {
 			isa = PBXGroup;
 			children = (
 				B2DA1EB3231CF93300A9FED2 /* Scenes */,
@@ -182,7 +182,7 @@
 				B24743E723153520003C58C0 /* LaunchScreen.storyboard */,
 				B24743EA23153520003C58C0 /* Info.plist */,
 			);
-			path = MobilesGuide;
+			path = SCBFirstAssignment;
 			sourceTree = "<group>";
 		};
 		B24743F02315352B003C58C0 /* Managers */ = {
@@ -282,7 +282,7 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		B2CE5774231F71AA0034A2B7 /* MobilesGuideUnitTests */ = {
+		B2CE5774231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests */ = {
 			isa = PBXGroup;
 			children = (
 				B2CE57AD23221DF70034A2B7 /* Detail */,
@@ -290,7 +290,7 @@
 				B2CE57A32320B0E50034A2B7 /* All */,
 				B2CE5777231F71AA0034A2B7 /* Info.plist */,
 			);
-			path = MobilesGuideUnitTests;
+			path = SCBFirstAssignmentUnitTests;
 			sourceTree = "<group>";
 		};
 		B2CE5783231FC7A30034A2B7 /* Cells */ = {
@@ -358,9 +358,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B24743DA23153520003C58C0 /* MobilesGuide */ = {
+		B24743DA23153520003C58C0 /* SCBFirstAssignment */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B24743ED23153520003C58C0 /* Build configuration list for PBXNativeTarget "MobilesGuide" */;
+			buildConfigurationList = B24743ED23153520003C58C0 /* Build configuration list for PBXNativeTarget "SCBFirstAssignment" */;
 			buildPhases = (
 				E4DB9E06F7806677BF0269B3 /* [CP] Check Pods Manifest.lock */,
 				B24743D723153520003C58C0 /* Sources */,
@@ -372,14 +372,14 @@
 			);
 			dependencies = (
 			);
-			name = MobilesGuide;
+			name = SCBFirstAssignment;
 			productName = SCBFirstAssignment;
-			productReference = B24743DB23153520003C58C0 /* MobilesGuide.app */;
+			productReference = B24743DB23153520003C58C0 /* SCBFirstAssignment.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B2CE5772231F71AA0034A2B7 /* MobilesGuideUnitTests */ = {
+		B2CE5772231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B2CE577C231F71AA0034A2B7 /* Build configuration list for PBXNativeTarget "MobilesGuideUnitTests" */;
+			buildConfigurationList = B2CE577C231F71AA0034A2B7 /* Build configuration list for PBXNativeTarget "SCBFirstAssignmentUnitTests" */;
 			buildPhases = (
 				B2CE576F231F71AA0034A2B7 /* Sources */,
 				B2CE5770231F71AA0034A2B7 /* Frameworks */,
@@ -390,9 +390,9 @@
 			dependencies = (
 				B2CE5779231F71AA0034A2B7 /* PBXTargetDependency */,
 			);
-			name = MobilesGuideUnitTests;
+			name = SCBFirstAssignmentUnitTests;
 			productName = SCBFirstAssignmentUnitTests;
-			productReference = B2CE5773231F71AA0034A2B7 /* MobilesGuideUnitTests.xctest */;
+			productReference = B2CE5773231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -414,7 +414,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B24743D623153520003C58C0 /* Build configuration list for PBXProject "MobilesGuide" */;
+			buildConfigurationList = B24743D623153520003C58C0 /* Build configuration list for PBXProject "SCBFirstAssignment" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -427,8 +427,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B24743DA23153520003C58C0 /* MobilesGuide */,
-				B2CE5772231F71AA0034A2B7 /* MobilesGuideUnitTests */,
+				B24743DA23153520003C58C0 /* SCBFirstAssignment */,
+				B2CE5772231F71AA0034A2B7 /* SCBFirstAssignmentUnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -551,7 +551,7 @@
 /* Begin PBXTargetDependency section */
 		B2CE5779231F71AA0034A2B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B24743DA23153520003C58C0 /* MobilesGuide */;
+			target = B24743DA23153520003C58C0 /* SCBFirstAssignment */;
 			targetProxy = B2CE5778231F71AA0034A2B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -704,8 +704,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.scb.ios.MobilesGuide;
-				PRODUCT_NAME = MobilesGuide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scb.ios.SCBFirstAssignment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -723,8 +723,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.scb.ios.MobilesGuide;
-				PRODUCT_NAME = MobilesGuide;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scb.ios.SCBFirstAssignment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -747,7 +747,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobilesGuide.app/MobilesGuide";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCBFirstAssignment.app/SCBFirstAssignment";
 			};
 			name = Debug;
 		};
@@ -768,14 +768,14 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MobilesGuide.app/MobilesGuide";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCBFirstAssignment.app/SCBFirstAssignment";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B24743D623153520003C58C0 /* Build configuration list for PBXProject "MobilesGuide" */ = {
+		B24743D623153520003C58C0 /* Build configuration list for PBXProject "SCBFirstAssignment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B24743EB23153520003C58C0 /* Debug */,
@@ -784,7 +784,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B24743ED23153520003C58C0 /* Build configuration list for PBXNativeTarget "MobilesGuide" */ = {
+		B24743ED23153520003C58C0 /* Build configuration list for PBXNativeTarget "SCBFirstAssignment" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B24743EE23153520003C58C0 /* Debug */,
@@ -793,7 +793,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B2CE577C231F71AA0034A2B7 /* Build configuration list for PBXNativeTarget "MobilesGuideUnitTests" */ = {
+		B2CE577C231F71AA0034A2B7 /* Build configuration list for PBXNativeTarget "SCBFirstAssignmentUnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B2CE577A231F71AA0034A2B7 /* Debug */,

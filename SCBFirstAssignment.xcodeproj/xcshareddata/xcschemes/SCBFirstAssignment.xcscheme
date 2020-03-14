@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B24743DA23153520003C58C0"
-               BuildableName = "MobilesGuide.app"
-               BlueprintName = "MobilesGuide"
-               ReferencedContainer = "container:MobilesGuide.xcodeproj">
+               BuildableName = "SCBFirstAssignment.app"
+               BlueprintName = "SCBFirstAssignment"
+               ReferencedContainer = "container:SCBFirstAssignment.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -26,29 +26,31 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B24743DA23153520003C58C0"
-            BuildableName = "MobilesGuide.app"
-            BlueprintName = "MobilesGuide"
-            ReferencedContainer = "container:MobilesGuide.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      codeCoverageEnabled = "YES"
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B2CE5772231F71AA0034A2B7"
-               BuildableName = "MobilesGuideUnitTests.xctest"
-               BlueprintName = "MobilesGuideUnitTests"
-               ReferencedContainer = "container:MobilesGuide.xcodeproj">
+               BuildableName = "SCBFirstAssignmentUnitTests.xctest"
+               BlueprintName = "SCBFirstAssignmentUnitTests"
+               ReferencedContainer = "container:SCBFirstAssignment.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B24743DA23153520003C58C0"
+            BuildableName = "SCBFirstAssignment.app"
+            BlueprintName = "SCBFirstAssignment"
+            ReferencedContainer = "container:SCBFirstAssignment.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -65,11 +67,13 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B24743DA23153520003C58C0"
-            BuildableName = "MobilesGuide.app"
-            BlueprintName = "MobilesGuide"
-            ReferencedContainer = "container:MobilesGuide.xcodeproj">
+            BuildableName = "SCBFirstAssignment.app"
+            BlueprintName = "SCBFirstAssignment"
+            ReferencedContainer = "container:SCBFirstAssignment.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -82,9 +86,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B24743DA23153520003C58C0"
-            BuildableName = "MobilesGuide.app"
-            BlueprintName = "MobilesGuide"
-            ReferencedContainer = "container:MobilesGuide.xcodeproj">
+            BuildableName = "SCBFirstAssignment.app"
+            BlueprintName = "SCBFirstAssignment"
+            ReferencedContainer = "container:SCBFirstAssignment.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
