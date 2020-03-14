@@ -131,7 +131,7 @@ class DetailPresenterTests: XCTestCase {
 
 fileprivate func getImages () -> ImageResponse {
   return [
-    Image(url: "a", id: 1, mobileID: 1),
-    Image(url: "b", id: 2, mobileID: 1),
-    Image(url: "c", id: 3, mobileID: 1)]
+    ImageResponse(url: "a", id: 1, mobileID: 1),
+    ImageResponse(url: "b", id: 2, mobileID: 1),
+    ImageResponse(url: "c", id: 3, mobileID: 1)]
 }
