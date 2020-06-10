@@ -1,13 +1,11 @@
 struct Detail {
-
   struct MobileDetail {
-
     struct Request {
-      let id : Int
+      let id: Int
     }
 
     struct Response {
-      let detailedMobile : Mobile
+      let detailedMobile: Mobile
     }
 
     struct ViewModel {
@@ -18,19 +16,22 @@ struct Detail {
       let rating: String!
     }
   }
+
   struct DetailImage {
     struct Request {
-      let id : Int
+      let id: Int
     }
+
     struct Response {
-      let content : Content<ImageResponse>
+      let content: Content<ImageResponse>
     }
-    
+
     struct ViewModel {
       struct displayedImage {
-        let imageURL : String
+        let imageURL: String
       }
-      let displayedImages : Content<[displayedImage]>
+
+      let displayedImages: Content<[displayedImage]>
     }
   }
 }

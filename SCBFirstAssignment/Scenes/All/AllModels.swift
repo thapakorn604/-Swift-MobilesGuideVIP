@@ -1,10 +1,8 @@
 struct All {
-  
   struct FetchMobiles {
-
     struct Request {
     }
-    
+
     struct Response {
       let content: Content<[Mobile]>
     }
@@ -19,26 +17,26 @@ struct All {
         let thumbImageURL: String!
         let isFav: Bool!
       }
+
       let displayedMobiles: Content<[DisplayedMobile]>
     }
   }
-  
+
   struct SortMobiles {
     struct Request {
-      let sortingType : Constants.SortingType
+      let sortingType: Constants.SortingType
     }
-    
+
     struct Response {
-      
     }
   }
-  
+
   struct UpdateFavourite {
     struct Request {
-      let id : Int
+      let id: Int
     }
+
     struct Response {
-      
     }
   }
 }

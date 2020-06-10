@@ -11,12 +11,12 @@ struct Favourite {
     /// Data struct sent to Interactor
     struct Request {
     }
-    
+
     /// Data struct sent to Presenter
     struct Response {
       let favMobiles: [Mobile]
     }
-    
+
     /// Data struct sent to ViewController
     struct ViewModel {
       struct DisplayedFavourite {
@@ -27,27 +27,26 @@ struct Favourite {
         let rating: String!
         let thumbImageURL: String!
       }
-      
+
       let displayedFavourites: [DisplayedFavourite]
     }
   }
-  
+
   struct SortFavs {
     struct Request {
       let sortingType: Constants.SortingType
     }
-    
-    struct Response {
 
+    struct Response {
     }
   }
-  
+
   struct DeleteFav {
     struct Request {
-      let id : Int
+      let id: Int
     }
+
     struct Response {
-      
     }
   }
 }

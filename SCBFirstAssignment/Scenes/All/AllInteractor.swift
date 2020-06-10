@@ -6,64 +6,60 @@ protocol AllInteractorInterface {
 }
 
 class AllInteractor: AllInteractorInterface {
-  
   var mobiles: [Mobile] = []
   var presenter: AllPresenterInterface!
   var worker: MobilesWorker?
-  
+
   func loadContent(request: All.FetchMobiles.Request) {
-    
     worker?.fetchMobiles { [weak self] response in
-      
+
       switch response {
-      case .success(let result):
+      case let .success(result):
         self?.mobiles = result
         let content: Content<[Mobile]> = .success(data: result)
         let response = All.FetchMobiles.Response(content: content)
         self?.presenter.presentMobiles(response: response)
-      case .failure(let error):
+      case let .failure(error):
         let content: Content<[Mobile]> = .error(error.localizedDescription)
         let response = All.FetchMobiles.Response(content: content)
         self?.presenter.presentMobiles(response: response)
       }
     }
   }
-  
+
   func sortContent(request: All.SortMobiles.Request) {
-    
     switch request.sortingType {
     case .priceDescending:
-      self.mobiles = sortByPriceDescending(self.mobiles)
-      ContentManager.shared.allMobiles = self.mobiles
+      mobiles = sortByPriceDescending(mobiles)
+      ContentManager.shared.allMobiles = mobiles
     case .priceAscending:
-      self.mobiles = sortByPriceAscending(self.mobiles)
-      ContentManager.shared.allMobiles = self.mobiles
+      mobiles = sortByPriceAscending(mobiles)
+      ContentManager.shared.allMobiles = mobiles
     case .rating:
-      self.mobiles = sortByRating(self.mobiles)
-      ContentManager.shared.allMobiles = self.mobiles
+      mobiles = sortByRating(mobiles)
+      ContentManager.shared.allMobiles = mobiles
     }
-    let content : Content<[Mobile]> = .success(data: self.mobiles)
+    let content: Content<[Mobile]> = .success(data: mobiles)
     let response = All.FetchMobiles.Response(content: content)
-    self.presenter.presentMobiles(response: response)
+    presenter.presentMobiles(response: response)
   }
-  
-  func sortByPriceAscending(_ list : [Mobile]) -> [Mobile] {
+
+  func sortByPriceAscending(_ list: [Mobile]) -> [Mobile] {
     return list.sorted { $0.mobile.price < $1.mobile.price }
   }
-  
-  func sortByPriceDescending(_ list : [Mobile]) -> [Mobile] {
+
+  func sortByPriceDescending(_ list: [Mobile]) -> [Mobile] {
     return list.sorted { $0.mobile.price > $1.mobile.price }
   }
-  
+
   func sortByRating(_ list: [Mobile]) -> [Mobile] {
     return list.sorted { $0.mobile.rating > $1.mobile.rating }
   }
-  
+
   func updateFavourite(request: All.UpdateFavourite.Request) {
-    
     guard let index = mobiles.firstIndex(where: { $0.mobile.id == request.id }) else { return }
     let element = mobiles[index]
-    
+
     if !element.isFav {
       mobiles[index].isFav = true
       ContentManager.shared.favMobiles.append(element)
@@ -73,12 +69,11 @@ class AllInteractor: AllInteractorInterface {
         ContentManager.shared.favMobiles.remove(at: favIndex)
       }
     }
-    
-    ContentManager.shared.allMobiles = mobiles
-    
-    let content : Content<[Mobile]> = .success(data: self.mobiles)
-    let response = All.FetchMobiles.Response(content: content)
-    self.presenter.presentMobiles(response: response)
-  }
- }
 
+    ContentManager.shared.allMobiles = mobiles
+
+    let content: Content<[Mobile]> = .success(data: mobiles)
+    let response = All.FetchMobiles.Response(content: content)
+    presenter.presentMobiles(response: response)
+  }
+}

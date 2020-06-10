@@ -11,14 +11,13 @@ protocol FavouriteRouterInput {
 }
 
 class FavouriteRouter: FavouriteRouterInput {
-  
   weak var viewController: FavouriteViewController!
-  
+
   func navigateToDetail(mobileId: Int) {
     let destination = viewController.storyboard?.instantiateViewController(withIdentifier: Constants.ViewControllerConstant.detailViewController) as! DetailViewController
-    
+
     destination.receivedId = mobileId
-    
+
     viewController.navigationController?.pushViewController(destination, animated: true)
   }
 }
